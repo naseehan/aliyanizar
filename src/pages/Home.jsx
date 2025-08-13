@@ -1,5 +1,5 @@
 import React from "react";
-import { ParallaxBanner } from "react-scroll-parallax";
+import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 import top from "../assets/top.png"
 import bottom from "../assets/bottom.png"
 import middle from "../assets/middle.png"
@@ -18,14 +18,15 @@ const Home = () => {
   <>
       <div style={{position: "relative"}} className="parallaxWrapper">
         <ParallaxBanner
-        className="parallax"
+        className="parallax aspect-[2/1]"
         layers={[
           // Bottom layer (fixed)
             {
-            speed: -30,
-            children: <img src={middle} alt="Middle layer" 
+            // speed: -30,
+            // children: <img src={middle} alt="Middle layer" 
             
-            className="parallax-image" />,
+            // className="parallax-image " />,
+            image: middle, speed: -30
           },
            {
             speed: -30,
@@ -35,19 +36,19 @@ const Home = () => {
             // className="parallax-image" />,
           },
           {
-            speed: -30,
+            // speed: -30,
             
-            children: <img src={bottom} alt="Bottom layer" 
+            // children: <img src={bottom} alt="Bottom layer" 
             
-            className="parallax-image" />,
+            // className="parallax-image " />,
+             image: bottom, speed: -30
           },
          
           // Top layer (scrolls faster)
           {
-            // speed: 0,
-            children: <img src={top} alt="Top layer" className="parallax-image"
-            //  style={{ transform: "translateY(-100px)" }}
-              />,
+            // speed: 1,
+            // children: <img src={top} alt="Top layer" className="parallax-image "/>,
+             image: top, speed: 0
           },
         ]}
         style={{ height: "701px" }}

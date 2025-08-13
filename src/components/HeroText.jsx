@@ -39,7 +39,7 @@ const HeroText = () => {
         ref={textRef}
         className="text-[35px] text-white font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
       >
-      <span>⋄</span> ARTIST <span>⋄</span>
+      <span>⋄</span> A R T I S T <span>⋄</span>
       </p>
       <h1 className="text-[86px] font-semibold font-[Maghfirea,sans-serif] text-[#D4AF37] tracking-[8px]">
         ALIYA NIZAR

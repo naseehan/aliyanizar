@@ -5,6 +5,7 @@ import RotatingTextCircle from "./RotatingTextCircle";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import avatar from "../assets/aliya2.jpg"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,7 +66,7 @@ const AboutSection = () => {
 
         <div className=" h-[480px] w-[480px] mx-auto lg:h-[520px]  relative">
           <img
-            src="https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg"
+            src={avatar}
             alt="author"
             loading="lazy"
             className="h-full w-full rounded-t-[50%] 

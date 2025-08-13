@@ -1,14 +1,59 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../App.css'
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
 
 const headingRef = React.useRef();
 const buttonRef = React.useRef()
+const projectRef = React.useRef()
+
+// for heading motion
+useGSAP(() => {
+    gsap.fromTo(
+      headingRef.current,
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "back.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 100%",
+          toggleActions: "play none none none", // play only once
+        },
+      }
+    );
+  }, []);
+
+
+  // for project motion
+    useGSAP(() => {
+    gsap.fromTo(
+      projectRef.current,
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "back.out",
+        scrollTrigger: {
+          trigger: projectRef.current,
+          start: "top 100%",
+          toggleActions: "play none none none", // play only once
+        },
+      }
+    );
+  }, []);
 
   return (
-    <div className="bg-[#FFFFF0]">
+    <div className="bg-[#FFFFF0]" >
 
         {/* heading */}
       <div className="py-20 mx-auto text-center">
@@ -19,7 +64,7 @@ const buttonRef = React.useRef()
       </div>
 
 {/* project section */}
-<div className="max-w-[1000px] my-12 mx-auto px-8 lg:px-0">
+<div className="max-w-[1000px] my-12 mx-auto px-8 lg:px-0" ref={projectRef}>
   <div className="grid [grid-template-columns:repeat(auto-fit,minmax(400px,1fr))] gap-5">
     {[...Array(4)].map((_, i) => (
       <div key={i} className="group relative hover:-translate-y-3 duration-500 h-[500px]">

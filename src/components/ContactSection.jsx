@@ -1,12 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactSection = () => {
+
+  const contactRef = React.useRef()
+
+  useGSAP(() => {
+    gsap.fromTo(
+      contactRef.current,
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "back.out",
+        scrollTrigger: {
+          trigger: contactRef.current,
+          start: "top 100%",
+          toggleActions: "play none none none", // play only once
+        },
+      }
+    );
+  }, []);
+
+
+
   return (
     <div className="bg-[#FFFFF0]">
       <div className="invisible">services</div>
 
-      <div className="max-w-[1000px] grid px-4 lg:px-0 my-12 mx-auto lg:flex gap-12 lg:gap-[6rem] items-start">
+      <div className="max-w-[1000px] grid px-4 lg:px-0 py-12 mx-auto lg:flex gap-12 lg:gap-[6rem] items-start" ref={contactRef}>
 
         <div className="grid max-w-[400px] basis-[40%] gap-5 ">
           <h1
@@ -44,7 +72,7 @@ const ContactSection = () => {
         </div>
       </div>
 
-      <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
+      {/* <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div> */}
       
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import author from "../assets/nas.jpg";
 import RotatingTextCircle from "./RotatingTextCircle";
@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
   let aboutRef = React.useRef();
+
 
   useGSAP(() => {
     gsap.fromTo(
@@ -43,7 +44,7 @@ const AboutSection = () => {
       >
         <div className="px-4 lg:px-0 text-center lg:text-start">
           <h1
-            className="text-[60px] font-bold font-[Flaviotte] tracking-[3px] text-[#b9900d]
+            className="text-[60px] font-bold font-[Flaviotte] tracking-[3px] text-[#b9900d] 
 "
           >
             HELLO!
@@ -51,7 +52,8 @@ const AboutSection = () => {
           <p className="text-[24px] mb-12 leading-[1.5] font-[Flaviotte] uppercase tracking-[4px] font-semibold text-[#b9900d] lg:max-w-[28rem]">
             I am Aliya Nizar,
             <br />
-            a Dubai-based freelance artist and interior designer. Here, you'll
+            a Dubai-based freelance artist and interior designer.
+            <br /> Here, you'll
             find a selection of projects that have defined my creative path.
             Currently, I'm at my desk crafting and curating new experiences.
             <br />
@@ -64,12 +66,12 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className=" h-[480px] w-[480px] mx-auto lg:h-[520px]  relative">
+        <div className="h-[350px] w-[350px] md:h-[480px] md:w-[480px] mx-auto  relative">
           <img
             src={avatar}
             alt="author"
             loading="lazy"
-            className="h-full w-full rounded-t-[50%] 
+            className="h-full w-full rounded-full object-cover
 "
           />
           <div

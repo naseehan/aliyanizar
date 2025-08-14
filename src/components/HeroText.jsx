@@ -1,14 +1,43 @@
 import React, { useEffect, useRef } from "react";
 import CircleType from "circletype";
+// import { anime } from "animejs";
+// import splt from "https://cdn.skypack.dev/spltjs@1.0.8";
+import anime from "https://cdn.skypack.dev/animejs@3.2.1";
 
 const HeroText = () => {
-
- const textRef = useRef(null);
-  const reverseRef = useRef(null); // new ref for reverse arc
+  // const root = useRef(null);
+  const textRef = useRef(null);
+  const reverseRef = useRef(null);
 
   const circleInstance = useRef(null);
-  const reverseInstance = useRef(null); // new CircleType instance for reverse
+  const reverseInstance = useRef(null);
 
+const motionRef = useRef(null);
+
+  useEffect(() => {
+    const element = motionRef.current;
+    const text = element.textContent;
+
+    element.innerHTML = "";
+
+    text.split("").forEach((char) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char; // preserve space
+      span.style.display = "inline-block";
+      element.appendChild(span);
+    });
+
+    anime({
+      targets: element.querySelectorAll("span"),
+      translateY: [50, 0],
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 1000,
+      delay: anime.stagger(50)
+    });
+  }, []);
+
+  // Top arc text
   useEffect(() => {
     if (textRef.current) {
       circleInstance.current = new CircleType(textRef.current);
@@ -21,11 +50,12 @@ const HeroText = () => {
     }
   }, []);
 
+  // Bottom arc text (reversed)
   useEffect(() => {
     if (reverseRef.current) {
-      reverseInstance.current = new CircleType(reverseRef.current).dir(-1); // reverse direction
+      reverseInstance.current = new CircleType(reverseRef.current).dir(-1);
       const updateRadius = () => {
-        reverseInstance.current.radius(184); // your chosen radius
+        reverseInstance.current.radius(184);
       };
       updateRadius();
       window.addEventListener("resize", updateRadius);
@@ -34,24 +64,30 @@ const HeroText = () => {
   }, []);
 
   return (
-     <div className="mt-25 text-center block">
+    <div className="mt-25 text-center block" 
+    // ref={root}
+    >
       <p
         ref={textRef}
-        className="text-[35px] text-white font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
+        className="text-[35px] text-white font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px] "
       >
-      <span>⋄</span> A R T I S T <span>⋄</span>
+        <span>⋄</span> A R T I S T <span>⋄</span>
       </p>
-      <h1 className="text-[86px] font-semibold font-[Maghfirea,sans-serif] text-[#D4AF37] tracking-[8px]">
+
+      <h1
+        className="text-[60px] sm:text-[86px] font-semibold font-[Maghfirea,sans-serif] text-[#D4AF37] tracking-[8px]" ref={motionRef}
+      >
         ALIYA NIZAR
       </h1>
+
       <p
         ref={reverseRef}
-        className="text-[35px] text-white font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
+        className="text-[35px] text-white font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
       >
-       <span className="text-[18px]">⋄</span> INTERIOR DESIGNER <span>⋄</span>
+        <span className="text-[18px]">⋄</span> INTERIOR DESIGNER <span>⋄</span>
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default HeroText
+export default HeroText;

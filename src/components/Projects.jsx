@@ -57,7 +57,7 @@ useGSAP(() => {
 
         {/* heading */}
       <div className="py-20 mx-auto text-center">
-        <h1 className="text-[50px] font-bold tracking-[5px] text-[#D4AF37] font-[Flaviotte,sans-serif] uppercase" id="heading" ref={headingRef}>
+        <h1 className="text-[60px] font-bold tracking-[5px] text-[#D4AF37] font-[Flaviotte,sans-serif] uppercase" id="heading" ref={headingRef}>
           Design Projects
         </h1>
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
@@ -65,7 +65,7 @@ useGSAP(() => {
 
 {/* project section */}
 <div className="max-w-[1000px] my-12 mx-auto px-8 lg:px-0" ref={projectRef}>
-  <div className="grid [grid-template-columns:repeat(auto-fit,minmax(400px,1fr))] gap-5">
+  <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-5">
     {[...Array(4)].map((_, i) => (
       <div key={i} className="group relative hover:-translate-y-3 duration-500 h-[500px]">
         <img

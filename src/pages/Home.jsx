@@ -8,14 +8,14 @@ import HeroText from "../components/HeroText";
 import Slider from "../components/Slider";
 import AboutSection from "../components/AboutSection";
 import Projects from "../components/Projects";
-import Services from "../components/Services";
+import ServiceSection from "../components/ServiceSection";
 import ContactSection from "../components/ContactSection";
-
 const Home = () => {
  
 
   return (
   <>
+
       <div style={{position: "relative"}} className="parallaxWrapper">
         <ParallaxBanner
         className="parallax aspect-[2/1]"
@@ -56,11 +56,10 @@ const Home = () => {
       </div>
      
 
-
      <Slider />
      <AboutSection />
      <Projects />
-     <Services />
+     <ServiceSection />
      <ContactSection />
       </>
   )

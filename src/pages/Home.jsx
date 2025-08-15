@@ -22,10 +22,6 @@ const Home = () => {
         layers={[
           // Bottom layer (fixed)
             {
-            // speed: -30,
-            // children: <img src={middle} alt="Middle layer" 
-            
-            // className="parallax-image " />,
             image: middle, speed: -30
           },
            {
@@ -33,12 +29,8 @@ const Home = () => {
             children: 
            <HeroText />
             
-            // className="parallax-image" />,
           },
           {
-            // speed: -30,
-            
-            // children: <img src={bottom} alt="Bottom layer" 
             
             // className="parallax-image " />,
              image: bottom, speed: -30
@@ -46,8 +38,6 @@ const Home = () => {
          
           // Top layer (scrolls faster)
           {
-            // speed: 1,
-            // children: <img src={top} alt="Top layer" className="parallax-image "/>,
              image: top, speed: 0
           },
         ]}

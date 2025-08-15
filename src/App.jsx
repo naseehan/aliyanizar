@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {  Route, Routes, Link } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -10,7 +10,23 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import Work from "./pages/Work";
 import ScrollToTop from "./components/ScrollToTop";
+import Loader from "./components/Loader";
 const App = () => {
+
+const [loading, setLoading] = useState(true)
+
+useState(() => {
+  const handleState = () => setLoading(false)
+  window.addEventListener("load",handleState)
+  return () => window.removeEventListener("load", handleState)
+})
+
+if(loading){
+  return(
+    <Loader />
+  )
+}
+
   return (
     <>
     <Navbar />

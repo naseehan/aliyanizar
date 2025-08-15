@@ -43,6 +43,7 @@ const motionRef = useRef(null);
       circleInstance.current = new CircleType(textRef.current);
       const updateRadius = () => {
         circleInstance.current.radius(180);
+        
       };
       updateRadius();
       window.addEventListener("resize", updateRadius);
@@ -50,12 +51,14 @@ const motionRef = useRef(null);
     }
   }, []);
 
+
   // Bottom arc text (reversed)
   useEffect(() => {
     if (reverseRef.current) {
       reverseInstance.current = new CircleType(reverseRef.current).dir(-1);
       const updateRadius = () => {
         reverseInstance.current.radius(184);
+        console.log(reverseInstance.current);
       };
       updateRadius();
       window.addEventListener("resize", updateRadius);

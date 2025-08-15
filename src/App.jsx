@@ -17,7 +17,7 @@ const [loading, setLoading] = useState(true)
 
 useEffect(() => {
     // Fake loading for 2s, replace with your real data-loading logic
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 

@@ -57,7 +57,7 @@ const motionRef = useRef(null);
     if (reverseRef.current) {
       reverseInstance.current = new CircleType(reverseRef.current).dir(-1);
       const updateRadius = () => {
-        reverseInstance.current.radius(184);
+        reverseInstance.current.radius(200);
         console.log(reverseInstance.current);
       };
       updateRadius();

@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
 const App = () => {
 
-const [loading, setLoading] = useState(true)
+const [loading, setLoading] = useState(false)
 
 useEffect(() => {
     // Fake loading for 2s, replace with your real data-loading logic

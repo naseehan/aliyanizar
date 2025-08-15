@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import CircleType from "circletype";
 // import { anime } from "animejs";
 // import splt from "https://cdn.skypack.dev/spltjs@1.0.8";
-// import anime from "https://cdn.skypack.dev/animejs@3.2.1";
+import anime from "https://cdn.skypack.dev/animejs@3.2.1";
 
 const HeroText = () => {
   // const root = useRef(null);
@@ -14,28 +14,28 @@ const HeroText = () => {
 
 const motionRef = useRef(null);
 
-  // useEffect(() => {
-  //   const element = motionRef.current;
-  //   const text = element.textContent;
+  useEffect(() => {
+    const element = motionRef.current;
+    const text = element.textContent;
 
-  //   element.innerHTML = "";
+    element.innerHTML = "";
 
-  //   text.split("").forEach((char) => {
-  //     const span = document.createElement("span");
-  //     span.textContent = char === " " ? "\u00A0" : char; // preserve space
-  //     span.style.display = "inline-block";
-  //     element.appendChild(span);
-  //   });
+    text.split("").forEach((char) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char; // preserve space
+      span.style.display = "inline-block";
+      element.appendChild(span);
+    });
 
-  //   anime({
-  //     targets: element.querySelectorAll("span"),
-  //     translateY: [50, 0],
-  //     opacity: [0, 1],
-  //     easing: "easeOutExpo",
-  //     duration: 1000,
-  //     delay: anime.stagger(50)
-  //   });
-  // }, []);
+    anime({
+      targets: element.querySelectorAll("span"),
+      translateY: [50, 0],
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 1000,
+      delay: anime.stagger(50)
+    });
+  }, []);
 
   // Top arc text
   useEffect(() => {

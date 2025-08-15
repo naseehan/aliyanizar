@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {  Route, Routes, Link } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -15,11 +15,12 @@ const App = () => {
 
 const [loading, setLoading] = useState(true)
 
-useState(() => {
-  const handleState = () => setLoading(false)
-  window.addEventListener("load",handleState)
-  return () => window.removeEventListener("load", handleState)
-})
+useEffect(() => {
+    // Fake loading for 2s, replace with your real data-loading logic
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
 
 if(loading){
   return(

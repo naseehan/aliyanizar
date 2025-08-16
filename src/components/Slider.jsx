@@ -2,7 +2,7 @@ import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./Slider.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,6 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const animation = { duration: 30000, easing: (t) => t };
 const Slider = () => {
+
+let navigate = useNavigate()
+const handleClick = (slug) => {
+  navigate(`artworkdetails/${slug}`)
+}
+
   const headingRef = React.useRef();
   const buttonRef = React.useRef();
 
@@ -105,7 +111,8 @@ const Slider = () => {
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="keen-slider__slide number-slide1 relative hover:-translate-y-5 group"
+            className="keen-slider__slide number-slide1 relative hover:-translate-y-5 group cursor-pointer"
+            onClick={() => handleClick("momma-and-bear")}
           >
             <img
               className="h-full w-full object-cover"
@@ -136,7 +143,7 @@ const Slider = () => {
       </div>
 
       <div className="flex pb-20" ref={buttonRef}>
-        <Link className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200">
+        <Link className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200" to="/works">
           MORE WORK
         </Link>
       </div>

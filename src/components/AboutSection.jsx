@@ -60,7 +60,7 @@ const AboutSection = () => {
             {/* Let's connect and create something beautiful together! */}
           </p>
           <div className="flex ">
-            <Link className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200">
+            <Link className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200" to="/about">
               MORE DETAILS
             </Link>
           </div>

@@ -11,6 +11,8 @@ import Services from "./pages/Services";
 import Work from "./pages/Work";
 import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
+import ProjectDetails from "./pages/ProjectDetails";
+import ArtWorkDetails from "./pages/ArtWorkDetails";
 const App = () => {
 
 const [loading, setLoading] = useState(false)
@@ -38,6 +40,8 @@ if(loading){
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
       <Route path="/works" element={<Work />} />
+      <Route path="/projectsDetails/:slug" element={<ProjectDetails />} />
+      <Route path="/artworkdetails/:slug" element={<ArtWorkDetails />} />
     </Routes>
 <Footer />
     </>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../App.css'
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -8,6 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
+const navigate = useNavigate()
+const handleClick = (slug) => {
+navigate(`/projectsDetails/${slug}`)
+}
 
 const headingRef = React.useRef();
 const buttonRef = React.useRef()
@@ -64,7 +68,8 @@ useGSAP(() => {
       </div>
 
 {/* project section */}
-<div className="max-w-[1000px] my-12 mx-auto px-8 lg:px-0" ref={projectRef}>
+<div className="max-w-[1000px] my-12 mx-auto px-8 lg:px-0" ref={projectRef}
+onClick={() => handleClick("project-title")}>
   <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-5">
     {[...Array(4)].map((_, i) => (
       <div key={i} className="group relative hover:-translate-y-3 duration-500 h-[500px]">

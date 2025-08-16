@@ -39,8 +39,8 @@ const handleClick = () => {
 
 {/* mobile nav */}
 <div>
-<img src={hamburger} alt="" className='sm:hidden' onClick={handleClick}/>
-<nav>
+<img src={hamburger} alt="" className='sm:hidden my-3.5' onClick={handleClick} />
+<nav className='transform transition-transform duration-300 ease-in-out'>
  <ul className={`sm:hidden gap-4 justify-start py-12 px-4  text-[#D4AF37] font-normal text-[30px]  tracking-[3px] font-[Maghfirea,sans-serif] ${open ? 'grid' : 'hidden'}`} >
             <li className='' onClick={handleClick}>
                 <Link to="/">Home</Link>

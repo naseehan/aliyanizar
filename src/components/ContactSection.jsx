@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,23 +12,6 @@ const ContactSection = () => {
   const contactRef = React.useRef()
 
 
-// send mail
-  //   const sendEmail = (e) => {
-  //   e.preventDefault();
-  //   emailjs
-  //     .sendForm(import.meta.env.VITE_EMAILJS_SERVICEID, import.meta.env.VITE_EMAILJS_TEMPLATEID, form.current, {
-  //       publicKey: import.meta.env.VITE_EMAILJS_PUBLICKEY,
-  //     })
-  //     .then(
-  //       () => {
-  //         console.log('SUCCESS!');
-  //         form.current.reset()
-  //       },
-  //       (error) => {
-  //         console.log('FAILED...', error.text);
-  //       },
-  //     );
-  // };
 
   useGSAP(() => {
     gsap.fromTo(

@@ -1,28 +1,11 @@
 import React, { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import emailjs from '@emailjs/browser';
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Contact = () => {
 
-    const form = useRef();
+const location = window.location.href
 
-// send mail
-    const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(import.meta.env.VITE_EMAILJS_SERVICEID, import.meta.env.VITE_EMAILJS_TEMPLATEID, form.current, {
-        publicKey: import.meta.env.VITE_EMAILJS_PUBLICKEY,
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-          form.current.reset()
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-  };
+
 
   return (
     <div className='  bg-[#FFFFF0]'>
@@ -42,14 +25,15 @@ const Contact = () => {
 
         {/* form */}
       <div className="">
-          <form action="" ref={form} onSubmit={sendEmail} className="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))] px-4 lg:px-0" >
+          <form action="https://formsubmit.co/802d01dd2e487f17e9f0ebf88ae34b8c" method="POST" className="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))] px-4 lg:px-0" >
+          <input type="hidden" name="_next" value={location}/>
             <div className='grid gap-2.5'>
             <label htmlFor="name" className="text-[#b9900d]">Name*</label>
-            <input type="text" name="user_name" id="name" className=" border p-2.5" required maxLength={30}/>
+            <input type="text" name="name" id="name" className=" border p-2.5" required maxLength={30}/>
             </div>
             <div className='grid gap-2.5'>
             <label htmlFor="email" className="text-[#b9900d]">Email Address*</label>
-            <input type="email" name="user_email" id="email" className=" border p-2.5" required maxLength={30}/>
+            <input type="email" name="email" id="email" className=" border p-2.5" required maxLength={30}/>
             </div>
             <div className='grid gap-2.5'>
             <label htmlFor="phone" className="text-[#b9900d]">Phone</label>

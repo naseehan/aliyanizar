@@ -59,7 +59,7 @@ const handleClick = (slug) => {
   const [sliderRef] = useKeenSlider({
     loop: true,
     renderMode: "performance",
-    drag: false,
+    drag: true,
     slides: {
       perView: 3, // show 3 slides at a time
       spacing: 20, // gap between slides in px

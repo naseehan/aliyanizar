@@ -48,7 +48,7 @@ const ContactSection = () => {
           </h1>
           <p className="font-medium font-[Ubuntu] text-[#b9900d]">
             Feel free to leave me a message via the form, or you can get a hold
-            of me at adfisherdesign@gmail.com
+            of me at <strong>aliyanizar023@gmail.com</strong> 
             <br />
             <br />
           Lets create something beautiful and impactful.</p>

@@ -15,9 +15,9 @@ const location = window.location.href
       <div className='grid gap-12'>
         {/* header */}
         <div className='max-w-[400px] pl-4 lg:pl-0'>
-          <h1 className='text-[50px] font-bold tracking-[3px] text-[#D4AF37] font-[Flaviotte,sans-serif] uppercase'>Lets work together</h1>
+          <h1 className='text-[50px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase'>Lets work together</h1>
           <br />
-          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Feel free to leave me a message via the form, or you can get a hold of me at adfisherdesign@gmail.com</p>
+          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Feel free to leave me a message via the form, or you can get a hold of me at <strong>aliyanizar023@gmail.com</strong> </p>
           <br />
           <br />
           <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Lets create something beautiful and impactful.</p>

@@ -33,14 +33,14 @@ const motionRef = useRef(null);
       opacity: [0, 1],
       easing: "easeOutExpo",
       duration: 1000,
-      delay: anime.stagger(50)
+      delay: anime.stagger(120)
     });
   }, []);
 
   // Top arc text
   useEffect(() => {
     if (textRef.current) {
-      circleInstance.current = new CircleType(textRef.current);
+      circleInstance.current = new CircleType(textRef.current).dir(-1);
       const updateRadius = () => {
         circleInstance.current.radius(180);
         
@@ -55,9 +55,9 @@ const motionRef = useRef(null);
   // Bottom arc text (reversed)
   useEffect(() => {
     if (reverseRef.current) {
-      reverseInstance.current = new CircleType(reverseRef.current).dir(-1);
+      reverseInstance.current = new CircleType(reverseRef.current);
       const updateRadius = () => {
-        reverseInstance.current.radius(184);
+        reverseInstance.current.radius(180);
       };
       updateRadius();
       window.addEventListener("resize", updateRadius);
@@ -66,28 +66,31 @@ const motionRef = useRef(null);
   }, []);
 
   return (
-    <div className="mt-25 text-center block" 
+    <div className="mt-6 lg:mt-21 text-center block" 
     // ref={root}
     >
-      <p
-        ref={textRef}
-        className="text-[35px] text-white font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px] "
+    
+
+<p
+        ref={reverseRef}
+        className="text-[28px] lg:text-[35px] text-[#cb9b4a] font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
       >
-        <span>⋄</span> A R T I S T <span>⋄</span>
+        <span className="text-[18px]">⋄</span> INTERIOR DESIGNER <span>⋄</span>
       </p>
 
       <h1
-        className="text-[60px] sm:text-[86px] font-semibold font-[Maghfirea,sans-serif] text-[#D4AF37] tracking-[8px]" ref={motionRef}
+        className="text-[54px] lg:text-[86px] font-semibold font-[Maghfirea,sans-serif] text-[#004953] tracking-[8px]" ref={motionRef}
       >
         ALIYA NIZAR
       </h1>
 
-      <p
-        ref={reverseRef}
-        className="text-[35px] text-white font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
+  <p
+        ref={textRef}
+        className="text-[28px] lg:text-[35px] text-[#cb9b4a] font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px] "
       >
-        <span className="text-[18px]">⋄</span> INTERIOR DESIGNER <span>⋄</span>
+        <span>⋄</span> A R T I S T <span>⋄</span>
       </p>
+      
     </div>
   );
 };

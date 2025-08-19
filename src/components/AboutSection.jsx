@@ -49,12 +49,16 @@ const AboutSection = () => {
           >
             HELLO!
           </h1>
-          <p className="text-[24px] mb-12 leading-[1.5] font-[Flaviotte] uppercase tracking-[4px] font-semibold text-[#b9900d] lg:max-w-[28rem]">
+          <p className="text-[24px] mb-12 leading-[1.5] font-[Flaviotte] uppercase tracking-[4px] font-medium text-[#b9900d] lg:max-w-[29rem]">
             I am Aliya Nizar,
             <br />
             a Dubai-based freelance artist and interior designer.
-            <br /> Here, you'll
+            <br />
+            <br />
+             Here, you'll
             find a selection of projects that have defined my creative path.
+            <br />
+            <br />
             Currently, I'm at my desk crafting and curating new experiences.
             <br />
             {/* Let's connect and create something beautiful together! */}

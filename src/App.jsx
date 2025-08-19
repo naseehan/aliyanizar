@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
 import ProjectDetails from "./pages/ProjectDetails";
 import ArtWorkDetails from "./pages/ArtWorkDetails";
+import CustomCursor from "./components/customCursor";
 const App = () => {
 
 const [loading, setLoading] = useState(false)
@@ -32,6 +33,7 @@ if(loading){
 
   return (
     <>
+    <CustomCursor />
     <Navbar />
     <ScrollToTop />
     <Routes>

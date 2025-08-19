@@ -11,13 +11,13 @@
 }
 @font-face {
   font-family: "Maghfirea";
-  src: url("/fonts/Maghfirea.woff2") format("woff2");
+  src: url("/fonts/Maghfirea-VGgl6.ttf") format("truetype");
   /* font-weight: 700; */
-  font-style: normal;
+  /* font-style: normal; */
 }
 
 .parallaxWrapper {
-  background-color: #004953;
+  background-color: #fffff0;
 }
 .parallax-image {
   width: 100%;
@@ -27,7 +27,8 @@
    display: block; 
 }
 .parallax div {
-  inset: 0 0 !important;
+  /* inset: 0 0 !important; */
+  inset: 0px 0px -80px !important;
   background-position: 50% 100% !important;
 }
 
@@ -40,7 +41,6 @@
 .parallax div .studio {
   font-family: "Flaviotte", sans-serif;
 }
-/* .small-project-container{
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-} */
+
+
+

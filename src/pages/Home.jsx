@@ -3,6 +3,7 @@ import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 import top from "../assets/top.png"
 import bottom from "../assets/bottom.png"
 import middle from "../assets/middle.png"
+import bg from "../assets/bgwork.png"
 import "../App.css"
 import HeroText from "../components/HeroText";
 import Slider from "../components/Slider";
@@ -18,30 +19,29 @@ const Home = () => {
 
       <div style={{position: "relative"}} className="parallaxWrapper">
         <ParallaxBanner
-        className="parallax aspect-[2/1]"
+        className="parallax aspect-[2/1] h-[500px] lg:h-[701px]"
         layers={[
           // Bottom layer (fixed)
-            {
-            image: middle, speed: -30
-          },
+          //   {
+          //   image: middle, speed: -30
+          // },
            {
             speed: -30,
             children: 
            <HeroText />
             
           },
-          {
+          // {
             
-            // className="parallax-image " />,
-             image: bottom, speed: -30
-          },
+          //   // className="parallax-image " />,
+          //    image: bottom, speed: -30
+          // },
          
           // Top layer (scrolls faster)
           {
-             image: top, speed: 0
+             image: bg, speed: -2
           },
         ]}
-        style={{ height: "701px" }}
       />
       </div>
      

@@ -12,7 +12,7 @@ const Services = () => {
         {/* header */}
 
         <div className="text-center max-w-[615px] mx-auto">
-          <h1 className="text-[60px] font-bold tracking-[3px] text-[#D4AF37] font-[Flaviotte,sans-serif] uppercase">
+          <h1 className="text-[60px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase">
             services
           </h1>
           <p className="font-medium font-[Ubuntu] text-[#b9900d] text-[19px]">

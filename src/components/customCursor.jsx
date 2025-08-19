@@ -4,14 +4,19 @@ import React, { useEffect, useState } from "react";
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(pointer: coarse)").matches;
+    if (isMobile) return; // don't enable cursor on touch devices
+
+    setEnabled(true);
+
     const moveCursor = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", moveCursor);
 
-    // detect hover on interactive elements
     const addHover = () => setHovered(true);
     const removeHover = () => setHovered(false);
 
@@ -30,6 +35,8 @@ const CustomCursor = () => {
     };
   }, []);
 
+  if (!enabled) return null; // don't render on mobile
+
   return (
     <img
       src={hovered ? "/cursor-gold.png" : "/cursor.png"}
@@ -41,7 +48,7 @@ const CustomCursor = () => {
       className={`fixed w-8 h-8 pointer-events-none 
                   -translate-x-1/2 -translate-y-1/2 
                   z-[9999] transition-transform duration-200
-                  ${hovered ? "scale-150 text-[#fff]" : "scale-100"}`}
+                  ${hovered ? "scale-150" : "scale-100"}`}
     />
   );
 };

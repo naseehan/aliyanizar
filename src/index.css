@@ -4,6 +4,8 @@ body{
     box-sizing: border-box;
   
 }
-*{
-  cursor: none !important;
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
 }

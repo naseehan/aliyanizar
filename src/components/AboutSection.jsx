@@ -45,10 +45,10 @@ const AboutSection = () => {
       >
         <div className="px-4 lg:px-0 text-center lg:text-start">
           <h1
-            className="text-[60px] font-bold font-[Flaviotte] tracking-[3px] text-[#b9900d] 
+            className="text-[60px] font-bold font-[Cloudy,sans-serif] tracking-[8px] text-[#b9900d] 
 "
           >
-            HELLO!
+            hello!
           </h1>
           <p className="text-[24px] mb-12 leading-[1.5] font-[Flaviotte] uppercase tracking-[4px] font-medium text-[#b9900d] lg:max-w-[29rem]">
             I am Aliya Nizar,

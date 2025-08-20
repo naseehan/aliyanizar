@@ -1,8 +1,5 @@
 import React from "react";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
-import top from "../assets/top.png"
-import bottom from "../assets/bottom.png"
-import middle from "../assets/middle.png"
 import bg from "../assets/bgwork.png"
 import "../App.css"
 import HeroText from "../components/HeroText";
@@ -11,15 +8,17 @@ import AboutSection from "../components/AboutSection";
 import Projects from "../components/Projects";
 import ServiceSection from "../components/ServiceSection";
 import ContactSection from "../components/ContactSection";
+import circle from "../assets/spinning-circle.png"
+
 const Home = () => {
- 
+
 
   return (
   <>
 
-      <div style={{position: "relative"}} className="parallaxWrapper">
+      <div className="parallaxWrapper relative">
         <ParallaxBanner
-        className="parallax aspect-[2/1] h-screen sm:h-[600px] lg:h-[701px]"
+        className="parallax aspect-[2/1] h-screen"
         layers={[
           // Bottom layer (fixed)
           //   {
@@ -43,6 +42,8 @@ const Home = () => {
           },
         ]}
       />
+      <img src={circle} alt="spinning circle" className="absolute w-[170px] top-[30%] left-[10%] rounded-full animate-spin-slow hidden lg:block" loading="lazy"/>
+       <img src={circle} alt="spinning circle" className="absolute w-[170px] top-[30%] right-[10%] rounded-full animate-spin-slow2 hidden lg:block" loading="lazy"/>
       </div>
      
 

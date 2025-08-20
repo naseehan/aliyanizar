@@ -28,7 +28,7 @@ const ArtWorkDetails = () => {
       </div>
 
       <div>
-        <h1 className="text-[45px] font-bold tracking-[3px] text-[#D4AF37] font-[Flaviotte,sans-serif] uppercase">Art work name</h1>
+        <h1 className="text-[45px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase">Art work name</h1>
         <p className="text-[14px] md:text-[17px]  font-normal font-[Ubuntu]  max-w-[474px] text-[#b9900d]">A forest scene of a mama bear with her three cubs climbing the tree trunks.</p>
       </div>
 

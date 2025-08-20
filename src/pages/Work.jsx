@@ -12,8 +12,8 @@ const handleClick = (slug) => {
     <div className="  bg-[#FFFFF0]">
       <div className="max-w-[1000px] pt-40  mx-auto">
         {/* heading */}
-        <div className="text-center max-w-[615px] mx-auto">
-          <h1 className="text-[60px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase">
+        <div className="text-center max-w-[686px] mx-auto">
+          <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-[Cloudy,sans-serif]  lowercase">
             design projects
           </h1>
           <br />

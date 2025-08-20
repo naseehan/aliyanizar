@@ -41,9 +41,9 @@ const handleClick = (slug) => {
   useGSAP(() => {
     gsap.fromTo(
       buttonRef.current,
-      { x: 100, opacity: 0 },
+      { y: 100, opacity: 0 },
       {
-        x: 0,
+        y: 0,
         opacity: 1,
         duration: 0.6,
         ease: "back.out",

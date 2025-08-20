@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 const DektopNavbar = () => {
   return (
     <nav>
-      <ul className="hidden sm:flex justify-around py-5 lg:max-w-[840px] lg:mx-auto text-[#D4AF37] font-normal text-[18px] lg:text-[26px] lg:font-medium tracking-[3px] font-['Maghfirea',sans-serif]">
+      <ul className="hidden sm:flex justify-around py-5 lg:max-w-[840px] lg:mx-auto text-[#D4AF37] font-normal text-[18px] lg:text-[26px] lg:font-medium tracking-[3px] font-['Maghfirea',sans-serif] h-[103px] items-center">
         <li className="">
           <Link to="/" className="relative inline-block group hover:font-bold">
             <span className="relative z-10">Home</span>
@@ -135,17 +135,19 @@ const DektopNavbar = () => {
 
         {/* logo */}
         <li className="mx-16 my-0 relative">
-          <Link className="relative flex items-center justify-center w-[85px] h-[38px]">
+          <Link className="relative flex items-center justify-center w-[94px] h-[94px]">
             {/* Circle logo image */}
             <img
               src={logo}
               alt="logo"
               loading="lazy"
-              className="absolute  w-full h-[80px] rounded-full"
+              className="absolute  w-full h-[94px] rounded-full"
             />
 
             {/* Text on top of circle */}
-            <span className="relative z-10 text-lg font-bold">AN</span>
+            <div className="relative"></div>
+            <span className="absolute z-10 top-5 left-[33px]">A</span>
+            <span className="absolute top-8 left-[50px]">N</span>
           </Link>
         </li>
 

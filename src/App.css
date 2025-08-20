@@ -15,7 +15,12 @@
   /* font-weight: 700; */
   /* font-style: normal; */
 }
-
+@font-face {
+  font-family: "Cloudy";
+  src: url("/fonts/Cloudy Aurora Serif.otf") format("opentype");
+  /* font-weight: 700; */
+  /* font-style: normal; */
+}
 .parallaxWrapper {
   background-color: #fffff0;
 }
@@ -28,7 +33,7 @@
 }
 .parallax div {
   /* inset: 0 0 !important; */
-  inset: 0px 0px -80px !important;
+  inset: 0px 0px 0px !important;
   background-position: 50% 100% !important;
 }
 
@@ -42,5 +47,19 @@
   font-family: "Flaviotte", sans-serif;
 }
 
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+@keyframes spin-slow2 {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
 
+.animate-spin-slow2 {
+  animation: spin-slow2 6s linear infinite;
+}

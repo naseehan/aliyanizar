@@ -12,7 +12,7 @@ const HeroText = () => {
   const circleInstance = useRef(null);
   const reverseInstance = useRef(null);
 
-const motionRef = useRef(null);
+  const motionRef = useRef(null);
 
   useEffect(() => {
     const element = motionRef.current;
@@ -33,24 +33,22 @@ const motionRef = useRef(null);
       opacity: [0, 1],
       easing: "easeOutExpo",
       duration: 1000,
-      delay: anime.stagger(120)
+      delay: anime.stagger(120),
     });
   }, []);
 
   // Bottom arc text
   useEffect(() => {
     if (textRef.current) {
-      circleInstance.current = new CircleType(textRef.current).dir(-1);
+      circleInstance.current = new CircleType(textRef.current);
       const updateRadius = () => {
         circleInstance.current.radius(120);
-        
       };
       updateRadius();
       window.addEventListener("resize", updateRadius);
       return () => window.removeEventListener("resize", updateRadius);
     }
   }, []);
-
 
   // Top arc text (reversed)
   useEffect(() => {
@@ -66,31 +64,33 @@ const motionRef = useRef(null);
   }, []);
 
   return (
-    <div className="mt-40 sm:mt-14 lg:mt-21 text-center block" 
-    // ref={root}
+    <div
+      className="mt-30 text-center block"
+      // ref={root}
     >
-    
-
-<p
+      <div className="relative mb-[30px]">
+      <p
         ref={reverseRef}
-        className="text-[28px] lg:text-[35px] text-[#cb9b4a] font-[Maghfirea,sans-serif] font-medium [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
+        className="text-[27px]  text-[#cb9b4a] font-[Maghfirea,sans-serif] font-medium [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
       >
         <span className="text-[18px]">⋄</span> INTERIOR DESIGNER <span>⋄</span>
       </p>
 
-      <h1
-        className="text-[54px] lg:text-[86px] font-medium font-[Maghfirea,sans-serif] text-[#004953] tracking-[8px]" ref={motionRef}
-      >
-        ALIYA NIZAR
-      </h1>
-
-  <p
+   <p
         ref={textRef}
-        className="text-[28px] lg:text-[35px] text-[#cb9b4a] font-[Maghfirea,sans-serif] font-medium[text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px] "
+        className="text-[27px]  text-[#cb9b4a] font-[Maghfirea,sans-serif] font-medium[text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px] absolute left-[50%]  top-[53px]"
       >
         <span>⋄</span> ARTIST <span>⋄</span>
       </p>
-      
+</div>
+      <h1
+        className="text-[45px] lg:text-[60px] font-medium font-[Cloudy,sans-serif] text-[#004953] tracking-[8px]"
+        ref={motionRef}
+      >
+        aliya nizar
+      </h1>
+
+   
     </div>
   );
 };

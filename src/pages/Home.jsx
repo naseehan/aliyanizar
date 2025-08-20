@@ -19,7 +19,7 @@ const Home = () => {
 
       <div style={{position: "relative"}} className="parallaxWrapper">
         <ParallaxBanner
-        className="parallax aspect-[2/1] h-[600px] lg:h-[701px]"
+        className="parallax aspect-[2/1] h-screen sm:h-[600px] lg:h-[701px]"
         layers={[
           // Bottom layer (fixed)
           //   {

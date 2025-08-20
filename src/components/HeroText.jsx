@@ -66,7 +66,7 @@ const motionRef = useRef(null);
   }, []);
 
   return (
-    <div className="mt-6 sm:mt-14 lg:mt-21 text-center block" 
+    <div className="mt-40 sm:mt-14 lg:mt-21 text-center block" 
     // ref={root}
     >
     

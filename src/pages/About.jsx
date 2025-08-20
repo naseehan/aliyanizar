@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import avatar from "../assets/aliya2.jpg";
-import RotatingTextCircle from "../components/RotatingTextCircle";
+import avatar from "../assets/aliya.jpg";
+import diamond from "../assets/diamond.png"
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -69,10 +69,10 @@ const About = () => {
 "
               />
               <div
-                className="absolute top-[-22px] right-[-22px]
+                className="absolute top-[-42px] right-[30px]
 "
               >
-                <RotatingTextCircle />
+                <img src={diamond} alt="diamond shape" loading="lazy" height={130} width={130}/>
               </div>
             </div>
           </div>

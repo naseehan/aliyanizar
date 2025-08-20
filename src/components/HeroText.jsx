@@ -37,12 +37,12 @@ const motionRef = useRef(null);
     });
   }, []);
 
-  // Top arc text
+  // Bottom arc text
   useEffect(() => {
     if (textRef.current) {
       circleInstance.current = new CircleType(textRef.current).dir(-1);
       const updateRadius = () => {
-        circleInstance.current.radius(180);
+        circleInstance.current.radius(120);
         
       };
       updateRadius();
@@ -52,7 +52,7 @@ const motionRef = useRef(null);
   }, []);
 
 
-  // Bottom arc text (reversed)
+  // Top arc text (reversed)
   useEffect(() => {
     if (reverseRef.current) {
       reverseInstance.current = new CircleType(reverseRef.current);
@@ -66,29 +66,29 @@ const motionRef = useRef(null);
   }, []);
 
   return (
-    <div className="mt-6 md:mt-14 lg:mt-21 text-center block" 
+    <div className="mt-14 lg:mt-21 text-center block" 
     // ref={root}
     >
     
 
 <p
         ref={reverseRef}
-        className="text-[28px] lg:text-[35px] text-[#cb9b4a] font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
+        className="text-[28px] lg:text-[35px] text-[#cb9b4a] font-[Maghfirea,sans-serif] font-medium [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
       >
         <span className="text-[18px]">⋄</span> INTERIOR DESIGNER <span>⋄</span>
       </p>
 
       <h1
-        className="text-[54px] lg:text-[86px] font-semibold font-[Maghfirea,sans-serif] text-[#004953] tracking-[8px]" ref={motionRef}
+        className="text-[54px] lg:text-[86px] font-medium font-[Maghfirea,sans-serif] text-[#004953] tracking-[8px]" ref={motionRef}
       >
         ALIYA NIZAR
       </h1>
 
   <p
         ref={textRef}
-        className="text-[28px] lg:text-[35px] text-[#cb9b4a] font-[Maghfirea,sans-serif] font-bold [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px] "
+        className="text-[28px] lg:text-[35px] text-[#cb9b4a] font-[Maghfirea,sans-serif] font-medium[text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px] "
       >
-        <span>⋄</span> A R T I S T <span>⋄</span>
+        <span>⋄</span> ARTIST <span>⋄</span>
       </p>
       
     </div>

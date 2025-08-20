@@ -1,20 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 const DektopNavbar = () => {
   return (
-   <nav>
-        <ul className="hidden sm:flex justify-around py-5 lg:max-w-[840px] lg:mx-auto text-[#D4AF37] font-normal text-[18px] lg:text-[26px] lg:font-medium tracking-[3px] font-['Maghfirea',sans-serif]">
-          <li className="">
-            <Link to="/" className="relative inline-block group hover:font-bold">
-              <span className="relative z-10">Home</span>
-              {/* SVG stroke */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 300.000000 140.000000"
-                className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <path
-                  d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
+    <nav>
+      <ul className="hidden sm:flex justify-around py-5 lg:max-w-[840px] lg:mx-auto text-[#D4AF37] font-normal text-[18px] lg:text-[26px] lg:font-medium tracking-[3px] font-['Maghfirea',sans-serif]">
+        <li className="">
+          <Link to="/" className="relative inline-block group hover:font-bold">
+            <span className="relative z-10">Home</span>
+            {/* SVG stroke */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 300.000000 140.000000"
+              className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <path
+                d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
                 -27 -58 -31 -76 -29 -143 1 -66 6 -85 34 -140 72 -136 270 -297 472 -384 45 -20
                 96 -42 112 -49 54 -24 288 -95 375 -115 306 -68 672 -87 965 -51 184 23 281 48
                 440 111 112 45 240 110 268 136 13 12 37 29 53 37 16 8 70 57 120 109 107 111
@@ -34,27 +35,30 @@ const DektopNavbar = () => {
                 -407 179 -13 11 -28 21 -33 21 -11 0 -79 52 -131 100 -43 38 -98 119 -123 177
                 -28 68 -17 185 23 234 7 8 13 20 13 26 0 24 151 150 231 194 211 115 568 197
                 935 215 76 4 157 13 179 20 l40 12 -35 2 c-83 5 -212 5 -305 -2z"
-                  transform="translate(0,140) scale(0.1,-0.1)"
-                  stroke="#70aec9"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  fill= "#D4AF37"
-                />
-              </svg>
-            </Link>
-          </li>
+                transform="translate(0,140) scale(0.1,-0.1)"
+                stroke="#70aec9"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                fill="#D4AF37"
+              />
+            </svg>
+          </Link>
+        </li>
 
-          <li>
-            <Link to="/works" className="relative inline-block group hover:font-bold">
+        <li>
+          <Link
+            to="/works"
+            className="relative inline-block group hover:font-bold"
+          >
             <span className="relative z-10">Work</span>
             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 300.000000 140.000000"
-                className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <path
-                  d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 300.000000 140.000000"
+              className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <path
+                d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
                 -27 -58 -31 -76 -29 -143 1 -66 6 -85 34 -140 72 -136 270 -297 472 -384 45 -20
                 96 -42 112 -49 54 -24 288 -95 375 -115 306 -68 672 -87 965 -51 184 23 281 48
                 440 111 112 45 240 110 268 136 13 12 37 29 53 37 16 8 70 57 120 109 107 111
@@ -74,28 +78,31 @@ const DektopNavbar = () => {
                 -407 179 -13 11 -28 21 -33 21 -11 0 -79 52 -131 100 -43 38 -98 119 -123 177
                 -28 68 -17 185 23 234 7 8 13 20 13 26 0 24 151 150 231 194 211 115 568 197
                 935 215 76 4 157 13 179 20 l40 12 -35 2 c-83 5 -212 5 -305 -2z"
-                  transform="translate(0,140) scale(0.1,-0.1)"
-                  stroke="#70aec9"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  fill= "#D4AF37"
-                />
-              </svg>
-            </Link>
-          </li>
+                transform="translate(0,140) scale(0.1,-0.1)"
+                stroke="#70aec9"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                fill="#D4AF37"
+              />
+            </svg>
+          </Link>
+        </li>
 
-          <li>
-            <Link to="/about" className="relative inline-block group hover:font-bold">
-               <span className="relative z-10">About</span>
-              {/* SVG stroke */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 300.000000 140.000000"
-                className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <path
-                  d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
+        <li>
+          <Link
+            to="/about"
+            className="relative inline-block group hover:font-bold"
+          >
+            <span className="relative z-10">About</span>
+            {/* SVG stroke */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 300.000000 140.000000"
+              className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <path
+                d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
                 -27 -58 -31 -76 -29 -143 1 -66 6 -85 34 -140 72 -136 270 -297 472 -384 45 -20
                 96 -42 112 -49 54 -24 288 -95 375 -115 306 -68 672 -87 965 -51 184 23 281 48
                 440 111 112 45 240 110 268 136 13 12 37 29 53 37 16 8 70 57 120 109 107 111
@@ -115,32 +122,47 @@ const DektopNavbar = () => {
                 -407 179 -13 11 -28 21 -33 21 -11 0 -79 52 -131 100 -43 38 -98 119 -123 177
                 -28 68 -17 185 23 234 7 8 13 20 13 26 0 24 151 150 231 194 211 115 568 197
                 935 215 76 4 157 13 179 20 l40 12 -35 2 c-83 5 -212 5 -305 -2z"
-                  transform="translate(0,140) scale(0.1,-0.1)"
-                  stroke="#70aec9"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  fill= "#D4AF37"
-                />
-              </svg>
-            </Link>
-          </li>
+                transform="translate(0,140) scale(0.1,-0.1)"
+                stroke="#70aec9"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                fill="#D4AF37"
+              />
+            </svg>
+          </Link>
+        </li>
 
-          <li className="mx-16 my-0">
-            <Link to="/" >Logo</Link>
-          </li>
+        {/* logo */}
+        <li className="mx-16 my-0 relative">
+          <Link className="relative flex items-center justify-center w-[85px] h-[38px]">
+            {/* Circle logo image */}
+            <img
+              src={logo}
+              alt="logo"
+              loading="lazy"
+              className="absolute  w-full h-[80px] rounded-full"
+            />
 
-          <li>
-            <Link to="/services" className="relative inline-block group hover:font-bold">
-             <span className="relative z-10">Services</span>
-              {/* SVG stroke */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 300.000000 140.000000"
-                className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <path
-                  d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
+            {/* Text on top of circle */}
+            <span className="relative z-10 text-lg font-bold">AN</span>
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="/services"
+            className="relative inline-block group hover:font-bold"
+          >
+            <span className=" z-10">Services</span>
+            {/* SVG stroke */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 300.000000 140.000000"
+              className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <path
+                d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
                 -27 -58 -31 -76 -29 -143 1 -66 6 -85 34 -140 72 -136 270 -297 472 -384 45 -20
                 96 -42 112 -49 54 -24 288 -95 375 -115 306 -68 672 -87 965 -51 184 23 281 48
                 440 111 112 45 240 110 268 136 13 12 37 29 53 37 16 8 70 57 120 109 107 111
@@ -160,28 +182,31 @@ const DektopNavbar = () => {
                 -407 179 -13 11 -28 21 -33 21 -11 0 -79 52 -131 100 -43 38 -98 119 -123 177
                 -28 68 -17 185 23 234 7 8 13 20 13 26 0 24 151 150 231 194 211 115 568 197
                 935 215 76 4 157 13 179 20 l40 12 -35 2 c-83 5 -212 5 -305 -2z"
-                  transform="translate(0,140) scale(0.1,-0.1)"
-                  stroke="#70aec9"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  fill= "#D4AF37"
-                />
-              </svg>
-            </Link>
-          </li>
+                transform="translate(0,140) scale(0.1,-0.1)"
+                stroke="#70aec9"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                fill="#D4AF37"
+              />
+            </svg>
+          </Link>
+        </li>
 
-          <li>
-            <Link to="/contact" className="relative inline-block group hover:font-bold">
-             <span className="relative z-10">Contact</span>
-              {/* SVG stroke */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 300.000000 140.000000"
-                className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <path
-                  d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
+        <li>
+          <Link
+            to="/contact"
+            className="relative inline-block group hover:font-bold"
+          >
+            <span className="relative z-10">Contact</span>
+            {/* SVG stroke */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 300.000000 140.000000"
+              className="absolute top-1/2 left-1/2 w-[calc(100%+60px)] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <path
+                d="M1145 1388 c-278 -18 -608 -98 -791 -191 -149 -76 -269 -184 -318 -286
                 -27 -58 -31 -76 -29 -143 1 -66 6 -85 34 -140 72 -136 270 -297 472 -384 45 -20
                 96 -42 112 -49 54 -24 288 -95 375 -115 306 -68 672 -87 965 -51 184 23 281 48
                 440 111 112 45 240 110 268 136 13 12 37 29 53 37 16 8 70 57 120 109 107 111
@@ -201,20 +226,19 @@ const DektopNavbar = () => {
                 -407 179 -13 11 -28 21 -33 21 -11 0 -79 52 -131 100 -43 38 -98 119 -123 177
                 -28 68 -17 185 23 234 7 8 13 20 13 26 0 24 151 150 231 194 211 115 568 197
                 935 215 76 4 157 13 179 20 l40 12 -35 2 c-83 5 -212 5 -305 -2z"
-                  transform="translate(0,140) scale(0.1,-0.1)"
-                  stroke="#70aec9"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeMiterlimit="6"
-                  fill= "#D4AF37"
-                />
-              </svg>
-            </Link>
-          </li>
+                transform="translate(0,140) scale(0.1,-0.1)"
+                stroke="#70aec9"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeMiterlimit="6"
+                fill="#D4AF37"
+              />
+            </svg>
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
-        </ul>
-      </nav>
-  )
-}
-
-export default DektopNavbar
+export default DektopNavbar;

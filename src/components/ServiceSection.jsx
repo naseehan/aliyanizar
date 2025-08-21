@@ -7,6 +7,7 @@ import icon4 from "../assets/staircase.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import spinning from "../assets/spinning-circle.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +54,10 @@ const ServiceSection = () => {
 
 
   return (
-    <div className="bg-[#FFFFF0]">
+    <div className="bg-[#FFFFF0] relative">
+      <div className="hidden md:block">
+        <img src={spinning} alt="spinning image" loading="lazy" className="absolute w-[200px] bottom-5 right-0" />
+      </div>
       {/* heading */}
       <div className=" mx-auto text-center">
         <h1

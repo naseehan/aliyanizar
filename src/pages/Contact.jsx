@@ -14,13 +14,15 @@ const location = window.location.href
       {/* container */}
       <div className='grid gap-12'>
         {/* header */}
-        <div className='max-w-[400px] pl-4 lg:pl-0'>
-          <h1 className='text-[50px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase'>Lets work together</h1>
+        <div className='max-w-[485px] pl-4 lg:pl-0'>
+          <h1 className='text-[50px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase'>Let’s Collaborate & Create</h1>
           <br />
-          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Feel free to leave me a message via the form, or you can get a hold of me at <strong>aliyanizar023@gmail.com</strong> </p>
+           <br />
+          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Whether you’re looking to add art to your life, style your space, or visualize a new idea—we’d love to hear from you. </p>
+         
           <br />
-          <br />
-          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Lets create something beautiful and impactful.</p>
+         <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Contact me at  <strong>aliyanizar023@gmail.com</strong> </p>
+          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Or feel free to leave a message via the form.</p>
         </div>
 
         {/* form */}

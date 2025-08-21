@@ -4,6 +4,7 @@ import icon1 from "../assets/calligraphy.png";
 import icon2 from "../assets/illu.png";
 import icon3 from "../assets/3d.png";
 import icon4 from "../assets/staircase.png";
+import paint from "../assets/paint.png"
 
 const Services = () => {
   return (
@@ -15,50 +16,79 @@ const Services = () => {
           <h1 className="text-[60px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase">
             services
           </h1>
-          <p className="font-medium font-[Ubuntu] text-[#b9900d] text-[19px]">
+          {/* <p className="font-medium font-[Ubuntu] text-[#b9900d] text-[19px]">
             Develop your passion project with eye catching branding, packaging,
             web design & illustrations.{" "}
-          </p>
+          </p> */}
           <br />
         </div>
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
 
         {/* services */}
-        <div className="my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(400px,1fr))] items-stretch">
+        <div className="my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(400px,1fr))] items-stretch gap-y-[30px]">
           <div className="p-5 grid gap-y-6">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-[Flaviotte] text-[#b9900d]">
-              <img src={icon1} alt="" loading="lazy" />
-              <h1 className="tracking-[3px]">calligraphy</h1>
+              <img src={paint} alt="paint" loading="lazy" />
+              <h1 className="tracking-[3px]">PAINTINGS</h1>
             </div>
-            <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
-              Logo & Identity • Style Guide • Packaging • Art Direction • Design
-              Research
+            <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
+              Canvases • Mural Walls • Packaging • fabric(clothing) • wood
+              panels
             </p>
-            <p className="text-[#987300] leading-[26px]">Building a brand visually always starts with a logo. When collaborating together we’ll hone in on a concept that is both eye-catching and represents the brand’s value and purpose. I can provide services from logo design, to a full identity system, which entails typography styles, colour palettes, brand elements, photography, etc. Along with developing application rules to how the identity would live in a physical and digital environment.</p>
+            <p className="text-[#987300] leading-[26px]">
+              Specialized custom hand-painted artworks across a variety of
+              surfaces—canvases, mural- wall arts, wearable fabrics, and wooden
+              panels. Each piece is thoughtfully crafted to reflect the client’s
+              vision, adding a personal touch to any space or item.
+            </p>
           </div>
 
           <div className="p-5 grid gap-y-3">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-[Flaviotte] text-[#b9900d]">
               <img src={icon2} alt="" loading="lazy" />
-              <h1 className="tracking-[3px]">calligraphy</h1>
+              <h1 className="tracking-[3px]">ILLUSTRATIONS</h1>
             </div>
-            <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
-              Logo & Identity • Style Guide • Packaging • Art Direction • Design
-              Research
+            <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
+              Invitation cards • Digital art
             </p>
-            <p className="text-[#987300] leading-[26px]  min-h-[182px]">Building a brand visually always starts with a logo. When collaborating together we’ll hone in on a concept that is both eye-catching and represents the brand’s value and purpose. I can provide services from logo design.</p>
+            <p className="text-[#987300] leading-[26px]  ">
+              Illustration services range from unique invitation card designs to
+              dynamic digital artworks. Delivering creative visuals that are
+              both striking and meaningful, whether it’s for a celebration, a
+              brand, or a personal project.
+            </p>
           </div>
 
           <div className="p-5 grid gap-y-3">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-[Flaviotte] text-[#b9900d]">
-              <img src={icon3} alt="" loading="lazy" />
-              <h1 className="tracking-[3px]">3D Visualisation</h1>
+              <img src={icon1} alt="" loading="lazy" />
+              <h1 className="tracking-[3px]">CALLIGRAPHY</h1>
             </div>
             <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
-              Logo & Identity • Style Guide • Packaging • Art Direction • Design
-              Research
+              Canvas paintings • Prints
             </p>
-            <p className="text-[#987300] leading-[26px]  min-h-[182px]">If you are looking for a new website with a brand roll out, or need a refresher for your current website, I have experience working with custom website builders such as Webflow, and/or could provide design and set up sites, such as Shopify, SquareSpace or Wix.</p>
+            <p className="text-[#987300] leading-[26px]  ">
+              Elegant hand-crafted Arabic calligraphy on canvas, or as framed
+              prints. With a focus on detail and aesthetics, the calligraphy
+              pieces add a refined and timeless element as décor or gift.
+            </p>
+          </div>
+
+          <div className="p-5 grid gap-y-3">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-[Flaviotte] text-[#b9900d]">
+              <img src={icon3} alt="" loading="lazy" />
+              
+              <h1 className="tracking-[3px]">3D VISUALIZATION</h1>
+            </div>
+            <p className="text-[14px] md:text-[17px] font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
+              3D models and visualization for interior spaces
+            </p>
+            <p className="text-[#987300] leading-[26px]  ">
+              Bringing interior ideas to life with realistic 3D models and
+              visualizations. 3D services provide a clear and immersive look of
+              the space before implementation—ideal for making informed design
+              decisions.
+            </p>
           </div>
 
           <div className="p-5 grid gap-y-3">
@@ -67,26 +97,33 @@ const Services = () => {
               <h1 className="tracking-[3px]">Interior Design Consultation</h1>
             </div>
             <p className="text-[14px] md:text-[17px] font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
-              Logo & Identity • Style Guide • Packaging • Art Direction • Design
-              Research
+              Concept development • Mood boards • CAD • 3D • Interior Styling
             </p>
-            <p className="text-[#987300] leading-[26px]  min-h-[182px]">With social media and branding it is always key to keep consistent engagement with your platforms. I provide guidance with developing a social media guideline, and creating content that is impactful and will help communicate the brand’s goals and services.</p>
+            <p className="text-[#987300] leading-[26px]  ">
+              A comprehensive design consultation service that includes concept
+              development, curated mood boards, technical CAD drawings, 3D
+              renderings, and tailored interior styling. A guide through the
+              entire creative process to design spaces that feel both functional
+              and beautifully personal.
+            </p>
           </div>
         </div>
 
-
-{/* quote */}
-<div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
-<div className="text-center max-w-[615px] mx-auto py-20 px-2.5">
-     <p className="font-medium font-[Ubuntu] text-[#b9900d] text-[19px] mb-8">
-            Interested in working together, or you have a unique project in mind, feel free to contact me.
+        {/* quote */}
+        <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
+        <div className="text-center max-w-[615px] mx-auto py-20 px-2.5">
+          <p className="font-medium font-[Ubuntu] text-[#b9900d] text-[19px] mb-8">
+           Looking to create something unique together? Reach out and let's make it happen.
           </p>
           <div className="flex">
-        <Link className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200 uppercase" to="/contact">
-          get a quote
-        </Link>
-      </div>
-</div>
+            <Link
+              className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200 uppercase"
+              to="/contact"
+            >
+              get a quote
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

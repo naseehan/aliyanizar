@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import spinning from "../assets/spinning-circle.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +35,10 @@ const ContactSection = () => {
 
 
   return (
-    <div className="bg-[#FFFFF0]">
+    <div className="bg-[#FFFFF0] relative">
+      <div className="hidden md:block">
+              <img src={spinning} alt="spinning image" loading="lazy" className="absolute w-[200px] bottom-5 left-0" />
+            </div>
       <div className="invisible">services</div>
 
       <div className="max-w-[1000px] grid px-4 lg:px-0 py-12 mx-auto lg:flex gap-12 lg:gap-[6rem] items-start" ref={contactRef}>

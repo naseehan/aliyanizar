@@ -16,11 +16,11 @@ import ArtWorkDetails from "./pages/ArtWorkDetails";
 import CustomCursor from "./components/customCursor";
 const App = () => {
 
-const [loading, setLoading] = useState(false)
+const [loading, setLoading] = useState(true)
 
 useEffect(() => {
     // Fake loading for 2s, replace with your real data-loading logic
-    const timer = setTimeout(() => setLoading(false), 1000);
+    const timer = setTimeout(() => setLoading(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 

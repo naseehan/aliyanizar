@@ -1,14 +1,14 @@
 import React from "react";
-import icon1 from "../assets/social/dribble.png";
 import icon2 from "../assets/social/instagram.png";
 import icon3 from "../assets/social/linkedin.png";
 import icon4 from "../assets/social/behance.png";
+import ToTop from "./ToTop";
 
 const Footer = () => {
   return (
-    <div>
+    <div className=" relative bg-[#FFFFF0]">
       <div className="h-[3px] bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
-      <div className="bg-[#FFFFF0] grid justify-center py-10 gap-8">
+      <div className="grid justify-center py-10 gap-8">
         <div className="flex justify-center items-center gap-[30px]">
 
           <a href="https://www.instagram.com/aliyanizarstudio_art">
@@ -43,6 +43,7 @@ const Footer = () => {
           ©2025 aliyanizarstudio. All Rights Reserved
         </p>
       </div>
+      <ToTop />
     </div>
   );
 };

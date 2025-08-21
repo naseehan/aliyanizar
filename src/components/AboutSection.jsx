@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import author from "../assets/nas.jpg";
-import RotatingTextCircle from "./RotatingTextCircle";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import avatar from "../assets/aliya.jpg"
 import diamond from "../assets/diamond.png"
+import "../App.css"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +44,7 @@ const AboutSection = () => {
       >
         <div className="px-4 lg:px-0 text-center lg:text-start">
           <h1
-            className="text-[60px] font-bold font-[Cloudy,sans-serif] tracking-[8px] text-[#b9900d] 
+            className="text-[60px] font-bold font-[Flaviotte,sans-serif] uppercase tracking-[8px] text-[#b9900d] 
 "
           >
             hello!
@@ -84,7 +83,7 @@ const AboutSection = () => {
 "
           >
             {/* <RotatingTextCircle /> */}
-            <img src={diamond} alt="diamond shape" loading="lazy" height={130} width={130}/>
+            <img src={diamond} alt="diamond shape" loading="lazy" height={160} width={160} className="animate-spin-slow"/>
           </div>
         </div>
       </div>

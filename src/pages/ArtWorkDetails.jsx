@@ -28,7 +28,7 @@ const ArtWorkDetails = () => {
       </div>
 
       <div>
-        <h1 className="text-[45px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase">Art work name</h1>
+        <h1 className="text-[45px] font-bold tracking-[3px] text-[#c16d3c] font-[Maghfirea,sans-serif] uppercase">Art work name</h1>
         <p className="text-[14px] md:text-[17px]  font-normal font-[Ubuntu]  max-w-[474px] text-[#b9900d]">A forest scene of a mama bear with her three cubs climbing the tree trunks.</p>
       </div>
 
@@ -36,7 +36,7 @@ const ArtWorkDetails = () => {
 
         <div className='grid gap-9'>
             <div>
-            <h1 className='uppercase text-[26px] font-bold tracking-[3px] text-[#D4AF37] font-[Flaviotte,sans-serif]'>project type</h1>
+            <h1 className='uppercase text-[26px] font-bold tracking-[3px] text-[#D4AF37] font-[Maghfirea,sans-serif]'>project type</h1>
             <p className='capitalize text-[14px] md:text-[17px]  font-light font-[Ubuntu]  max-w-[474px] text-[#b9900d]'>personal project</p>
             </div>
              <div className="h-px bg-[#D4AF37] "></div>
@@ -44,7 +44,7 @@ const ArtWorkDetails = () => {
 
           <div className='grid gap-9'>
             <div>
-            <h1 className='uppercase text-[26px] font-bold tracking-[3px] text-[#D4AF37] font-[Flaviotte,sans-serif]'>Role</h1>
+            <h1 className='uppercase text-[26px] font-bold tracking-[3px] text-[#D4AF37] font-[Maghfirea,sans-serif]'>Role</h1>
             <p className='capitalize text-[14px] md:text-[17px]  font-light font-[Ubuntu]  max-w-[474px] text-[#b9900d]'>personal project</p>
             </div>
              <div className="h-px bg-[#D4AF37] "></div>
@@ -52,7 +52,7 @@ const ArtWorkDetails = () => {
 
           <div className='grid gap-9'>
             <div>
-            <h1 className='uppercase text-[26px] font-bold tracking-[3px] text-[#D4AF37] font-[Flaviotte,sans-serif]'>tools used</h1>
+            <h1 className='uppercase text-[26px] font-bold tracking-[3px] text-[#D4AF37] font-[Maghfirea,sans-serif]'>tools used</h1>
             <p className='capitalize text-[14px] md:text-[17px]  font-light font-[Ubuntu]  max-w-[474px] text-[#b9900d]'>personal project</p>
             </div>
             <div className="h-px bg-[#D4AF37] md:hidden"></div>
@@ -60,7 +60,7 @@ const ArtWorkDetails = () => {
 
           <div className='grid gap-9'>
             <div>
-            <h1 className='uppercase text-[26px] font-bold tracking-[3px] text-[#D4AF37] font-[Flaviotte,sans-serif]'>year</h1>
+            <h1 className='uppercase text-[26px] font-bold tracking-[3px] text-[#D4AF37] font-[Maghfirea,sans-serif]'>year</h1>
             <p className='capitalize text-[14px] md:text-[17px]  font-light font-[Ubuntu]  max-w-[474px] text-[#b9900d]'>personal project</p>
             </div>
         </div>

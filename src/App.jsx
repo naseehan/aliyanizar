@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {  Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import "./App.css"
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
@@ -14,39 +14,59 @@ import Loader from "./components/Loader";
 import ProjectDetails from "./pages/ProjectDetails";
 import ArtWorkDetails from "./pages/ArtWorkDetails";
 import CustomCursor from "./components/customCursor";
+
 const App = () => {
+  const [loading, setLoading] = useState(true);
 
-const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    const loadResources = async () => {
+      try {
+        // Wait for fonts
+        if (document.fonts) {
+          await document.fonts.ready;
+        }
 
-useEffect(() => {
-    // Fake loading for 2s, replace with your real data-loading logic
-    const timer = setTimeout(() => setLoading(false), 2500);
-    return () => clearTimeout(timer);
+        // Wait for images
+        const images = Array.from(document.images);
+        await Promise.all(
+          images.map((img) => {
+            if (img.complete) return Promise.resolve();
+            return new Promise((resolve) => {
+              img.onload = resolve;
+              img.onerror = resolve; // resolve anyway if image fails
+            });
+          })
+        );
+      } catch (err) {
+        console.error("Error loading resources", err);
+      }
+    };
+
+    // Combine resource load + 2.5s fake delay
+    Promise.all([loadResources(), new Promise((res) => setTimeout(res, 2500))])
+      .finally(() => setLoading(false));
   }, []);
 
-
-if(loading){
-  return(
-    <Loader />
-  )
-}
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
-    <>
-    <CustomCursor />
-    <Navbar />
-    <ScrollToTop />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/works" element={<Work />} />
-      <Route path="/projectsDetails/:slug" element={<ProjectDetails />} />
-      <Route path="/artworkdetails/:slug" element={<ArtWorkDetails />} />
-    </Routes>
-<Footer />
-    </>
+    <div className="fade-in">
+      <CustomCursor />
+      <Navbar />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/works" element={<Work />} />
+        <Route path="/projectsDetails/:slug" element={<ProjectDetails />} />
+        <Route path="/artworkdetails/:slug" element={<ArtWorkDetails />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 };
 

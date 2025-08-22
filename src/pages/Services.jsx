@@ -13,7 +13,7 @@ const Services = () => {
         {/* header */}
 
         <div className="text-center max-w-[615px] mx-auto">
-          <h1 className="text-[60px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase">
+          <h1 className="text-[60px] font-bold tracking-[3px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">
             services
           </h1>
           {/* <p className="font-medium font-[Ubuntu] text-[#b9900d] text-[19px]">
@@ -26,13 +26,14 @@ const Services = () => {
 
         {/* services */}
         <div className="my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(400px,1fr))] items-stretch gap-y-[30px]">
+
           <div className="p-5 grid gap-y-6">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-[Flaviotte] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">
               <img src={paint} alt="paint" loading="lazy" />
               <h1 className="tracking-[3px]">PAINTINGS</h1>
             </div>
             <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
-              Canvases • Mural Walls • Packaging • fabric(clothing) • wood
+              Canvases • Mural Walls • fabric(clothing) • wood
               panels
             </p>
             <p className="text-[#987300] leading-[26px]">
@@ -44,7 +45,7 @@ const Services = () => {
           </div>
 
           <div className="p-5 grid gap-y-3">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-[Flaviotte] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">
               <img src={icon2} alt="" loading="lazy" />
               <h1 className="tracking-[3px]">ILLUSTRATIONS</h1>
             </div>
@@ -60,7 +61,7 @@ const Services = () => {
           </div>
 
           <div className="p-5 grid gap-y-3">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-[Flaviotte] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">
               <img src={icon1} alt="" loading="lazy" />
               <h1 className="tracking-[3px]">CALLIGRAPHY</h1>
             </div>
@@ -75,7 +76,7 @@ const Services = () => {
           </div>
 
           <div className="p-5 grid gap-y-3">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-[Flaviotte] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea'] text-[#b9900d]">
               <img src={icon3} alt="" loading="lazy" />
               
               <h1 className="tracking-[3px]">3D VISUALIZATION</h1>
@@ -92,7 +93,7 @@ const Services = () => {
           </div>
 
           <div className="p-5 grid gap-y-3">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-[Flaviotte] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea'] text-[#b9900d]">
               <img src={icon4} alt="" loading="lazy" />
               <h1 className="tracking-[3px]">Interior Design Consultation</h1>
             </div>

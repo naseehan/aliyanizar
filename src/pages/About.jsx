@@ -23,7 +23,7 @@ const About = () => {
           >
             <div className="grid gap-5 px-4 lg:px-0 text-center lg:text-start">
               <h1
-                className="text-[60px] font-bold font-[Flaviotte] tracking-[3px] text-[#c16d3c]
+                className="text-[60px] font-bold font-['Maghfirea'] tracking-[3px] text-[#c16d3c]
 "
               >
                 HELLO!

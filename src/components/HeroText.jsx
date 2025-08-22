@@ -84,7 +84,7 @@ const HeroText = () => {
       </p>
 </div>
       <h1
-        className="text-[45px] lg:text-[60px] font-medium font-[Cloudy,sans-serif] text-[#004953] tracking-[8px]"
+        className="text-[40px] lg:text-[60px] font-medium font-[Cloudy,sans-serif] text-[#004953] tracking-[5px]"
         ref={motionRef}
       >
         aliya nizar

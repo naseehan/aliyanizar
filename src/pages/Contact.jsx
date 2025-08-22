@@ -15,7 +15,9 @@ const location = window.location.href
       <div className='grid gap-12'>
         {/* header */}
         <div className='max-w-[485px] pl-4 lg:pl-0'>
-          <h1 className='text-[50px] font-bold tracking-[3px] text-[#c16d3c] font-[Flaviotte,sans-serif] uppercase'>Let’s Collaborate & Create</h1>
+          <h1 className='text-[50px] font-bold tracking-[3px] text-[#c16d3c] font-[Maghfirea,sans-serif] uppercase'>
+          Let’s Collaborate & Create
+          </h1>
           <br />
            <br />
           <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Whether you’re looking to add art to your life, style your space, or visualize a new idea—we’d love to hear from you. </p>

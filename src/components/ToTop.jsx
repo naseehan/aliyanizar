@@ -11,9 +11,9 @@ const handleClick = () => {
 
 
   return (
-    <div className='absolute top-[19%] right-[2%] '>
+    <div className='absolute bottom-[-2%] z-50 right-[2%] '>
       <button onClick={handleClick}
-  class="group relative flex h-[50px] w-[50px] items-center justify-center rounded-full bg-neutral-900 shadow-[0_0_0_4px_rgba(180,160,255,0.25)] transition-all duration-300 ease-in-out hover:w-[140px] hover:rounded-[50px] hover:bg-[#D4AF37] cursor-pointer overflow-hidden"
+  class="group relative flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#D4AF37] shadow-[0_0_0_4px_rgba(180,160,255,0.25)] transition-all duration-300 ease-in-out hover:w-[140px] hover:rounded-[50px] hover:bg-[#D4AF37] cursor-pointer overflow-hidden"
 >
   <svg
     class="svgIcon w-[12px] transition-transform duration-300 ease-in-out group-hover:-translate-y-[200%]"

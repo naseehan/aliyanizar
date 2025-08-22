@@ -1,7 +1,7 @@
 /* body{
     color: #000;
 } */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 @font-face {
   font-family: "Flaviotte";
@@ -29,7 +29,7 @@
   height: 100%;
   object-fit: cover; /* Makes sure the image covers without stretching */
   object-position: center -160px;
-   display: block; 
+  display: block;
 }
 .parallax div {
   /* inset: 0 0 !important; */
@@ -48,20 +48,50 @@
 }
 
 @keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-spin-slow {
   animation: spin-slow 6s linear infinite;
 }
 @keyframes spin-slow2 {
-  0% { transform: rotate(360deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .animate-spin-slow2 {
   animation: spin-slow2 6s linear infinite;
 }
 
+.divider {
+  background-image: url("./assets/divider1.png");
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 23px;
+  max-width: 1000px;
+}
 
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s; /* delay after loader */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

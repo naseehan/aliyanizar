@@ -37,7 +37,7 @@ const ContactSection = () => {
   return (
     <div className="bg-[#FFFFF0] relative">
       <div className="hidden md:block">
-              <img src={spinning} alt="spinning image" loading="lazy" className="absolute w-[200px] bottom-5 left-0" />
+              <img src={spinning} alt="spinning image" loading="lazy" className="absolute w-[371px] bottom-5 left-[-104px]" />
             </div>
       <div className="invisible">services</div>
 
@@ -45,17 +45,15 @@ const ContactSection = () => {
 
         <div className="grid max-w-[400px] basis-[40%] gap-5 ">
           <h1
-            className="text-[50px] font-bold tracking-[3px] text-[#D4AF37] font-[Flaviotte,sans-serif] uppercase"
+            className="text-[50px] font-bold tracking-[3px] text-[#D4AF37] font-['Maghfirea',sans-serif] uppercase"
             id="heading"
           >
-            Lets work together
+           Let’s Collaborate & Create
           </h1>
-          <p className="font-medium font-[Ubuntu] text-[#b9900d]">
-            Feel free to leave me a message via the form, or you can get a hold
-            of me at <strong>aliyanizar023@gmail.com</strong> 
-            <br />
-            <br />
-          Lets create something beautiful and impactful.</p>
+           <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Whether you’re looking to add art to your life, style your space, or visualize a new idea—we’d love to hear from you. </p>
+             {/* <br /> */}
+         <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Contact me at  <strong>aliyanizar023@gmail.com</strong> </p>
+         <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Or feel free to leave a message via the form.</p>
         </div>
 
         <div className="basis-[60%]">

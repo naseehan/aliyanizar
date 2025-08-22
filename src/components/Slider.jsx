@@ -6,16 +6,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import bismillah from "../assets/bismillah1.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const animation = { duration: 30000, easing: (t) => t };
-const Slider = () => {
 
-let navigate = useNavigate()
-const handleClick = (slug) => {
-  navigate(`artworkdetails/${slug}`)
-}
+const Slider = () => {
+  let navigate = useNavigate();
+  const handleClick = (slug) => {
+    navigate(`artworkdetails/${slug}`);
+  };
 
   const headingRef = React.useRef();
   const buttonRef = React.useRef();
@@ -32,7 +33,7 @@ const handleClick = (slug) => {
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 100%",
-          toggleActions: "play none none none", // play only once
+          toggleActions: "play none none none",
         },
       }
     );
@@ -50,19 +51,20 @@ const handleClick = (slug) => {
         scrollTrigger: {
           trigger: buttonRef.current,
           start: "top 100%",
-          toggleActions: "play none none none", // play only once
+          toggleActions: "play none none none",
         },
       }
     );
   }, []);
 
-  const [sliderRef] = useKeenSlider({
+  // Keen slider setup
+  const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     renderMode: "performance",
     drag: true,
     slides: {
-      perView: 3, // show 3 slides at a time
-      spacing: 20, // gap between slides in px
+      perView: 3,
+      spacing: 20,
     },
     breakpoints: {
       "(max-width: 1024px)": {
@@ -71,7 +73,6 @@ const handleClick = (slug) => {
           spacing: 16,
         },
       },
-
       "(max-width: 640px)": {
         slides: {
           perView: 1,
@@ -90,13 +91,34 @@ const handleClick = (slug) => {
     },
   });
 
+  // Pause on hover
+  React.useEffect(() => {
+    if (!instanceRef.current) return;
+    const sliderEl = instanceRef.current.container;
+
+    const stop = () => instanceRef.current?.animator.stop();
+    const resume = () =>
+      instanceRef.current?.moveToIdx(
+        instanceRef.current.track.details.abs + 5,
+        true,
+        animation
+      );
+
+    sliderEl.addEventListener("mouseover", stop);
+    sliderEl.addEventListener("mouseleave", resume);
+
+    return () => {
+      sliderEl.removeEventListener("mouseover", stop);
+      sliderEl.removeEventListener("mouseleave", resume);
+    };
+  }, [instanceRef]);
+
   return (
     <div className="bg-[#FFFFF0]">
       {/* heading */}
-
       <div className="py-20 mx-auto text-center">
         <h1
-          className="text-[50px] font-bold tracking-[5px] text-[#D4AF37] font-[Flaviotte,sans-serif]"
+          className="text-[50px] font-bold tracking-[5px] text-[#D4AF37] font-['Maghfirea',sans-serif]"
           id="heading"
           ref={headingRef}
         >
@@ -106,7 +128,6 @@ const handleClick = (slug) => {
       </div>
 
       {/* carousel */}
-
       <div ref={sliderRef} className="keen-slider py-8" id="slider">
         {[...Array(5)].map((_, i) => (
           <div
@@ -116,34 +137,28 @@ const handleClick = (slug) => {
           >
             <img
               className="h-full w-full object-cover"
-              src="https://cdn.pixabay.com/photo/2025/01/07/21/44/cats-9317796_1280.jpg"
+              src={bismillah}
               alt=""
             />
             <div
-              className="
-                   
-                   absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-0 pointer-events-none
+              className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-0 pointer-events-none
              group-hover:opacity-70 group-hover:pointer-events-auto transition-opacity duration-300"
             >
-              <h3
-                className=" text-[40px] font-bold font-[Flaviotte] tracking-[4px] text-white
-"
-              >
+              <h3 className="text-[40px] font-bold font-[Flaviotte] tracking-[4px] text-white">
                 Artwork Title
               </h3>
-              <p
-                className="text-[20px] font-semibold
- text-center"
-              >
-                LEARN MORE
-              </p>
+              <p className="text-[20px] font-semibold text-center">LEARN MORE</p>
             </div>
           </div>
         ))}
       </div>
 
+      {/* button */}
       <div className="flex pb-20" ref={buttonRef}>
-        <Link className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200" to="/works">
+        <Link
+          className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
+          to="/works"
+        >
           MORE WORK
         </Link>
       </div>

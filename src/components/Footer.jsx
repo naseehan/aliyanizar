@@ -2,7 +2,7 @@ import React from "react";
 import icon2 from "../assets/social/instagram.png";
 import icon3 from "../assets/social/linkedin.png";
 import icon4 from "../assets/social/behance.png";
-import ToTop from "./ToTop";
+
 
 const Footer = () => {
   return (
@@ -43,7 +43,7 @@ const Footer = () => {
           ©2025 aliyanizarstudio. All Rights Reserved
         </p>
       </div>
-      <ToTop />
+      
     </div>
   );
 };

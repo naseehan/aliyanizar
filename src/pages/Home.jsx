@@ -9,12 +9,13 @@ import Projects from "../components/Projects";
 import ServiceSection from "../components/ServiceSection";
 import ContactSection from "../components/ContactSection";
 import circle from "../assets/spinning-circle.png"
+import ToTop from "../components/ToTop";
 
 const Home = () => {
 
 
   return (
-  <>
+  <div className="relative">
 
       <div className="parallaxWrapper relative">
         <ParallaxBanner
@@ -52,7 +53,8 @@ const Home = () => {
      <Projects />
      <ServiceSection />
      <ContactSection />
-      </>
+     <ToTop />
+      </div>
   )
 };
 

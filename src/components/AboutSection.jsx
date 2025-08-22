@@ -37,14 +37,16 @@ const AboutSection = () => {
 "
       ref={aboutRef}
     >
-      <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
+      {/* <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div> */}
+{/* <img src={divider} alt="divider" loading="lazy" /> */}
+{/* <div className="divider"></div> */}
       <div
-        className="grid lg:w-[1000px] my-12 mx-auto
+        className="grid lg:w-[1000px] py-12 mx-auto
  items-center lg:grid-cols-2 gap-[60px] grid-cols-1"
       >
         <div className="px-4 lg:px-0 text-center lg:text-start">
           <h1
-            className="text-[60px] font-bold font-[Flaviotte,sans-serif] uppercase tracking-[8px] text-[#b9900d] 
+            className="text-[60px] font-bold font-['Maghfirea',sans-serif] uppercase tracking-[8px] text-[#b9900d] 
 "
           >
             hello!

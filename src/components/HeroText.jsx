@@ -53,6 +53,9 @@ const HeroText = () => {
       }
     );
   }, []);
+
+
+
   //
   useEffect(() => {
     // const element = motionRef.current;
@@ -87,6 +90,7 @@ const HeroText = () => {
     }
   }, []);
 
+  
 
   // useGSAP(() => {
   //   gsap.fromTo(
@@ -118,6 +122,25 @@ const HeroText = () => {
       return () => window.removeEventListener("resize", updateRadius);
     }
   }, []);
+
+ useGSAP(() => {
+    gsap.fromTo(
+      textRef.current,
+      { y: 250, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 100%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+
 
   return (
     <div

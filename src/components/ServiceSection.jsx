@@ -72,7 +72,7 @@ const ServiceSection = () => {
       </div>
 
       {/* services */}
-      <div className="max-w-[1000px] my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(400px,1fr))]" ref={serviceRef}>
+      <div className="max-w-[1000px] my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))]" ref={serviceRef}>
 
         <div className="p-5 grid gap-y-3">
           <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">

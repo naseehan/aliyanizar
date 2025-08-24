@@ -21,7 +21,7 @@ const handleClick = (slug) => {
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
 
         {/* works */}
-        <div className=" py-12 mx-auto px-8 lg:px-0">
+        <div className=" py-12 mx-auto px-3 sm:px-8 lg:px-0">
           <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-5">
             {[...Array(4)].map((_, i) => (
               <div

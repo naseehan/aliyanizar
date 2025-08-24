@@ -49,7 +49,7 @@ const AboutSection = () => {
             className="text-[60px] font-bold font-['Maghfirea',sans-serif] uppercase tracking-[8px] text-[#b9900d] 
 "
           >
-            hello!
+            hello <span className="font-[Flaviotte]">!</span>
           </h1>
           <p className="text-[24px] mb-12 leading-[1.5] font-[Flaviotte] uppercase tracking-[4px] font-medium text-[#b9900d] lg:max-w-[29rem]">
             I am Aliya Nizar,

@@ -7,7 +7,7 @@ const ArtWorkDetails = () => {
 
 
     {/* art work details */}
-      <div className=" py-12 mx-auto px-8 lg:px-0" >
+      <div className=" py-12 mx-auto px-3 sm:px-8 lg:px-0" >
   <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-x-5 gap-y-32">
       <div  className="relative h-[500px]">
         <img

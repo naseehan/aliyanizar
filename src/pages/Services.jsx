@@ -25,7 +25,7 @@ const Services = () => {
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
 
         {/* services */}
-        <div className="my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(400px,1fr))] items-stretch gap-y-[30px]">
+        <div className="my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] items-stretch gap-y-[30px]">
 
           <div className="p-5 grid gap-y-6">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">
@@ -65,7 +65,7 @@ const Services = () => {
               <img src={icon1} alt="" loading="lazy" />
               <h1 className="tracking-[3px]">CALLIGRAPHY</h1>
             </div>
-            <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
+            <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
               Canvas paintings • Prints
             </p>
             <p className="text-[#987300] leading-[26px]  ">
@@ -82,7 +82,7 @@ const Services = () => {
               <h1 className="tracking-[3px]">3D VISUALIZATION</h1>
             </div>
             <p className="text-[14px] md:text-[17px] font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
-              3D models and visualization for interior spaces
+              3D Models and Visualization for Interior Spaces
             </p>
             <p className="text-[#987300] leading-[26px]  ">
               Bringing interior ideas to life with realistic 3D models and

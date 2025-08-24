@@ -68,11 +68,11 @@ useGSAP(() => {
       </div>
 
 {/* project section */}
-<div className="max-w-[1000px] my-12 mx-auto px-8 lg:px-0" ref={projectRef}
+<div className="max-w-[1000px] my-12 mx-auto px-3 sm:px-8 lg:px-0" ref={projectRef}
 onClick={() => handleClick("project-title")}>
   <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-5">
     {[...Array(4)].map((_, i) => (
-      <div key={i} className="group relative hover:-translate-y-3 duration-500 h-[500px]">
+      <div key={i} className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
         <img
           src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg"
           alt=""

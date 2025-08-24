@@ -4,7 +4,7 @@ const ProjectDetails = () => {
   return (
     <div className="  bg-[#FFFFF0]">
 <div className="max-w-[1000px] pt-20  mx-auto">
- <div className=" py-12 mx-auto px-8 lg:px-0" >
+ <div className=" py-12 mx-auto px-3 sm:px-8 lg:px-0" >
   <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-x-5 gap-y-20">
  <div className='grid'>
         <h1 className="text-[45px] font-bold tracking-[3px] text-[#D4AF37] font-[Maghfirea,sans-serif] uppercase">Art work name</h1>

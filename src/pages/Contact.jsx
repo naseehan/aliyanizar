@@ -14,7 +14,7 @@ const location = window.location.href
       {/* container */}
       <div className='grid gap-12'>
         {/* header */}
-        <div className='max-w-[485px] pl-4 lg:pl-0'>
+        <div className='max-w-[360px] pl-4 lg:pl-0'>
           <h1 className='text-[50px] font-bold tracking-[3px] text-[#c16d3c] font-[Maghfirea,sans-serif] uppercase'>
           Let’s Collaborate & Create
           </h1>
@@ -29,7 +29,7 @@ const location = window.location.href
 
         {/* form */}
       <div className="">
-          <form action="https://formsubmit.co/802d01dd2e487f17e9f0ebf88ae34b8c" method="POST" className="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(360px,1fr))] px-4 lg:px-0" >
+          <form action="https://formsubmit.co/802d01dd2e487f17e9f0ebf88ae34b8c" method="POST" className="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] px-4 lg:px-0" >
           <input type="hidden" name="_next" value={location}/>
             <div className='grid gap-2.5'>
             <label htmlFor="name" className="text-[#b9900d]">Name*</label>

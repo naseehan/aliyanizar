@@ -2,39 +2,76 @@ import React, { useEffect, useRef } from "react";
 import CircleType from "circletype";
 // import { anime } from "animejs";
 // import splt from "https://cdn.skypack.dev/spltjs@1.0.8";
-import anime from "https://cdn.skypack.dev/animejs@3.2.1";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "../App.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HeroText = () => {
   // const root = useRef(null);
   const textRef = useRef(null);
   const reverseRef = useRef(null);
-
+  const aliyaRef = React.useRef();
+  const wrapperRef = React.useRef();
   const circleInstance = useRef(null);
   const reverseInstance = useRef(null);
 
-  const motionRef = useRef(null);
+  useGSAP(() => {
+    gsap.fromTo(
+      aliyaRef.current,
+      { y: 200, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1.5,
+        duration: 2,
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: aliyaRef.current,
+          start: "top 100%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
 
+  useGSAP(() => {
+    gsap.fromTo(
+      reverseRef.current,
+      { y: 250, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: reverseRef.current,
+          start: "top 100%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+  //
   useEffect(() => {
-    const element = motionRef.current;
-    const text = element.textContent;
-
-    element.innerHTML = "";
-
-    text.split("").forEach((char) => {
-      const span = document.createElement("span");
-      span.textContent = char === " " ? "\u00A0" : char; // preserve space
-      span.style.display = "inline-block";
-      element.appendChild(span);
-    });
-
-    anime({
-      targets: element.querySelectorAll("span"),
-      translateY: [50, 0],
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 1000,
-      delay: anime.stagger(120),
-    });
+    // const element = motionRef.current;
+    // const text = element.textContent;
+    // element.innerHTML = "";
+    // text.split("").forEach((char) => {
+    //   const span = document.createElement("span");
+    //   span.textContent = char === " " ? "\u00A0" : char; // preserve space
+    //   span.style.display = "inline-block";
+    //   element.appendChild(span);
+    // });
+    // anime({
+    //   targets: element.querySelectorAll("span"),
+    //   translateY: [50, 0],
+    //   opacity: [0, 1],
+    //   easing: "easeOutExpo",
+    //   duration: 1000,
+    //   delay: anime.stagger(120),
+    // });
   }, []);
 
   // Bottom arc text
@@ -42,7 +79,7 @@ const HeroText = () => {
     if (textRef.current) {
       circleInstance.current = new CircleType(textRef.current);
       const updateRadius = () => {
-        circleInstance.current.radius(120);
+        circleInstance.current.radius(100);
       };
       updateRadius();
       window.addEventListener("resize", updateRadius);
@@ -50,12 +87,31 @@ const HeroText = () => {
     }
   }, []);
 
+
+  // useGSAP(() => {
+  //   gsap.fromTo(
+  //     textRef.current,
+  //     { rotation: -10, opacity: 0,  transformOrigin: "50% 100%"},
+  //     {
+  //       rotation: 0,
+  //       opacity: 1,
+  //       duration: 1.2,
+  //       ease: "power1.in",
+  //       scrollTrigger: {
+  //         trigger: textRef.current,
+  //         start: "top 100%",
+  //         toggleActions: "play none none none",
+  //       },
+  //     }
+  //   );
+  // }, []);
+
   // Top arc text (reversed)
   useEffect(() => {
     if (reverseRef.current) {
       reverseInstance.current = new CircleType(reverseRef.current);
       const updateRadius = () => {
-        reverseInstance.current.radius(180);
+        reverseInstance.current.radius(130);
       };
       updateRadius();
       window.addEventListener("resize", updateRadius);
@@ -69,28 +125,31 @@ const HeroText = () => {
       // ref={root}
     >
       <div className="relative mb-[30px]">
-      <p
-        ref={reverseRef}
-        className="text-[27px]  text-[#cb9b4a] font-[Maghfirea,sans-serif] font-medium [text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px]"
-      >
-        <span className="text-[18px]">⋄</span> INTERIOR DESIGNER <span>⋄</span>
-      </p>
+        <p
+          ref={reverseRef}
+          className="text-[27px] font-bold text-[#cb9b4a] font-[Maghfirea,sans-serif]  "
+        >
+          ⋄ INTERIOR DESIGNER ⋄
+        </p>
 
-   <p
-        ref={textRef}
-        className="text-[27px]  text-[#cb9b4a] font-[Maghfirea,sans-serif] font-medium[text-shadow:#D4AF37_0px_0px_1px,#D4AF37_0px_0px_1px] absolute left-[50%]  top-[53px]"
-      >
-        <span>⋄</span> ARTIST <span>⋄</span>
-      </p>
-</div>
+        <p
+          ref={textRef}
+          className="text-[27px]  text-[#cb9b4a] font-[Maghfirea,sans-serif] font-bold absolute left-[50%]  top-[53px] circle-text"
+        >
+          ⋄ ARTIST ⋄
+        </p>
+        
+
+
+
+
+      </div>
       <h1
         className="text-[40px] lg:text-[60px] font-medium font-[Cloudy,sans-serif] text-[#004953] tracking-[5px]"
-        ref={motionRef}
+        ref={aliyaRef}
       >
         aliya nizar
       </h1>
-
-   
     </div>
   );
 };

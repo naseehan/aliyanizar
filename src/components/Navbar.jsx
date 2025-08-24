@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#004953] fixed z-[99] top-0 left-0 right-0">
+    <div className="bg-[#004953] fixed z-[99] top-0 left-0 right-0 w-screen">
       {/* desktop nav */}
       <DesktopNavbar />
 
@@ -36,19 +36,19 @@ const Navbar = () => {
             <li className="" onClick={handleClick}>
               <Link to="/">Home</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] w-[452px] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
             <li className="" onClick={handleClick}>
               <Link to="/works">Works</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] w-[452px] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
             <li className="" onClick={handleClick}>
               <Link to="/about">About</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] w-[452px] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
             <li className="" onClick={handleClick}>
               <Link to="/services">Services</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] w-[452px] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
             <li className="" onClick={handleClick}>
               <Link to="/contact">Contact</Link>
             </li>

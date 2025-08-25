@@ -1,14 +1,13 @@
-import React from "react";
+import React, {Suspense, lazy} from "react";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
-import bg from "../assets/bgwork.png";
 import "../App.css";
 import HeroText from "../components/HeroText";
-import Slider from "../components/Slider";
-import AboutSection from "../components/AboutSection";
-import Projects from "../components/Projects";
-import ServiceSection from "../components/ServiceSection";
-import ContactSection from "../components/ContactSection";
-import circle from "../assets/spinning-circle.png";
+const Slider  = lazy(() => import("../components/Slider"));
+const AboutSection = lazy(() => import ("../components/AboutSection"));
+const Projects = lazy(() => import("../components/Projects"));
+const ServiceSection = lazy(() => import("../components/ServiceSection"));
+const ContactSection = lazy(() => import("../components/ContactSection"));
+import circle from "../assets/spinning-circle.webp";
 import ToTop from "../components/ToTop";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -32,6 +31,8 @@ const Home = () => {
         scrollTrigger: {
           trigger: image1.current,
           start: "top 100%",
+          fastScrollEnd: true, 
+      invalidateOnRefresh: true,
           toggleActions: "play none none none",
         },
       }
@@ -51,6 +52,8 @@ const Home = () => {
         scrollTrigger: {
           trigger: image2.current,
           start: "top 100%",
+          fastScrollEnd: true, 
+      invalidateOnRefresh: true,
           toggleActions: "play none none none",
         },
       }
@@ -69,7 +72,7 @@ const Home = () => {
             },
            
             {
-              image: bg,
+              image: "/bgwork.webp",
               speed: -2,
             },
           ]}
@@ -80,7 +83,6 @@ const Home = () => {
           src={circle}
           alt="spinning circle"
           className=" rounded-full animate-spin-slow hidden lg:block"
-          loading="lazy"
           style={{ willChange: "transform, opacity" }}
         />
         </div>
@@ -89,16 +91,17 @@ const Home = () => {
           src={circle}
           alt="spinning circle"
           className="rounded-full animate-spin-slow2 hidden lg:block"
-          loading="lazy"
         />
         </div>
       </div>
 
+<Suspense fallback={<p>Loading ...</p>}>
       <Slider />
       <AboutSection />
       <Projects />
       <ServiceSection />
       <ContactSection />
+      </Suspense>
       <ToTop />
     </div>
   );

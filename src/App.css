@@ -58,6 +58,7 @@
 
 .animate-spin-slow {
   animation: spin-slow 6s linear infinite;
+  will-change: transform;
 }
 @keyframes spin-slow2 {
   0% {
@@ -70,6 +71,7 @@
 
 .animate-spin-slow2 {
   animation: spin-slow2 6s linear infinite;
+  will-change: transform;
 }
 
 /* .divider {
@@ -82,19 +84,7 @@
 } */
 
 
-/* .fade-in {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 1s ease forwards;
-  animation-delay: 0.3s; 
-}
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
 .circle-text {
   display: inline-block;
   transform-origin: center center;

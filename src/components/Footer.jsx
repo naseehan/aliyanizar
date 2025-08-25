@@ -1,7 +1,7 @@
 import React from "react";
-import icon2 from "../assets/social/instagram.png";
-import icon3 from "../assets/social/linkedin.png";
-import icon4 from "../assets/social/behance.png";
+import icon2 from "../assets/social/instagram.webp";
+import icon3 from "../assets/social/linkedin.webp";
+import icon4 from "../assets/social/behance.webp";
 
 
 const Footer = () => {

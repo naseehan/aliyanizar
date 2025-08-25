@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import bismillah from "../assets/bismillah1.png";
+import bismillah from "../assets/bismillah1.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

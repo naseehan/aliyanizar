@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import icon1 from "../assets/calligraphy.png";
-import icon2 from "../assets/illu.png";
-import icon3 from "../assets/3d.png";
-import icon4 from "../assets/staircase.png";
-import paint from "../assets/paint.png"
+import icon1 from "../assets/calligraphy.webp";
+import icon2 from "../assets/illu.webp";
+import icon3 from "../assets/3d.webp";
+import icon4 from "../assets/staircase.webp";
+import paint from "../assets/paint.webp"
 
 const Services = () => {
   return (

@@ -39,7 +39,7 @@ const CustomCursor = () => {
 
   return (
     <img
-      src={hovered ? "/cursor-gold.png" : "/cursor.png"}
+      src={hovered ? "/cursor-gold.webp" : "/cursor.webp"}
       alt="custom cursor"
       style={{
         left: `${position.x}px`,

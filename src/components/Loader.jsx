@@ -1,6 +1,6 @@
 import React from "react";
 import "./loader.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

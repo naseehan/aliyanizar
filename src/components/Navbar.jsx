@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import hamburger from "../assets/hamburger.png";
+import hamburger from "../assets/hamburger.webp";
 import "../App.css";
 import DesktopNavbar from "./DektopNavbar"
 

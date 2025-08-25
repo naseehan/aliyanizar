@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import spinning from "../assets/spinning-circle.png"
+import spinning from "../assets/spinning-circle.webp"
 
 gsap.registerPlugin(ScrollTrigger);
 

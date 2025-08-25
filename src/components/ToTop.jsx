@@ -13,10 +13,10 @@ const handleClick = () => {
   return (
     <div className='absolute bottom-[-1.1%] sm:bottom-[-2%] z-50 right-[2%] '>
       <button onClick={handleClick}
-  class="group relative flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#D4AF37] shadow-[0_0_0_4px_rgba(180,160,255,0.25)] transition-all duration-300 ease-in-out hover:w-[140px] hover:rounded-[50px] hover:bg-[#D4AF37] cursor-pointer overflow-hidden"
+  className="group relative flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#D4AF37] shadow-[0_0_0_4px_rgba(180,160,255,0.25)] transition-all duration-300 ease-in-out hover:w-[140px] hover:rounded-[50px] hover:bg-[#D4AF37] cursor-pointer overflow-hidden"
 >
   <svg
-    class="svgIcon w-[12px] transition-transform duration-300 ease-in-out group-hover:-translate-y-[200%]"
+    className="svgIcon w-[12px] transition-transform duration-300 ease-in-out group-hover:-translate-y-[200%]"
     viewBox="0 0 384 512"
   >
     <path
@@ -30,7 +30,7 @@ const handleClick = () => {
   </svg>
 
   <span
-    class="absolute bottom-[-20px] text-white text-[0px] transition-all duration-300 ease-in-out group-hover:static group-hover:text-[13px] group-hover:opacity-100"
+    className="absolute bottom-[-20px] text-white text-[0px] transition-all duration-300 ease-in-out group-hover:static group-hover:text-[13px] group-hover:opacity-100"
   >
     Back to Top
   </span>

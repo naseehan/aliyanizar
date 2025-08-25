@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import avatar from "../assets/aliya.jpg";
-import diamond from "../assets/diamond.png"
+import avatar from "../assets/aliya.webp";
+import diamond from "../assets/diamond.webp"
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

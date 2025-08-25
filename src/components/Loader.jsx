@@ -1,6 +1,5 @@
 import React from "react";
 import "./loader.css";
-import logo from "../assets/logo.webp";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -70,7 +69,7 @@ export default function Loader() {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-[#FFFFF0] z-50">
       <div className="relative flex items-center justify-center font-['Maghfirea',sans-serif] text-[#D4AF37] font-medium text-[50px]">
-        <img src={logo} alt="Logo" className="w-40 h-40"  ref={imageRef}/>
+        <img src="/logo.webp" alt="Logo" className="w-40 h-40"  ref={imageRef} fetchPriority="high"/>
 
         <span className="absolute z-10 top-8 left-[50px]" ref={ARef}>A</span>
         <span className="absolute top-14 left-[82px]" ref={NRef}>N</span>

@@ -41,6 +41,8 @@ const CustomCursor = () => {
     <img
       src={hovered ? "/cursor-gold.webp" : "/cursor.webp"}
       alt="custom cursor"
+      width="32"
+      height="32"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,

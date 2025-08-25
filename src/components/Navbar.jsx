@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import hamburger from "../assets/hamburger.webp";
 import "../App.css";
-import DesktopNavbar from "./DektopNavbar"
+import DesktopNavbar from "./DektopNavbar";
 
 const Navbar = () => {
   const [open, isOpen] = useState(false);
@@ -37,14 +37,23 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+
             <li className="" onClick={handleClick}>
               <Link to="/works">Works</Link>
             </li>
+
             <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+
             <li className="" onClick={handleClick}>
               <Link to="/about">About</Link>
             </li>
             <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+
+            <li className="" onClick={handleClick}>
+              <Link to="/buy">Buy</Link>
+            </li>
+            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+
             <li className="" onClick={handleClick}>
               <Link to="/services">Services</Link>
             </li>

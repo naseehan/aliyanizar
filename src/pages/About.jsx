@@ -1,11 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import avatar from "../assets/aliya.webp";
 import diamond from "../assets/diamond.webp"
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   return (
@@ -23,10 +18,10 @@ const About = () => {
           >
             <div className="grid gap-5 px-4 lg:px-0 text-center lg:text-start">
               <h1
-                className="text-[60px] font-bold font-['Maghfirea'] tracking-[3px] text-[#c16d3c]
+                className="text-[60px] font-bold font-['Maghfirea',sans-serif] tracking-[3px] text-[#c16d3c]
 "
               >
-                HELLO!
+                HELLO<span className="font-[Ubuntu]">!</span>
               </h1>
               <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] mx-auto">
                 I am Aliya Nizar,

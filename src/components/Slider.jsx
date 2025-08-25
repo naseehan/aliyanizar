@@ -138,7 +138,8 @@ const Slider = () => {
             <img
               className="h-full w-full object-cover"
               src={bismillah}
-              alt=""
+              loading="lazy"
+              alt="artwork"
             />
             <div
               className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-0 pointer-events-none
@@ -156,7 +157,7 @@ const Slider = () => {
       {/* button */}
       <div className="flex pb-20" ref={buttonRef}>
         <Link
-          className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
+          className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
           to="/works"
         >
           MORE WORK

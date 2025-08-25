@@ -24,8 +24,8 @@ const HeroText = () => {
       { y: 200, opacity: 0 },
       {
         y: 0,
-        opacity: 1.5,
-        duration: 2,
+        opacity: 1,
+        duration: 1,
         ease: "power2.in",
         scrollTrigger: {
           trigger: aliyaRef.current,
@@ -43,7 +43,7 @@ const HeroText = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.5,
         ease: "power2.in",
         scrollTrigger: {
           trigger: reverseRef.current,
@@ -92,23 +92,7 @@ const HeroText = () => {
 
   
 
-  // useGSAP(() => {
-  //   gsap.fromTo(
-  //     textRef.current,
-  //     { rotation: -10, opacity: 0,  transformOrigin: "50% 100%"},
-  //     {
-  //       rotation: 0,
-  //       opacity: 1,
-  //       duration: 1.2,
-  //       ease: "power1.in",
-  //       scrollTrigger: {
-  //         trigger: textRef.current,
-  //         start: "top 100%",
-  //         toggleActions: "play none none none",
-  //       },
-  //     }
-  //   );
-  // }, []);
+
 
   // Top arc text (reversed)
   useEffect(() => {
@@ -130,7 +114,7 @@ const HeroText = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.5,
         ease: "power2.in",
         scrollTrigger: {
           trigger: textRef.current,
@@ -150,7 +134,7 @@ const HeroText = () => {
       <div className="relative mb-[30px]">
         <p
           ref={reverseRef}
-          className="text-[27px] font-bold text-[#cb9b4a] font-[Maghfirea,sans-serif]  "
+          className="text-[27px] font-bold text-[#cb9b4a] font-[Maghfirea,sans-serif]"
         >
           ⋄ INTERIOR DESIGNER ⋄
         </p>

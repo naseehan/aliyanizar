@@ -49,7 +49,7 @@ const AboutSection = () => {
             className="text-[60px] font-bold font-['Maghfirea',sans-serif] uppercase tracking-[8px] text-[#b9900d] 
 "
           >
-            hello <span className="font-[Ubuntu]">!</span>
+            hello<span className="font-[Ubuntu]">!</span>
           </h1>
           <p className="text-[24px] mb-12 leading-[1.5] font-[Flaviotte] uppercase tracking-[4px] font-medium text-[#b9900d] lg:max-w-[29rem]">
             I am Aliya Nizar,
@@ -66,7 +66,7 @@ const AboutSection = () => {
             {/* Let's connect and create something beautiful together! */}
           </p>
           <div className="flex ">
-            <Link className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200" to="/about">
+            <Link className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200" to="/about">
               MORE DETAILS
             </Link>
           </div>

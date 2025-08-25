@@ -26,32 +26,6 @@ const App = () => {
     },2500)
 
     return () => clearTimeout(timer)
-    // const loadResources = async () => {
-    //   try {
-        // Wait for fonts
-        // if (document.fonts) {
-        //   await document.fonts.ready;
-        // }
-
-        // Wait for images
-    //     const images = Array.from(document.images);
-    //     await Promise.all(
-    //       images.map((img) => {
-    //         if (img.complete) return Promise.resolve();
-    //         return new Promise((resolve) => {
-    //           img.onload = resolve;
-    //           img.onerror = resolve; // resolve anyway if image fails
-    //         });
-    //       })
-    //     );
-    //   } catch (err) {
-    //     console.error("Error loading resources", err);
-    //   }
-    // };
-
-    // Combine resource load + 2.5s fake delay
-  //   Promise.all([loadResources(), new Promise((res) => setTimeout(res, 2500))])
-  //     .finally(() => setLoading(false));
   }, []);
 
   if (loading) {

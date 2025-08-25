@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.webp";
 const DektopNavbar = () => {
   return (
     <nav>
       <ul className="hidden sm:flex justify-around py-5 lg:max-w-[840px] lg:mx-auto text-[#d4af37] font-normal text-[18px] lg:text-[26px] lg:font-medium tracking-[3px] font-['Maghfirea',sans-serif] h-[103px] items-center">
+
         <li className="">
           <Link to="/" className="relative inline-block group hover:font-bold">
             <span className="relative z-10">Home</span>
@@ -45,6 +45,7 @@ const DektopNavbar = () => {
             </svg>
           </Link>
         </li>
+
         <li>
           <Link
             to="/about"
@@ -140,10 +141,10 @@ const DektopNavbar = () => {
           >
             {/* Circle logo image */}
             <img
-              src={logo}
+              src="/logo.webp"
               alt="logo"
-              loading="lazy"
-              className="absolute  w-full h-[94px] rounded-full"
+              className="absolute h-[94px] rounded-full"
+              // height="94"
             />
 
             {/* Text on top of circle */}

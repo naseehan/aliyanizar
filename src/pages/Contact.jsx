@@ -52,7 +52,7 @@ const location = window.location.href
             <textarea type="text" name="message" id="message" className=" border p-2.5" maxLength={300} required/>
             </div>
              <div className="flex py-16  mx-auto col-span-full">
-        <button type="submit" value="send" className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200 uppercase">
+        <button type="submit" value="send" className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200 uppercase">
           submit
         </button>
       </div>

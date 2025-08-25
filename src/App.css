@@ -1,25 +1,24 @@
-/* body{
-    color: #000;
-} */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 @font-face {
   font-family: "Flaviotte";
   src: url("/fonts/Flaviotte.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: "Maghfirea";
+  font-family: 'Maghfirea';
   src: url("/fonts/Maghfirea-VGgl6.ttf") format("truetype");
-  /* font-weight: 700; */
-  /* font-style: normal; */
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("/fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Cloudy";
   src: url("/fonts/Cloudy Aurora Serif.otf") format("opentype");
-  /* font-weight: 700; */
-  /* font-style: normal; */
 }
 .parallaxWrapper {
   background-color: #fffff0;
@@ -58,7 +57,7 @@
 
 .animate-spin-slow {
   animation: spin-slow 6s linear infinite;
-  will-change: transform;
+  will-change: transform, opacity;
 }
 @keyframes spin-slow2 {
   0% {
@@ -71,7 +70,7 @@
 
 .animate-spin-slow2 {
   animation: spin-slow2 6s linear infinite;
-  will-change: transform;
+  will-change: transform, opacity;
 }
 
 /* .divider {

@@ -25,7 +25,7 @@ const Services = () => {
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
 
         {/* services */}
-        <div className="my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] items-stretch gap-y-[30px]">
+        <div className="my-12 mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(334px,1fr))] items-stretch gap-y-[30px]">
 
           <div className="p-5 grid gap-y-6">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">
@@ -45,7 +45,7 @@ const Services = () => {
           </div>
 
           <div className="p-5 grid gap-y-3">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
               <img src={icon2} alt="" loading="lazy" />
               <h1 className="tracking-[3px]">ILLUSTRATIONS</h1>
             </div>
@@ -61,7 +61,7 @@ const Services = () => {
           </div>
 
           <div className="p-5 grid gap-y-3">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
               <img src={icon1} alt="" loading="lazy" />
               <h1 className="tracking-[3px]">CALLIGRAPHY</h1>
             </div>
@@ -76,7 +76,7 @@ const Services = () => {
           </div>
 
           <div className="p-5 grid gap-y-3">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea'] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
               <img src={icon3} alt="" loading="lazy" />
               
               <h1 className="tracking-[3px]">3D VISUALIZATION</h1>
@@ -93,7 +93,7 @@ const Services = () => {
           </div>
 
           <div className="p-5 grid gap-y-3">
-            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea'] text-[#b9900d]">
+            <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
               <img src={icon4} alt="" loading="lazy" />
               <h1 className="tracking-[3px]">Interior Design Consultation</h1>
             </div>
@@ -118,7 +118,7 @@ const Services = () => {
           </p>
           <div className="flex">
             <Link
-              className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-[Maghfirea] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200 uppercase"
+              className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200 uppercase"
               to="/contact"
             >
               get a quote

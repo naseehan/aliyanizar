@@ -159,7 +159,7 @@ const DektopNavbar = () => {
             to="/shop"
             className="relative inline-block group hover:font-bold"
           >
-            <span className=" z-10">Buy</span>
+            <span className=" z-10">Shop</span>
             {/* SVG stroke */}
             <svg
               xmlns="http://www.w3.org/2000/svg"

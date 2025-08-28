@@ -50,7 +50,7 @@ const Navbar = () => {
             <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
 
             <li className="" onClick={handleClick}>
-              <Link to="/buy">Buy</Link>
+              <Link to="/shop">Shop</Link>
             </li>
             <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
 

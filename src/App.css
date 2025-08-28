@@ -102,6 +102,32 @@
 }
 
 
-@media (max-width :360px){
 
+/* for input */
+.search-input[type="range"] {
+  -webkit-appearance: none; 
+}
+
+/* Thumb */
+.search-input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Required */
+  background-color: #b9900d; /* Thumb color */
+  width: 20px; /* Must define size */
+  height: 20px; /* Must define size */
+  border-radius: 50%; /* Rounded */
+  margin-top: -6px; /* vertically center */
+}
+
+/* Track */
+.search-input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #d1d5db; /* Track color */
+  height: 7px;
+  border-radius: 9999px;
+}
+
+/* shop page */
+@media (max-width :360px){
+  .shop-page-products{
+    width: 329px;
+  }
 }

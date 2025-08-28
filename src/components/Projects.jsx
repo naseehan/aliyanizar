@@ -79,6 +79,7 @@ onClick={() => handleClick("project-title")}>
           loading="lazy"
           className="w-full h-full"
         />
+        {/* when hovering */}
         <div className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-0 pointer-events-none group-hover:opacity-70 group-hover:pointer-events-auto transition-opacity duration-300">
           <h3 className="text-[40px] font-bold font-[Flaviotte] tracking-[4px]">
             Design Title
@@ -87,6 +88,7 @@ onClick={() => handleClick("project-title")}>
             Design Category
           </p>
         </div>
+
       </div>
     ))}
   </div>
@@ -94,9 +96,9 @@ onClick={() => handleClick("project-title")}>
 
 
       <div className="flex pb-20" ref={buttonRef}>
-        <Link
+        <Link to="/works"
           className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200">
-          MORE WORK
+          MORE WORKS
         </Link>
       </div>
     </div>

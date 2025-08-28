@@ -14,6 +14,7 @@ import Loader from "./components/Loader";
 import ProjectDetails from "./pages/ProjectDetails";
 import ArtWorkDetails from "./pages/ArtWorkDetails";
 import CustomCursor from "./components/customCursor";
+import Shop from "./pages/Shop";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/works" element={<Work />} />
         <Route path="/projectsDetails/:slug" element={<ProjectDetails />} />
         <Route path="/artworkdetails/:slug" element={<ArtWorkDetails />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
       <Footer />
     </div>

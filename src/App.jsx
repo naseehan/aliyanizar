@@ -15,7 +15,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import ArtWorkDetails from "./pages/ArtWorkDetails";
 import CustomCursor from "./components/customCursor";
 import Shop from "./pages/Shop";
-import ProductSlider from "./components/ProductSlider";
+// import ProductSlider from "./components/ProductSlider";
 
 const App = () => {
   const [loading, setLoading] = useState(true);

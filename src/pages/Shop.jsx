@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import { products } from "./shopItems";
 import { categories } from "./shopItems";
+import Sidebar from "../components/Sidebar";
 
 const Shop = () => {
   const [price, setPrice] = useState(35);
   const [cateHide, setCateHide] = useState(true);
   const [priceHide, setPriceHide] = useState(true);
   const [faveHide, setFaveHide] = useState(false);
+  const [filterHide, setFilterHide] = useState(false);
   const [faves, setFaves] = useState(() => {
     try {
       const savedFaves = localStorage.getItem("faves");
@@ -47,28 +49,38 @@ const Shop = () => {
     localStorage.setItem("faves", JSON.stringify(faves));
   }, [faves]);
 
+  // filter by price
   const handleFilter = () => {
     let product = products.filter((item) => item.offerPrice <= price);
     setFilteredProducts(product);
+    setFilterHide(false)
   };
   // show || hide price filter
   const hidePriceFilter = () => {
     setPriceHide(!priceHide);
   };
+
   // show || hide categories filter
   const toggleCates = () => {
     setCateHide(!cateHide);
   };
 
+  const handleFilterToggle = () => {
+    setFilterHide((prev) => !prev);
+    setFaveHide(false);
+    setShowCart(false);
+  };
   // show || hide cart sidebar
   const handleCartToggle = () => {
     setShowCart((prev) => !prev);
     setFaveHide(false);
+    setFilterHide(false);
   };
   // show || hide fave sidebar
   const handleFaveToggle = () => {
     setFaveHide((prev) => !prev);
     setShowCart(false);
+    setFilterHide(false);
   };
 
   const searchFunction = (e) => {
@@ -113,6 +125,7 @@ const Shop = () => {
     setFilteredProducts(() =>
       products.filter((item) => item.categories == name)
     );
+    setFilterHide(false)
   };
 
   return (
@@ -122,7 +135,9 @@ const Shop = () => {
         {/* sidebuttons */}
         <div
           className={`z-999 transition-all duration-500 ease-in-out fixed top-[50%]  grid gap-2.5 ${
-            showCart || faveHide ? "right-[268px] sm:right-[329px]" : "right-0"
+            showCart || faveHide || filterHide
+              ? "right-[268px] sm:right-[329px]"
+              : "right-0"
           }`}
         >
           <div className="flex bg-white shadow-[0_0_9.8px_0.2px_rgba(0,0,0,0.1)] tracking-[0.11em]  items-center gap-2 p-4 relative">
@@ -146,96 +161,122 @@ const Shop = () => {
               <i className="fa-solid fa-heart fa-lg text-[#b9900d]"></i>
             </button>
           </div>
+
+          <div className="flex sm:hidden bg-white shadow-[0_0_9.8px_0.2px_rgba(0,0,0,0.1)] tracking-[0.11em]  items-center gap-2 p-4 relative">
+            <button onClick={handleFilterToggle} className="">
+              <i className="fa-solid fa-sliders fa-lg text-[#b9900d]"></i>
+            </button>
+          </div>
         </div>
 
         {/*cart sidebar */}
-        <div
-          className={`z-999 fixed top-0 h-screen w-[270px] sm:w-[330px] bg-white transition-all duration-500 ease-in-out ${
-            showCart ? "right-0 opacity-100" : "-right-[330px] opacity-0"
-          }`}
-        >
-          {cart.length === 0 ? (
-            <p className="p-4">No items in cart</p>
-          ) : (
-            <div className="p-4 space-y-4">
-              {cart.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex items-center gap-4 border-b pb-2 relative"
-                >
-                  <img
-                    src={item.img}
-                    alt={item.name}
-                    className="h-[80px] w-[80px] object-cover rounded"
-                  />
-                  <button
-                    className="absolute top-0 right-0"
-                    onClick={() => deleteCartItem(item.id)}
-                  >
-                    <i className="fa-solid fa-xmark"></i>
-                  </button>
-                  <div className="flex flex-col">
-                    <h1 className="font-semibold">{item.name}</h1>
-                    <div>
-                      <span>{item.quantity} × </span>
-                      <span className="text-sm text-gray-700">
-                        AED{item.offerPrice}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
 
-              <div className="flex">
-                <button
-                  className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
-                  onClick={handleFilter}
-                >
-                  Checkout
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
+        <Sidebar
+          toggle={showCart}
+          length={cart.length}
+          arrayOfItems={cart}
+          deleteItem={deleteCartItem}
+          name="Cart"
+          checkout={true}
+          handleFilter={handleFilter}
+        />
 
         {/*faviorates sidebar */}
+
+        <Sidebar
+          toggle={faveHide}
+          length={faves.length}
+          arrayOfItems={faves}
+          deleteItem={deleteFaveItem}
+          name="Favourites"
+          checkout={false}
+        />
+
+        {/* filter sidebar mobile device only */}
         <div
-          className={`z-999 fixed top-0 h-screen w-[270px] sm:w-[330px] bg-white transition-all duration-500 ease-in-out ${
-            faveHide ? "right-0 opacity-100" : "-right-[330px] opacity-0"
+          className={`sm:hidden z-999 fixed top-0 h-screen w-[270px] sm:w-[330px] bg-white transition-all duration-500 ease-in-out ${
+            filterHide ? "right-0 opacity-100" : "-right-[330px] opacity-0"
           }`}
         >
-          {faves.length === 0 ? (
-            <p className="p-4">No items in Faviorates</p>
-          ) : (
-            <div className="p-4 space-y-4">
-              {faves.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 border-b pb-2 relative"
-                >
-                  <img
-                    src={item.img}
-                    alt={item.name}
-                    className="h-[80px] w-[80px] object-cover rounded"
-                  />
-                  <button
-                    className="absolute top-0 right-0"
-                    onClick={() => deleteFaveItem(item.id)}
-                  >
-                    <i className="fa-solid fa-xmark"></i>
+          <div className="mt-14">
+            <h1 className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-3xl font-semibold mb-2.5 text-center">
+              Filter
+            </h1>
+            <div>
+              {/* filter by categories */}
+              <div className="px-[3.25rem] mt-[2rem]  grid gap-3">
+                <div className="flex items-center gap-[18px] mb-2.5">
+                  <h1 className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-[22px] font-semibold ">
+                    Categories
+                  </h1>
+                  <button onClick={toggleCates}>
+                    <i className="fa-solid fa-plus"></i>
                   </button>
-                  <div className="flex flex-col">
-                    <h1 className="font-semibold">{item.name}</h1>
-                    <div>
-                      <span className="text-sm text-gray-700">
-                        AED{item.offerPrice}
-                      </span>
-                    </div>
+                </div>
+                <ul
+                  className={`overflow-hidden transition-all duration-300 ease-out ${
+                    cateHide ? "max-h-0 opacity-0" : "max-h-[500px] opacity-100"
+                  }`}
+                >
+                  {categories.map((item, i) => (
+                    <li
+                      key={i}
+                      className=" transition-transform duration-300 ease-out"
+                    >
+                      <button
+                        className="text-[14px] md:text-[16px]   font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize"
+                        onClick={() => filterByCates(item)}
+                      >
+                        {item}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* filter by price */}
+              <div className="px-[3.25rem] mt-[1rem]  grid gap-3">
+                <div className="flex items-center gap-[18px] mb-2.5">
+                  <h1 className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-[22px] font-semibold ">
+                    Price
+                  </h1>
+                  <button onClick={hidePriceFilter}>
+                    <i className="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+
+                <div
+                  className={`transition-all duration-300 ease-out ${
+                    priceHide
+                      ? "max-h-0 opacity-0"
+                      : "max-h-[500px] opacity-100"
+                  }`}
+                >
+                  <input
+                    type="range"
+                    name="range"
+                    id="range"
+                    min="10"
+                    max="35"
+                    value={price}
+                    onChange={handleChange}
+                    className="search-input w-full relative"
+                  />
+                  <p className="text-[#6d6d65] font-[Ubuntu]">
+                    Price : AED10 - AED{price}
+                  </p>
+                  <div className="flex">
+                    <button
+                      className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
+                      onClick={handleFilter}
+                    >
+                      Filter
+                    </button>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
 

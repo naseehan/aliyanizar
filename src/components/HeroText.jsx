@@ -43,7 +43,7 @@ const HeroText = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 0.5,
+        duration: 1.5,
         ease: "power2.in",
         scrollTrigger: {
           trigger: reverseRef.current,
@@ -114,7 +114,7 @@ const HeroText = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 0.5,
+        duration: 1.5,
         ease: "power2.in",
         scrollTrigger: {
           trigger: textRef.current,

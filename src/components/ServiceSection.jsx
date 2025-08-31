@@ -130,8 +130,9 @@ const ServiceSection = () => {
           MORE DETAILS
         </Link>
       </div>
+      
+        <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
 
-      <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
     </div>
   );
 };

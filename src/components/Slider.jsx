@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./Slider.css";
@@ -61,10 +61,12 @@ const Slider = () => {
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     renderMode: "performance",
+    origin: 'center',
     drag: true,
     slides: {
       perView: 3,
       spacing: 20,
+      
     },
     breakpoints: {
       "(max-width: 1024px)": {
@@ -90,6 +92,15 @@ const Slider = () => {
       s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
   });
+
+ // Add active class on init
+  // useEffect(() => {
+  //   if (instanceRef.current) {
+  //     const s = instanceRef.current
+  //     s.slides[s.track.details.rel].classList.add("active")
+  //   }
+  // }, [instanceRef])
+
 
   // Pause on hover
   React.useEffect(() => {

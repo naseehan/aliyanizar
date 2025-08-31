@@ -70,3 +70,19 @@
     rgba(174, 63, 255, 1) 100%
   );
 }
+
+
+
+/* .keen-slider__slide {
+  opacity: 0.3;
+  filter: blur(2px);
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.keen-slider__slide.active {
+  opacity: 1;
+  filter: none;
+  transform: scale(1);
+  z-index: 10;
+} */

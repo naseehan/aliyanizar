@@ -1,6 +1,7 @@
 import React from "react";
 import avatar from "../assets/aliya.webp";
 import diamond from "../assets/diamond.webp"
+import "../App.css"
 
 const About = () => {
   return (
@@ -64,10 +65,10 @@ const About = () => {
 "
               />
               <div
-                className="absolute top-[-42px] right-[30px]
+                className="absolute top-[-42px] right-[52px]
 "
               >
-                <img src={diamond} alt="diamond shape" loading="lazy" height={130} width={130}/>
+                <img src="/circle.webp" alt="diamond shape" loading="lazy" className="animate-spin-slow h-[172px]" />
               </div>
             </div>
           </div>

@@ -7,7 +7,8 @@ import icon4 from "../assets/social/behance.webp";
 const Footer = () => {
   return (
     <div className=" relative bg-[#FFFFF0]">
-      <div className="h-[3px] bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
+            <img src="/divider.webp" alt="divider" className="h-[45px] w-[600px] mx-auto"/>
+
       <div className="grid justify-center py-10 gap-8">
         <div className="flex justify-center items-center gap-[30px]">
 

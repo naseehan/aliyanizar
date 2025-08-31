@@ -16,10 +16,6 @@ const Services = () => {
           <h1 className="text-[60px] font-bold tracking-[3px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">
             services
           </h1>
-          {/* <p className="font-medium font-[Ubuntu] text-[#b9900d] text-[19px]">
-            Develop your passion project with eye catching branding, packaging,
-            web design & illustrations.{" "}
-          </p> */}
           <br />
         </div>
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>

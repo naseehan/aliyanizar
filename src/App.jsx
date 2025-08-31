@@ -15,6 +15,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import ArtWorkDetails from "./pages/ArtWorkDetails";
 import CustomCursor from "./components/customCursor";
 import Shop from "./pages/Shop";
+import ProductSlider from "./components/ProductSlider";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -38,6 +39,7 @@ const App = () => {
       <CustomCursor />
       <Navbar />
       <ScrollToTop />
+      {/* <ProductSlider /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

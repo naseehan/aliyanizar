@@ -5,50 +5,61 @@ export const products = [
     id: 1,
     name: "Bismillah",
     img: bismillah,
-    categories: { 1: "Paintings", 2: "Calligraphy" },
+    categories: "Wall mural",
     ogPrice: 3000,
     offerPrice: 312,
     offer: 50,
-    quantity: 1
+    quantity: 1,
   },
   {
     id: 2,
     name: "Bismillah",
     img: bismillah,
-    categories: { 1: "Paintings", 2: "Calligraphy" },
+    categories: "Wooden panel",
     ogPrice: 303,
     offerPrice: 50,
     offer: 50,
-    quantity: 1
+    quantity: 1,
   },
   {
     id: 3,
     name: "Bismillah",
     img: bismillah,
-    categories: { 1: "Paintings", 2: "Calligraphy" },
+    categories: "Fabric painting",
     ogPrice: 900,
     offerPrice: 15,
     offer: 50,
-    quantity: 1
+    quantity: 1,
   },
   {
     id: 4,
     name: "Bismillah",
     img: bismillah,
-    categories: { 1: "Paintings", 2: "Calligraphy" },
+    categories: "Calligraphy painting" ,
     ogPrice: 30,
     offerPrice: 15,
     offer: 50,
-    quantity: 1
+    quantity: 1,
   },
   {
     id: 5,
-    name: "Bismillah",
+    name: "fsidf",
     img: bismillah,
-    categories: { 1: "Paintings", 2: "Calligraphy" },
+    categories: "Digital Art",
     ogPrice: 30,
     offerPrice: 15,
     offer: 50,
-    quantity: 1
-  }
+    quantity: 1,
+  },
+];
+
+export const categories = [
+  "Calligraphy painting",
+  "Canvas paintings",
+  "Wooden panel",
+  "Fabric painting",
+  "Digital Art",
+  "Customised mask",
+  "Wall mural",
+  "Mixed Media",
 ];

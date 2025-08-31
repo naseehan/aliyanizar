@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const DektopNavbar = () => {
   return (
     <nav>
-      <ul className="hidden sm:flex justify-around py-5 lg:max-w-[840px] lg:mx-auto text-[#d4af37] font-normal text-[18px] lg:text-[26px] lg:font-medium tracking-[3px] font-['Maghfirea',sans-serif] h-[103px] items-center">
+      <ul className="hidden sm:flex justify-around py-5 lg:max-w-[840px] lg:mx-auto text-[#d4af37] font-normal text-[18px] lg:text-[26px] lg:font-medium tracking-[3px] font-['Maghfirea',sans-serif] h-[84\px] items-center">
 
         <li className="">
           <Link to="/" className="relative inline-block group hover:font-bold">

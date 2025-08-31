@@ -85,11 +85,12 @@ const AboutSection = () => {
 "
           >
             {/* <RotatingTextCircle /> */}
-            <img src={diamond} alt="diamond shape" loading="lazy" height={160} width={160} className="animate-spin-slow"/>
+            <img src="/circle.webp" alt="diamond shape" loading="lazy" className="animate-spin-slow h-[172px]"/>
           </div>
         </div>
       </div>
-      <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
+
     </div>
   );
 };

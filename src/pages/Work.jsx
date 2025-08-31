@@ -2,26 +2,38 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Work = () => {
-
-let navigate = useNavigate()
-const handleClick = (slug) => {
-  navigate(`/artworkdetails/${slug}`)
-}
+  let navigate = useNavigate();
+  const handleClick = (slug) => {
+    navigate(`/artworkdetails/${slug}`);
+  };
 
   return (
-    <div className=" bg-[#FFFFF0] ">
+    <div className="bg-[#FFFFF0] ">
       <div className="max-w-[1000px] pt-40  mx-auto">
         {/* heading */}
-        <div className="text-center max-w-[686px] mx-auto">
+
+        <div className="flex">
+          <div className="relative">
+            <img src="/container.webp" alt="work container" />
+            <button className="absolute top-[44%] left-[28%] text-[34px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">Artworks</button>
+          </div>
+          <div className="relative">
+            <img src="/container.webp" alt="project container" />
+            <button className="absolute top-[42%] left-[32%] text-center  text-[34px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase"style={{lineHeight: 1}}>Design <br /> Projects</button>
+          </div>
+        </div>
+
+        {/* <div className="text-center max-w-[686px] mx-auto">
           <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">
             design projects
           </h1>
           <br />
-        </div>
-        <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
+        </div> */}
+        {/* <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div> */}
 
         {/* works */}
-        <div className=" py-12 mx-auto px-3 sm:px-8 lg:px-0">
+
+        {/* <div className=" py-12 mx-auto px-3 sm:px-8 lg:px-0">
           <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-5">
             {[...Array(4)].map((_, i) => (
               <div
@@ -46,7 +58,7 @@ const handleClick = (slug) => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

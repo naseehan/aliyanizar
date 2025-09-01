@@ -1,10 +1,9 @@
-import bismillah from "../assets/bismillah.webp";
 
 export const products = [
   {
     id: 1,
     name: "Bismillah",
-    img: bismillah,
+    img: "/bismillah.webp",
     categories: "Wall mural",
     ogPrice: 3000,
     offerPrice: 312,
@@ -14,7 +13,7 @@ export const products = [
   {
     id: 2,
     name: "Bismillah",
-    img: bismillah,
+    img: "/bismillah.webp",
     categories: "Wooden panel",
     ogPrice: 303,
     offerPrice: 50,
@@ -24,7 +23,7 @@ export const products = [
   {
     id: 3,
     name: "Bismillah",
-    img: bismillah,
+    img: "/bismillah.webp",
     categories: "Fabric painting",
     ogPrice: 900,
     offerPrice: 15,
@@ -34,7 +33,7 @@ export const products = [
   {
     id: 4,
     name: "Bismillah",
-    img: bismillah,
+    img: "/bismillah.webp",
     categories: "Calligraphy painting" ,
     ogPrice: 30,
     offerPrice: 15,
@@ -44,7 +43,7 @@ export const products = [
   {
     id: 5,
     name: "fsidf",
-    img: bismillah,
+    img: "/bismillah.webp",
     categories: "Digital Art",
     ogPrice: 30,
     offerPrice: 15,

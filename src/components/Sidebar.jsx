@@ -7,7 +7,6 @@ const Sidebar = ({
   deleteItem,
   name,
   checkout,
-  handleFilter,
 }) => {
   return (
     <div
@@ -50,7 +49,21 @@ const Sidebar = ({
             <div className="flex">
               <button
                 className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
-                onClick={handleFilter}
+                onClick={() => {
+                  const message = arrayOfItems
+                    .map(
+                      (item) =>
+                        `🛍️ Product: ${item.name} 💵 Price: AED${item.offerPrice}  Count: ${item.quantity}`
+                    )
+                    .join("%0A"); // use %0A for line breaks
+
+                  const text = `Hi, I'm interested in buying these:%0A%0A${message}`;
+
+                  window.open(
+                    `https://wa.me/+971561150924?text=${text}`,
+                    "_blank"
+                  );
+                }}
               >
                 Checkout
               </button>

@@ -53,7 +53,7 @@ const Shop = () => {
   const handleFilter = () => {
     let product = products.filter((item) => item.offerPrice <= price);
     setFilteredProducts(product);
-    setFilterHide(false)
+    setFilterHide(false);
   };
   // show || hide price filter
   const hidePriceFilter = () => {
@@ -117,19 +117,28 @@ const Shop = () => {
     setFaves(faves.filter((prev) => prev.id != pid));
   };
 
-  const handleChange = (e) => {
-    setPrice(e.target.value);
+ const handleChange = (e) => {
+    const val = Number(e.target.value);
+    setPrice(val);
+
+    // calculate percentage relative to min/max
+    const min = Number(e.target.min);
+    const max = Number(e.target.max);
+    const percent = ((val - min) / (max - min)) * 100;
+
+    // update CSS variable
+    e.target.style.setProperty("--value", `${percent}%`);
   };
 
   const filterByCates = (name) => {
     setFilteredProducts(() =>
       products.filter((item) => item.categories == name)
     );
-    setFilterHide(false)
+    setFilterHide(false);
   };
 
   return (
-    <div className="lg:flex pt-40 bg-[#FFFFF0] relative">
+    <div className="lg:flex pt-27 sm:pt-40 bg-[#FFFFF0] relative">
       {/* sidebar */}
       <div className="z-999">
         {/* sidebuttons */}
@@ -178,7 +187,6 @@ const Shop = () => {
           deleteItem={deleteCartItem}
           name="Cart"
           checkout={true}
-          handleFilter={handleFilter}
         />
 
         {/*faviorates sidebar */}
@@ -291,7 +299,7 @@ const Shop = () => {
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
 
         {/* search */}
-        <div className="px-[3.25rem] py-[3.7rem] h-[184px] max-w-[600px] mx-auto">
+        <div className="px-[3.25rem] sm:py-[3.7rem] pt-10 sm:h-[184px] max-w-[600px] mx-auto relative">
           <input
             onChange={searchFunction}
             value={search || ""}
@@ -301,6 +309,15 @@ const Shop = () => {
             className="border border-[#c9c8bf] pr-9 pl-5 py-2.5 rounded-[30px] text-[#6d6d65]  bg-[#FFFFF0] w-[100%] focus:border-[#606060]"
             placeholder="Search for Products..."
           />
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="absolute w-4 h-4 right-[70px] top-[55px] sm:top-[74px]"
+          >
+            <g>
+              <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+            </g>
+          </svg>
         </div>
 
         <div className="sm:flex sm:justify-start">
@@ -359,16 +376,18 @@ const Shop = () => {
                       : "max-h-[500px] opacity-100"
                   }`}
                 >
+
                   <input
-                    type="range"
+                   type="range"
                     name="range"
                     id="range"
                     min="10"
                     max="35"
                     value={price}
                     onChange={handleChange}
-                    className="search-input w-full relative"
+                    className="w-full search-input"
                   />
+
                   <p className="text-[#6d6d65] font-[Ubuntu]">
                     Price : AED10 - AED{price}
                   </p>
@@ -400,15 +419,30 @@ const Shop = () => {
                       loading="lazy"
                       className=""
                     />
-                    <div className="absolute top-[7px] right-[9px] text-white bg-[#fff] rounded-full h-[44px] w-[44px] flex items-center justify-center group">
+                    {/* favourates button */}
+                    <div className="absolute top-[7px] sm:right-[9px] left-1 text-white bg-[#fff] rounded-full h-[44px] w-[44px] flex items-center justify-center group">
                       <button
                         className="z-30 pointer"
                         onClick={() => addFaves(item, item.id)}
                       >
-                        <i className="fa-solid fa-heart fa-lg text-[#b9900d]  group-hover:text-[#fff]"></i>
+                        <i
+                          className={`${
+                            faves.some((fav) => fav.id == item.id)
+                              ? "fa-solid"
+                              : "fa-regular"
+                          } fa-heart fa-lg text-[#b9900d]  sm:group-hover:text-[#fff]`}
+                        ></i>
                       </button>
                     </div>
-
+                    {/* cart button only on mobile screens */}
+                    <div className="absolute top-[7px] right-[5px] text-white bg-[#fff] rounded-full h-[44px] w-[44px] flex items-center justify-center group sm:hidden">
+                      <button
+                        className="z-30 pointer"
+                        onClick={() => handleClick(item.id)}
+                      >
+                        <i className="fa-solid fa-cart-shopping fa-lg text-[#b9900d]  sm:group-hover:text-[#fff]"></i>
+                      </button>
+                    </div>
                     {/* when hovering */}
                     <div className="absolute inset-0 bg-[#000] bg-opacity-70 sm:flex flex-col justify-center items-center text-white opacity-0 pointer-events-none group-hover:opacity-70 group-hover:pointer-events-auto transition-opacity duration-300 hidden">
                       <button
@@ -427,30 +461,24 @@ const Shop = () => {
                   </div>
 
                   <div>
-                    {/* <p className=" font-[Ubuntu]">
-                      {item.categories[1]}, {item.categories[2]}
-                    </p> */}
-                    <h3 className="font-['Maghfirea',sans-serif] text-[#b9900d] text-3xl font-semibold tracking-[3px] capitalize">
+                    <h3 className="font-['Maghfirea',sans-serif] text-[#b9900d] text-[25px] sm:text-3xl font-semibold tracking-[3px] capitalize">
                       {item.name}
                     </h3>
-                    <div className="flex justify-center text-[20px] gap-3">
-                      {/* <p className="line-through text-[#93938f] font-[Ubuntu]">
-                        AED{item.ogPrice} {"  "}
-                      </p> */}
+                    <div className="flex justify-center text-[18px] sm:text-[20px] gap-3">
                       <p className="text-[#987300] font-[Ubuntu]">
                         {" "}
                         AED{item.offerPrice}
                       </p>
                     </div>
                   </div>
-                  <div className="flex sm:hidden">
+                  {/* <div className="flex sm:hidden">
                     <button
                       className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
                       onClick={() => handleClick(item.id)}
                     >
                       Add to Cart
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>

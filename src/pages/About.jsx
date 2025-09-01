@@ -65,7 +65,7 @@ const About = () => {
 "
               />
               <div
-                className="absolute top-[-42px] right-[52px]
+                className="absolute top-[-42px] right-[30px] sm:right-[52px]
 "
               >
                 <img src="/circle.webp" alt="diamond shape" loading="lazy" className="animate-spin-slow h-[172px]" />

@@ -4,7 +4,7 @@ export const products = [
     id: 1,
     name: "Bismillah",
     img: "/bismillah.webp",
-    categories: "Wall mural",
+    categories: "Mixed Media",
     ogPrice: 3000,
     offerPrice: 312,
     offer: 50,
@@ -24,7 +24,7 @@ export const products = [
     id: 3,
     name: "Bismillah",
     img: "/bismillah.webp",
-    categories: "Fabric painting",
+    categories: "Paintings",
     ogPrice: 900,
     offerPrice: 15,
     offer: 50,
@@ -34,7 +34,7 @@ export const products = [
     id: 4,
     name: "Bismillah",
     img: "/bismillah.webp",
-    categories: "Calligraphy painting" ,
+    categories: "Calligraphy" ,
     ogPrice: 30,
     offerPrice: 15,
     offer: 50,
@@ -53,12 +53,9 @@ export const products = [
 ];
 
 export const categories = [
-  "Calligraphy painting",
-  "Canvas paintings",
-  "Wooden panel",
-  "Fabric painting",
+  "Calligraphy",
+  "Wooden Panels",
   "Digital Art",
-  "Customised mask",
-  "Wall mural",
+  "Paintings",
   "Mixed Media",
 ];

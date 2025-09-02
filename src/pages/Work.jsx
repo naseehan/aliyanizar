@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Work = () => {
   let navigate = useNavigate();
@@ -19,7 +19,7 @@ const Work = () => {
           </div>
           <div className="relative">
             <img src="/container.webp" alt="project container" />
-            <button className="absolute top-[42%] left-[32%] text-center  text-[34px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase"style={{lineHeight: 1}}>Design <br /> Projects</button>
+            <Link to="designWorks" className="absolute top-[42%] left-[32%] text-center  text-[34px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase"style={{lineHeight: 1}}>Design <br /> Projects</Link>
           </div>
         </div>
 

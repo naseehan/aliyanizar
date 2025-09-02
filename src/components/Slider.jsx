@@ -92,14 +92,6 @@ const Slider = () => {
     },
   });
 
- // Add active class on init
-  // useEffect(() => {
-  //   if (instanceRef.current) {
-  //     const s = instanceRef.current
-  //     s.slides[s.track.details.rel].classList.add("active")
-  //   }
-  // }, [instanceRef])
-
 
   // Pause on hover
   React.useEffect(() => {

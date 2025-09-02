@@ -15,6 +15,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import ArtWorkDetails from "./pages/ArtWorkDetails";
 import CustomCursor from "./components/customCursor";
 import Shop from "./pages/Shop";
+import DesignWork from "./pages/DesignWork";
 // import ProductSlider from "./components/ProductSlider";
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/works" element={<Work />} />
         <Route path="/projectsDetails/:slug" element={<ProjectDetails />} />
         <Route path="/artworkdetails/:slug" element={<ArtWorkDetails />} />
+        <Route path="/works/designWorks" element={<DesignWork />} />
         <Route path="/shop" element={<Shop />} />
       </Routes>
       <Footer />

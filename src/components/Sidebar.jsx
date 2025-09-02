@@ -39,7 +39,7 @@ const Sidebar = ({
                 <div>
                   <span>{item.quantity} × </span>
                   <span className="text-sm text-gray-700">
-                    AED{item.offerPrice}
+                    Price on Request
                   </span>
                 </div>
               </div>
@@ -53,7 +53,7 @@ const Sidebar = ({
                   const message = arrayOfItems
                     .map(
                       (item) =>
-                        `🛍️ Product: ${item.name} 💵 Price: AED${item.offerPrice}  Count: ${item.quantity}`
+                        ` Product: ${item.name}  Price: AED${item.offerPrice}  Count: ${item.quantity}`
                     )
                     .join("%0A"); // use %0A for line breaks
 

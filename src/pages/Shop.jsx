@@ -466,8 +466,7 @@ const Shop = () => {
                     </h3>
                     <div className="flex justify-center text-[18px] sm:text-[20px] gap-3">
                       <p className="text-[#987300] font-[Ubuntu]">
-                        {" "}
-                        AED{item.offerPrice}
+                       Price on Request
                       </p>
                     </div>
                   </div>

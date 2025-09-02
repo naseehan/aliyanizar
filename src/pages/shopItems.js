@@ -1,9 +1,11 @@
 
-export const products = [
+export const products = 
+[
   {
     id: 1,
     name: "Bismillah",
-    img: "/bismillah.webp",
+    img: "/products/Bismillah-.webp",
+    thumbnail: "/products/Bismillah- thumb.jpg",
     categories: "Mixed Media",
     ogPrice: 3000,
     offerPrice: 312,
@@ -12,8 +14,9 @@ export const products = [
   },
   {
     id: 2,
-    name: "Bismillah",
-    img: "/bismillah.webp",
+    name: "Contrast-Linoprint",
+    img: "/products/Contrast-Linoprint.webp",
+    thumbnail: "/products/Contrast-Linoprint thumb.jpg",
     categories: "Wooden panel",
     ogPrice: 303,
     offerPrice: 50,
@@ -22,8 +25,9 @@ export const products = [
   },
   {
     id: 3,
-    name: "Bismillah",
-    img: "/bismillah.webp",
+    name: "Golden Fold-mixed media",
+    img: "/products/Golden Fold-mixed media.webp",
+    thumbnail: "/products/Golden Fold-mixed media thumb.jpg",
     categories: "Paintings",
     ogPrice: 900,
     offerPrice: 15,
@@ -32,9 +36,10 @@ export const products = [
   },
   {
     id: 4,
-    name: "Bismillah",
-    img: "/bismillah.webp",
-    categories: "Calligraphy" ,
+    name: "Kadeer",
+    img: "/products/Kadeer-.webp",
+    thumbnail: "/products/Kadeer- thumb.jpg",
+    categories: "Calligraphy",
     ogPrice: 30,
     offerPrice: 15,
     offer: 50,
@@ -42,14 +47,37 @@ export const products = [
   },
   {
     id: 5,
-    name: "fsidf",
-    img: "/bismillah.webp",
-    categories: "Digital Art",
+    name: "Oriental Pattern-painting",
+    img: "/products/Oriental Pattern-painting.webp",
+    thumbnail: "/products/Oriental Pattern-painting thumb.jpg",
+    categories: "Paintings",
     ogPrice: 30,
     offerPrice: 15,
     offer: 50,
     quantity: 1,
   },
+   {
+    id: 6,
+    name: "Petunia Gold Leaf-mixed media",
+    img: "/products/Petunia Gold Leaf-mixed media.webp",
+    thumbnail: "/products/Petunia Gold Leaf-mixed media thumb.jpg",
+    categories: "Mixed Media",
+    ogPrice: 30,
+    offerPrice: 15,
+    offer: 50,
+    quantity: 1,
+  },
+   {
+    id: 7,
+    name: "Water lilly Pond-mixed media",
+    img: "/products/Water lilly Pond-mixed media.webp",
+    thumbnail: "/products/Water lilly Pond-mixed media thumb.jpg",
+    categories: "Mixed Media",
+    ogPrice: 30,
+    offerPrice: 15,
+    offer: 50,
+    quantity: 1,
+  }
 ];
 
 export const categories = [

@@ -10,7 +10,7 @@ const Sidebar = ({
 }) => {
   return (
     <div
-      className={`z-999 fixed top-0 h-screen w-[270px] sm:w-[330px] bg-white transition-all duration-500 ease-in-out ${
+      className={`z-999 fixed top-0 h-screen w-[270px] overflow-auto sm:w-[330px] bg-white transition-all duration-500 ease-in-out ${
         toggle ? "right-0 opacity-100" : "-right-[330px] opacity-0"
       }`}
     >
@@ -24,9 +24,10 @@ const Sidebar = ({
               className="flex items-center gap-4 border-b pb-2 relative"
             >
               <img
-                src={item.img}
+                src={item.thumbnail}
                 alt={item.name}
                 className="h-[80px] w-[80px] object-cover rounded"
+                loading="lazy"
               />
               <button
                 className="absolute top-0 right-0"

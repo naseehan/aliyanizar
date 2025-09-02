@@ -412,12 +412,12 @@ const Shop = () => {
                   key={i}
                   className="text-center leading[2] w-[100%] sm:w-[239px]"
                 >
-                  <div className="relative group ">
+                  <div className="relative group h-[280px] sm:h-[300px]">
                     <img
                       src={item.img}
                       alt="art image"
                       loading="lazy"
-                      className=""
+                      className="h-[100%]"
                     />
                     {/* favourates button */}
                     <div className="absolute top-[7px] sm:right-[9px] left-1 text-white bg-[#fff] rounded-full h-[44px] w-[44px] flex items-center justify-center group">

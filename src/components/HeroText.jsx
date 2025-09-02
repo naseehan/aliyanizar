@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import CircleType from "circletype";
 // import { anime } from "animejs";
-// import splt from "https://cdn.skypack.dev/spltjs@1.0.8";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -146,9 +145,6 @@ const HeroText = () => {
           ⋄ ARTIST ⋄
         </p>
         
-
-
-
 
       </div>
       <h1

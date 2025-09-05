@@ -140,6 +140,7 @@ const Shop = () => {
   const filterByCates = (name) => {
     if(name == "All"){
       setFilteredProducts(products)
+       setFilterHide(false);
     }else{
     setFilteredProducts(() =>
       products.filter((item) => item.categories == name)

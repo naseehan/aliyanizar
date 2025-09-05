@@ -8,12 +8,12 @@ import paint from "../assets/paint.webp"
 
 const Services = () => {
   return (
-    <div className="  bg-[#FFFFF0]">
+    <div className="bg-[#FFFFF0]">
       <div className="max-w-[1000px] pt-40  mx-auto">
         {/* header */}
 
         <div className="text-center max-w-[615px] mx-auto">
-          <h1 className="text-[60px] font-bold tracking-[3px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">
+          <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">
             services
           </h1>
           <br />

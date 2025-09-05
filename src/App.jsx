@@ -15,6 +15,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import ArtWorkDetails from "./pages/ArtWorkDetails";
 import CustomCursor from "./components/customCursor";
 import Shop from "./pages/Shop";
+import ArtWorks from "./components/embla/ArtWorks";
 // import DesignWork from "./pages/DesignWork";
 // import ProductSlider from "./components/ProductSlider";
 
@@ -22,13 +23,11 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
 
-
-   const timer =  setTimeout(() => {
-      setLoading(false)
-    },2500)
-
-    return () => clearTimeout(timer)
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
@@ -48,8 +47,10 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/works" element={<Work />} />
         <Route path="/projectsDetails/:slug" element={<ProjectDetails />} />
-        <Route path="/artworkdetails/:slug" element={<ArtWorkDetails />} />
+        <Route path="/works/artWorks/:slug" element={<ArtWorkDetails />} />
         {/* <Route path="/works/designWorks" element={<DesignWork />} /> */}
+        <Route path="/works/artWorks" element={<ArtWorks />} />
+
         <Route path="/shop" element={<Shop />} />
       </Routes>
       <Footer />

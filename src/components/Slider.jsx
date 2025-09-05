@@ -162,7 +162,7 @@ const Slider = () => {
           className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
           to="/works"
         >
-          MORE WORK
+          MORE WORKS
         </Link>
       </div>
     </div>

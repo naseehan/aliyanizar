@@ -3,6 +3,7 @@ import "../App.css";
 import { products } from "./shopItems";
 import { categories } from "./shopItems";
 import Sidebar from "../components/Sidebar";
+import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
   const [price, setPrice] = useState(35);
@@ -30,7 +31,7 @@ const Shop = () => {
   const [showCart, setShowCart] = useState(false);
   const [search, setSearch] = useState();
   const totalLength = products.length;
-
+  let navigate = useNavigate()
   const addFaves = (product, id) => {
     setFaves((prev) => {
       const exists = prev.find((item) => item.id === id);
@@ -64,6 +65,12 @@ const Shop = () => {
   const toggleCates = () => {
     setCateHide(!cateHide);
   };
+
+  // goto artwork details page
+  const goToDetailsPage = (name) => {
+    let keyword = name.toLowerCase().replace(/s\+/g, "-")
+    navigate(`/works/artWorks/${keyword}`)
+  }
 
   const handleFilterToggle = () => {
     setFilterHide((prev) => !prev);
@@ -131,10 +138,14 @@ const Shop = () => {
   };
 
   const filterByCates = (name) => {
+    if(name == "All"){
+      setFilteredProducts(products)
+    }else{
     setFilteredProducts(() =>
       products.filter((item) => item.categories == name)
     );
     setFilterHide(false);
+  }
   };
 
   return (
@@ -243,7 +254,7 @@ const Shop = () => {
               </div>
 
               {/* filter by price */}
-              <div className="px-[3.25rem] mt-[1rem]  grid gap-3">
+              {/* <div className="px-[3.25rem] mt-[1rem]  grid gap-3">
                 <div className="flex items-center gap-[18px] mb-2.5">
                   <h1 className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-[22px] font-semibold ">
                     Price
@@ -282,7 +293,7 @@ const Shop = () => {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -359,7 +370,7 @@ const Shop = () => {
               </div>
 
               {/* filter by price */}
-              <div className="px-[3.25rem] mt-[1rem]  grid gap-3">
+              {/* <div className="px-[3.25rem] mt-[1rem]  grid gap-3">
                 <div className="flex items-center gap-[18px] mb-2.5">
                   <h1 className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-[22px] font-semibold ">
                     Price
@@ -400,7 +411,7 @@ const Shop = () => {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -419,8 +430,8 @@ const Shop = () => {
                       loading="lazy"
                       className="h-[100%]"
                     />
-                    {/* favourates button */}
-                    <div className="absolute top-[7px] sm:right-[9px] left-1 text-white bg-[#fff] rounded-full h-[44px] w-[44px] flex items-center justify-center group">
+                        {/* favourates button */}
+                        {!item.sold  && ( <div className="absolute -top-[6px] sm:right-[9px] -left-2 text-white rounded-full h-[44px] w-[44px] flex items-center justify-center group">
                       <button
                         className="z-30 pointer"
                         onClick={() => addFaves(item, item.id)}
@@ -433,9 +444,17 @@ const Shop = () => {
                           } fa-heart fa-lg text-[#b9900d]  sm:group-hover:text-[#fff]`}
                         ></i>
                       </button>
-                    </div>
-                    {/* cart button only on mobile screens */}
-                    <div className="absolute top-[7px] right-[5px] text-white bg-[#fff] rounded-full h-[44px] w-[44px] flex items-center justify-center group sm:hidden">
+                    </div>)}
+                     
+
+                    {/* sold or not  */}
+                    {item.sold && ( <div className="absolute bottom-[7px] sm:right-[9px] left-1 ">
+                     <img src="/badge.png" alt="sold" />
+                    </div>)}
+                   
+                    {/* cart button only on mobile screens and not for sold items*/}
+                    {!item.sold  && ( 
+                    <div className="absolute -top-[7px] -right-[7px] text-white rounded-full h-[44px] w-[44px] flex items-center justify-center group sm:hidden">
                       <button
                         className="z-30 pointer"
                         onClick={() => handleClick(item.id)}
@@ -443,41 +462,40 @@ const Shop = () => {
                         <i className="fa-solid fa-cart-shopping fa-lg text-[#b9900d]  sm:group-hover:text-[#fff]"></i>
                       </button>
                     </div>
+                    )}
+
                     {/* when hovering */}
                     <div className="absolute inset-0 bg-[#000] bg-opacity-70 sm:flex flex-col justify-center items-center text-white opacity-0 pointer-events-none group-hover:opacity-70 group-hover:pointer-events-auto transition-opacity duration-300 hidden">
+                      {!item.sold  && ( 
                       <button
                         className="text-[30px] font-bold font-['Maghfirea'] tracking-[4px]"
                         onClick={() => handleClick(item.id)}
                       >
                         Add To Cart
                       </button>
+                      )}
                       <button
                         className="text-[30px] font-bold font-['Maghfirea'] tracking-[4px]"
-                        // onClick={() => handleClick(item.id)}
+                        onClick={() => goToDetailsPage(item.name)}
                       >
                         View Details
                       </button>
+
+                  
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="font-['Maghfirea',sans-serif] text-[#b9900d] text-[25px] sm:text-3xl font-semibold tracking-[3px] capitalize">
+                    <h3 className="font-['Maghfirea',sans-serif] text-[#004953] text-[25px] sm:text-3xl font-semibold tracking-[3px] capitalize">
                       {item.name}
                     </h3>
-                    <div className="flex justify-center text-[18px] sm:text-[20px] gap-3">
+                    {/* <div className="flex justify-center text-[18px] sm:text-[20px] gap-3">
                       <p className="text-[#987300] font-[Ubuntu]">
                        Price on Request
                       </p>
-                    </div>
+                    </div> */}
                   </div>
-                  {/* <div className="flex sm:hidden">
-                    <button
-                      className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
-                      onClick={() => handleClick(item.id)}
-                    >
-                      Add to Cart
-                    </button>
-                  </div> */}
+                
                 </div>
               ))}
             </div>

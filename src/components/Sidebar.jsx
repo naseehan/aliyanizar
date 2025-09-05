@@ -36,7 +36,7 @@ const Sidebar = ({
                 <i className="fa-solid fa-xmark"></i>
               </button>
               <div className="flex flex-col">
-                <h1 className="font-semibold">{item.name}</h1>
+                <h1 className="font-semibold capitalize">{item.name}</h1>
                 <div>
                   <span>{item.quantity} × </span>
                   <span className="text-sm text-gray-700">

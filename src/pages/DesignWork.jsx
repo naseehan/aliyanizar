@@ -14,7 +14,7 @@ const DesignWork = () => {
 
          {/* header */}
         <div className="text-center max-w-[615px] mx-auto">
-          <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] capitalize">
+          <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">
             design projects
           </h1>
           <br />

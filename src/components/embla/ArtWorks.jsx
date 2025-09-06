@@ -102,7 +102,7 @@ const ArtWorks = (props) => {
     <div className="bg-[#FFFFF0] pt-27 sm:pt-40">
       {/* header */}
       <div className="text-center max-w-[615px] mx-auto">
-        <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] capitalize">
+        <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">
           art works
         </h1>
         <br />
@@ -146,8 +146,14 @@ const ArtWorks = (props) => {
       <div className="max-w-[1000px] mx-auto grid gap-[60px] pt-[95px]">
         {products.map((item) => (
           <div>
-            <div className="md:flex grid justify-center md:justify-normal text-center gap-[3%] md:gap-[38%] pb-[39px]">
+            <div className="
+            md:flex grid justify-center items-center md:justify-normal text-center gap-[3%] md:gap-x-[240px] pb-[39px]
+            "
+            >
+              <div className="relative">
               <img src={item.img} alt={item.name} className="w-[300px]" />
+              <button onClick={() => handleClick(item.name)} className="absolute inset-0"></button>
+              </div>
               <div>
                 <h1 className="uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d] tracking-[3px]">{item.name}</h1>
                 <p className="text-[#b9900d] capitalize text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]">{item.categories}</p>

@@ -11,12 +11,12 @@ import Services from "./pages/Services";
 import Work from "./pages/Work";
 import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
-import ProjectDetails from "./pages/ProjectDetails";
 import ArtWorkDetails from "./pages/ArtWorkDetails";
 import CustomCursor from "./components/customCursor";
 import Shop from "./pages/Shop";
 import ArtWorks from "./components/embla/ArtWorks";
-// import DesignWork from "./pages/DesignWork";
+import DesignWork from "./pages/DesignWork";
+import DesignWorkDetails from "./pages/DesignWorkDetails";
 // import ProductSlider from "./components/ProductSlider";
 
 const App = () => {
@@ -46,10 +46,10 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/works" element={<Work />} />
-        <Route path="/projectsDetails/:slug" element={<ProjectDetails />} />
-        <Route path="/works/artWorks/:slug" element={<ArtWorkDetails />} />
-        {/* <Route path="/works/designWorks" element={<DesignWork />} /> */}
         <Route path="/works/artWorks" element={<ArtWorks />} />
+        <Route path="/works/artWorks/:slug" element={<ArtWorkDetails />} />
+        <Route path="/works/designWorks" element={<DesignWork />} />
+        <Route path="/works/designWorks/:slug" element={<DesignWorkDetails />} />
 
         <Route path="/shop" element={<Shop />} />
       </Routes>

@@ -1,11 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Work = () => {
-  let navigate = useNavigate();
-  const handleClick = (slug) => {
-    navigate(`/artworkdetails/${slug}`);
-  };
+ 
 
   return (
     <div className="bg-[#FFFFF0] ">

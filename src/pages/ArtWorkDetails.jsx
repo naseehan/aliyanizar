@@ -4,7 +4,6 @@ import { products } from "./shopItems";
 
 const ArtWorkDetails = () => {
   let { slug } = useParams();
-  console.log(slug);
 
   let product = products.find((item) => item.name == slug);
 

@@ -43,6 +43,20 @@ const Shop = () => {
     });
   };
 
+  // hide sidebars when clicked outside
+useEffect(() =>{
+  if(showCart || faveHide || filterHide){
+    document.body.style.overflow = "hidden"
+  }else{
+    document.body.style.overflow = "auto"
+  }
+   return () => {
+      document.body.style.overflow = "auto"; // cleanup
+    };
+},[showCart, faveHide, filterHide])
+
+
+// save cart and favourates to localstorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -90,13 +104,13 @@ const Shop = () => {
     setFilterHide(false);
   };
 
+  // search function
   const searchFunction = (e) => {
     let query = e.target.value.toLowerCase();
     setSearch(query);
     setFilteredProducts(
       products.filter((item) => item.name.toLocaleLowerCase().includes(query))
-    );
-  };
+    )}
 
   const handleClick = (id) => {
     setCart((prevCart) => {
@@ -137,6 +151,13 @@ const Shop = () => {
     e.target.style.setProperty("--value", `${percent}%`);
   };
 
+  const closeSidebars = () => {
+    setShowCart(false)
+    setFaveHide(false)
+    setFilterHide(false)
+
+  }
+
   const filterByCates = (name) => {
     if(name == "All"){
       setFilteredProducts(products)
@@ -151,6 +172,7 @@ const Shop = () => {
 
   return (
     <div className="lg:flex pt-27 sm:pt-40 bg-[#FFFFF0] relative">
+      <div className={`absolute inset-0 z-50  ${showCart || faveHide || filterHide ? "block" : "hidden"}`} onClick={closeSidebars}></div>
       {/* sidebar */}
       <div className="z-999">
         {/* sidebuttons */}
@@ -424,13 +446,17 @@ const Shop = () => {
                   key={i}
                   className="text-center leading[2] w-[100%] sm:w-[239px]"
                 >
-                  <div className="relative group h-[280px] sm:h-[300px]">
+                  <div className="relative group h-[280px] sm:h-[300px] bg-white sm:bg-transparent">
+                    
                     <img
                       src={item.img}
                       alt="art image"
                       loading="lazy"
-                      className="h-[100%]"
+                      className="h-[100%] object-contain sm:object-fill"
                     />
+
+                    {/* goto details page on mobile devices */}
+                   <button onClick={() => goToDetailsPage(item.name)} className="absolute inset-0 sm:hidden block"></button>
                         {/* favourates button */}
                         {!item.sold  && ( <div className="absolute -top-[6px] sm:right-[9px] -left-2 text-white rounded-full h-[44px] w-[44px] flex items-center justify-center group">
                       <button

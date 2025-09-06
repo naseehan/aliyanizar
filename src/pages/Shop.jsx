@@ -452,7 +452,7 @@ useEffect(() =>{
                       src={item.img}
                       alt="art image"
                       loading="lazy"
-                      className="h-[100%] object-contain sm:object-fill"
+                      className={`${filterdProducts.length === 1 ? "w-full" : ""} h-[100%] object-contain sm:object-fill`}
                     />
 
                     {/* goto details page on mobile devices */}

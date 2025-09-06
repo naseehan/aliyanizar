@@ -24,7 +24,7 @@
 }
 .embla__slide {
   transform: translate3d(0, 0, 0);
-  flex: 0 0 var(--slide-size);
+  flex: 0 0 50%;
   min-width: 0;
   padding-left: var(--slide-spacing);
 }
@@ -40,8 +40,8 @@
   user-select: none;
 }
 @media (max-width: 640px){
-.embla__slide__number {
-  transform: scale(1.4) ;
+.embla__slide {
+  flex: 0 0 55%;
 }}
 .embla__controls {
   display: grid;

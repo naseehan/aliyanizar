@@ -6,15 +6,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {products} from "../pages/shopItems"
 
 gsap.registerPlugin(ScrollTrigger);
 
 const animation = { duration: 30000, easing: (t) => t };
 
 const Slider = () => {
+
   let navigate = useNavigate();
   const handleClick = (slug) => {
-    navigate(`artworkdetails/${slug}`);
+    let keyword = slug.toLowerCase().replace(/s\+/g, "-");
+    navigate(`/works/artWorks/${keyword}`);
   };
 
   const headingRef = React.useRef();
@@ -131,15 +134,15 @@ const Slider = () => {
 
       {/* carousel */}
       <div ref={sliderRef} className="keen-slider py-8" id="slider">
-        {[...Array(5)].map((_, i) => (
+        {products.map(item => (
           <div
-            key={i}
+            key={item.id}
             className="keen-slider__slide number-slide1 relative hover:-translate-y-5 group cursor-pointer"
-            onClick={() => handleClick("momma-and-bear")}
+            onClick={() => handleClick(item.name)}
           >
             <img
-              className="h-full w-full object-cover"
-              src="/bismillah.webp"
+              className="h-full w-full"
+              src={item.img}
               loading="lazy"
               alt="artwork"
             />
@@ -148,7 +151,7 @@ const Slider = () => {
              group-hover:opacity-70 group-hover:pointer-events-auto transition-opacity duration-300"
             >
               <h3 className="text-[40px] font-bold font-[Flaviotte] tracking-[4px] text-white">
-                Artwork Title
+                {item.name}
               </h3>
               <p className="text-[20px] font-semibold text-center">LEARN MORE</p>
             </div>

@@ -13,10 +13,10 @@ const ArtWorkDetails = () => {
 
         {/* art work details */}
         <div className="">
-          <div className="lg:fixed  lg:h-[460px] lg:w-[460px] transition-all duration-300 ease-in-out lg:hover:z-20 lg:hover:transform  lg:hover:scale-110">
+          <div className="lg:fixed  lg:h-[500px] object-contain lg:w-[450px] transition-all duration-300 ease-in-out lg:hover:z-20 lg:hover:transform  lg:hover:scale-110">
           <img src={product.img} alt={product.name} className="w-full h-full"/>
           </div>
-          <div className="lg:z-10 lg:relative max-w-[600px] left-[40%]">
+          <div className="lg:z-10 lg:relative max-w-[600px] left-[40%] mx-auto  lg:mx-0">
             <div className="py-12 px-20">
             <h1 className="font-['Maghfirea',sans-serif] text-[#004953] text-[25px] sm:text-3xl font-semibold tracking-[3px] capitalize">{product.name}</h1>
             <p className="text-[#987300] font-[Ubuntu] text-[18px] sm:text-[20px]">{product.categories}</p>

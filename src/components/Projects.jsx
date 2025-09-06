@@ -8,10 +8,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-const navigate = useNavigate()
-const handleClick = (slug) => {
-navigate(`/projectsDetails/${slug}`)
-}
+
+ let navigate = useNavigate()
+  const handleClick = (slug) => {
+     let keyword = slug.toLowerCase().replace(/s\+/g, "-")
+    navigate(`/works/designWorks/${keyword}`)
+  };
 
 const headingRef = React.useRef();
 const buttonRef = React.useRef()
@@ -96,7 +98,7 @@ onClick={() => handleClick("project-title")}>
 
 
       <div className="flex pb-20" ref={buttonRef}>
-        <Link to="/works"
+        <Link to='/works/designWorks'
           className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200">
           MORE WORKS
         </Link>

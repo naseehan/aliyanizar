@@ -22,11 +22,11 @@ const ArtWorks = (props) => {
   const tweenFactor = useRef(0);
   const tweenNodes = useRef([]);
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   const handleClick = (slug) => {
-    let keyword = slug.toLowerCase().replace(/s\+/g, "-")
-    navigate(`${keyword}`)
-  }
+    let keyword = slug.toLowerCase().replace(/s\+/g, "-");
+    navigate(`${keyword}`);
+  };
 
   const {
     prevBtnDisabled,
@@ -48,8 +48,12 @@ const ArtWorks = (props) => {
   const tweenScale = useCallback((emblaApi, eventName) => {
     const engine = emblaApi.internalEngine();
     const scrollProgress = emblaApi.scrollProgress();
-    const slidesInView = emblaApi.slidesInView();
+    const slidesInView = emblaApi.slidesInView(true);
+    const selectedIndex = emblaApi.selectedScrollSnap();
     const isScrollEvent = eventName === "scroll";
+
+    // check screen is whether mobile or not
+    const isMobile = window.innerWidth <= 640;
 
     emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
       let diffToTarget = scrollSnap - scrollProgress;
@@ -74,10 +78,15 @@ const ArtWorks = (props) => {
             }
           });
         }
-
-        const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+        let tweenValue;
+        if (isMobile) {
+           tweenValue = 1.4 - Math.abs(diffToTarget * tweenFactor.current);
+        } else {
+           tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+        }
         const scale = numberWithinRange(tweenValue, 0, 1).toString();
         const tweenNode = tweenNodes.current[slideIndex];
+
         tweenNode.style.transform = `scale(${scale})`;
       });
     });
@@ -115,11 +124,11 @@ const ArtWorks = (props) => {
               <div className="embla__slide" key={item.id}>
                 <div className="embla__slide__number">
                   <button onClick={() => handleClick(item.name)}>
-                  <img
-                    src={item.img}
-                    alt={item.name}
-                    className="w-full h-full"
-                  />
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="w-full h-full"
+                    />
                   </button>
                 </div>
               </div>
@@ -145,18 +154,26 @@ const ArtWorks = (props) => {
 
       <div className="max-w-[1000px] mx-auto grid gap-[60px] pt-[95px]">
         {products.map((item) => (
-          <div>
-            <div className="
+          <div key={item.id}>
+            <div
+              className="
             md:flex grid justify-center items-center md:justify-normal text-center gap-[3%] md:gap-x-[240px] pb-[39px]
             "
             >
               <div className="relative">
-              <img src={item.img} alt={item.name} className="w-[300px]" />
-              <button onClick={() => handleClick(item.name)} className="absolute inset-0"></button>
+                <img src={item.img} alt={item.name} className="w-[300px]" />
+                <button
+                  onClick={() => handleClick(item.name)}
+                  className="absolute inset-0"
+                ></button>
               </div>
               <div>
-                <h1 className="uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d] tracking-[3px]">{item.name}</h1>
-                <p className="text-[#b9900d] capitalize text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]">{item.categories}</p>
+                <h1 className="uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d] tracking-[3px]">
+                  {item.name}
+                </h1>
+                <p className="text-[#b9900d] capitalize text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]">
+                  {item.categories}
+                </p>
               </div>
             </div>
             <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>

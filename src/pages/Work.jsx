@@ -1,11 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Work = () => {
  
+   const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/");
+  };
 
   return (
-    <div className="bg-[#FFFFF0] ">
+    <div className="bg-[#FFFFF0] relative">
+      {/* <button onClick={handleBack} className="absolute top-28 left-3.5">go back</button> */}
       <div className="max-w-[1000px] pt-40  mx-auto">
         {/* heading */}
 

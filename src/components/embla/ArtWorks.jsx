@@ -112,7 +112,7 @@ const ArtWorks = (props) => {
       {/* header */}
       <div className="text-center max-w-[615px] mx-auto">
         <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">
-          art works
+          artworks
         </h1>
         <br />
       </div>
@@ -171,7 +171,7 @@ const ArtWorks = (props) => {
                 <h1 className="uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d] tracking-[3px]">
                   {item.name}
                 </h1>
-                <p className="text-[#b9900d] capitalize text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]">
+                <p className="text-[#b9900d] capitalize text-[14px] md:text-[17px]  font-medium font-[Ubuntu]">
                   {item.categories}
                 </p>
               </div>

@@ -73,16 +73,6 @@
   will-change: transform, opacity;
 }
 
-/* .divider {
-  background-image: url("./assets/divider1.png");
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 23px;
-  max-width: 1000px;
-} */
-
-
 
 .circle-text {
   display: inline-block;

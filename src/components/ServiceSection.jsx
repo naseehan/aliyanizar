@@ -77,7 +77,7 @@ const ServiceSection = () => {
             <img src={paint} alt="paint" loading='lazy'/>
             <h1 className="tracking-[3px]">PAINTINGS</h1>
           </div>
-          <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
+          <p className="text-[14px] md:text-[17px]  font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
             Canvases • Mural Walls • fabric(clothing) • wood
               panels
           </p>
@@ -88,7 +88,7 @@ const ServiceSection = () => {
             <img src={icon2} alt="" loading='lazy'/>
             <h1 className="tracking-[3px]">Illustrations </h1>
           </div>
-          <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
+          <p className="text-[14px] md:text-[17px]  font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
             Invitation cards • Digital art
           </p>
         </div>
@@ -98,7 +98,7 @@ const ServiceSection = () => {
             <img src={icon1} alt="" loading='lazy'/>
             <h1 className="tracking-[3px]">CALLIGRAPHY</h1>
           </div>
-          <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
+          <p className="text-[14px] md:text-[17px]  font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
            Canvas paintings • Prints
           </p>
         </div>
@@ -108,7 +108,7 @@ const ServiceSection = () => {
             <img src={icon3} alt="" loading='lazy'/>
             <h1 className="tracking-[3px]">3D VISUALIZATION</h1>
           </div>
-          <p className="text-[14px] md:text-[17px] font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
+          <p className="text-[14px] md:text-[17px] font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
             3D Models and Visualization for Interior Spaces
           </p>
         </div>
@@ -118,7 +118,7 @@ const ServiceSection = () => {
             <img src={icon4} alt="" loading='lazy'/>
             <h1 className="tracking-[3px]">Interior Design Consultation</h1>
           </div>
-          <p className="text-[14px] md:text-[17px] font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
+          <p className="text-[14px] md:text-[17px] font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
            Concept development • Mood boards • CAD • 3D • Interior Styling
           </p>
         </div>

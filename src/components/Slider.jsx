@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./Slider.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -67,7 +67,7 @@ const Slider = () => {
     drag: true,
     slides: {
       perView: 3,
-      spacing: 20,
+      spacing: 80,
       
     },
     breakpoints: {
@@ -118,6 +118,7 @@ const Slider = () => {
     };
   }, [instanceRef]);
 
+
   return (
     <div className="bg-[#FFFFF0]">
       {/* heading */}
@@ -140,17 +141,21 @@ const Slider = () => {
             className="keen-slider__slide number-slide1 relative hover:-translate-y-5 group cursor-pointer"
             onClick={() => handleClick(item.name)}
           >
+            <div className="w-full h-full aspect-[4/3] overflow-hidden">
             <img
               className="h-full w-full"
               src={item.img}
               loading="lazy"
               alt="artwork"
             />
+            </div>
+
+            {/* overlay */}
             <div
               className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-0 pointer-events-none
              group-hover:opacity-70 group-hover:pointer-events-auto transition-opacity duration-300"
             >
-              <h3 className="text-[40px] font-bold font-[Flaviotte] tracking-[4px] text-white">
+              <h3 className="text-[40px] font-bold font-[Flaviotte] tracking-[4px] text-white uppercase">
                 {item.name}
               </h3>
               <p className="text-[20px] font-semibold text-center">LEARN MORE</p>
@@ -160,7 +165,7 @@ const Slider = () => {
       </div>
 
       {/* button */}
-      <div className="flex pb-20" ref={buttonRef}>
+      <div className="flex pb-20" ref={buttonRef} >
         <Link
           className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
           to="/works"

@@ -54,14 +54,14 @@ const Sidebar = ({
                   const message = arrayOfItems
                     .map(
                       (item) =>
-                        ` Product: ${item.name}  Price: AED${item.offerPrice}  Count: ${item.quantity}`
+                        `Product: ${item.name} Count: ${item.quantity}`
                     )
                     .join("%0A"); // use %0A for line breaks
 
                   const text = `Hi, I'm interested in buying these:%0A%0A${message}`;
 
                   window.open(
-                    `https://wa.me/+971561150924?text=${text}`,
+                    `https://wa.me/+971562826331?text=${text}`,
                     "_blank"
                   );
                 }}

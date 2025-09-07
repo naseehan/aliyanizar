@@ -56,7 +56,7 @@ const ContactSection = () => {
         </div>
 
         <div className="basis-[60%]">
-          <form action="https://formsubmit.co/802d01dd2e487f17e9f0ebf88ae34b8c " method="POST" className="grid gap-3.5">
+          <form action="https://formsubmit.co/802d01dd2e487f17e9f0ebf88ae34b8c" method="POST" className="grid gap-3.5">
             <label htmlFor="name" className="text-[#b9900d]" >Name*</label>
             <input type="text" name="name" id="name" className=" border p-2.5" required maxLength={30}/>
             <label htmlFor="email" className="text-[#b9900d]">Email Address*</label>

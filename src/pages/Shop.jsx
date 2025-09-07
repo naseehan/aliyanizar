@@ -446,13 +446,13 @@ useEffect(() =>{
                   key={i}
                   className="text-center leading[2] w-[100%] sm:w-[239px]"
                 >
-                  <div className="relative group h-[280px] sm:h-[300px] bg-white sm:bg-transparent">
+                  <div className="relative group h-[280px] sm:h-[300px] bg-white">
                     
                     <img
                       src={item.img}
                       alt="art image"
                       loading="lazy"
-                      className={`${filterdProducts.length === 1 ? "w-full" : ""} h-[100%] object-contain sm:object-fill`}
+                      className={`${filterdProducts.length === 1 ? "w-full" : ""} h-[100%] object-contain `}
                     />
 
                     {/* goto details page on mobile devices */}

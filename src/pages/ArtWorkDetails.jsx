@@ -14,7 +14,7 @@ const ArtWorkDetails = () => {
         {/* art work details */}
         <div className="">
           <div className="lg:fixed  lg:h-[500px] object-contain lg:w-[450px] transition-all duration-300 ease-in-out lg:hover:z-20 lg:hover:transform  lg:hover:scale-110">
-          <img src={product.img} alt={product.name} className="w-full h-full"/>
+          <img src={product.img} alt={product.name} className="w-full h-full object-contain"/>
           </div>
           <div className="lg:z-10 lg:relative max-w-[600px] left-[40%] mx-auto  lg:mx-0">
             <div className="py-12 px-20">

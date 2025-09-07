@@ -54,9 +54,9 @@ const ContactSection = () => {
          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Contact me at  <strong>aliyanizar023@gmail.com</strong> </p>
          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Or feel free to leave a message via the form.</p>
         </div>
-
+{/* 802d01dd2e487f17e9f0ebf88ae34b8c */}
         <div className="basis-[60%]">
-          <form action="https://formsubmit.co/802d01dd2e487f17e9f0ebf88ae34b8c" method="POST" className="grid gap-3.5">
+          <form action="https://formsubmit.co/naseehan700@gmail.com" method="POST" className="grid gap-3.5">
             <label htmlFor="name" className="text-[#b9900d]" >Name*</label>
             <input type="text" name="name" id="name" className=" border p-2.5" required maxLength={30}/>
             <label htmlFor="email" className="text-[#b9900d]">Email Address*</label>

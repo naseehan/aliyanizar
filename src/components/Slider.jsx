@@ -141,9 +141,9 @@ const Slider = () => {
             className="keen-slider__slide number-slide1 relative hover:-translate-y-5 group cursor-pointer"
             onClick={() => handleClick(item.name)}
           >
-            <div className="w-full h-full aspect-[4/3] overflow-hidden">
+            <div className="w-full h-full aspect-[4/3] overflow-hidden bg-white">
             <img
-              className="h-full w-full"
+              className="h-full w-full object-contain"
               src={item.img}
               loading="lazy"
               alt="artwork"

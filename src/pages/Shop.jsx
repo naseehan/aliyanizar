@@ -5,64 +5,41 @@ import { categories } from "./shopItems";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "../store/cartSlice";
+import { toggleFave, removeFave } from "../store/favesSlice";
+
 const Shop = () => {
   const [price, setPrice] = useState(35);
   const [cateHide, setCateHide] = useState(true);
   const [priceHide, setPriceHide] = useState(true);
   const [faveHide, setFaveHide] = useState(false);
   const [filterHide, setFilterHide] = useState(false);
-  const [faves, setFaves] = useState(() => {
-    try {
-      const savedFaves = localStorage.getItem("faves");
-      return savedFaves ? JSON.parse(savedFaves) : [];
-    } catch {
-      return [];
-    }
-  });
-  const [cart, setCart] = useState(() => {
-    try {
-      const savedCart = localStorage.getItem("cart");
-      return savedCart ? JSON.parse(savedCart) : [];
-    } catch {
-      return [];
-    }
-  });
+
+  const dispatch = useDispatch();
+  const faves = useSelector((state) => state.faves.items);
+  const cart = useSelector((state) => state.cart.items);
+
   const [filterdProducts, setFilteredProducts] = useState(products);
+
   const [showCart, setShowCart] = useState(false);
   const [search, setSearch] = useState();
-  const totalLength = products.length;
-  let navigate = useNavigate()
-  const addFaves = (product, id) => {
-    setFaves((prev) => {
-      const exists = prev.find((item) => item.id === id);
-      if (exists) {
-        return prev.filter((item) => item.id !== id); // remove if exists
-      } else {
-        return [...prev, product];
-      }
-    });
-  };
+  let navigate = useNavigate();
+
 
   // hide sidebars when clicked outside
-useEffect(() =>{
-  if(showCart || faveHide || filterHide){
-    document.body.style.overflow = "hidden"
-  }else{
-    document.body.style.overflow = "auto"
-  }
-   return () => {
+  useEffect(() => {
+    if (showCart || faveHide || filterHide) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
       document.body.style.overflow = "auto"; // cleanup
     };
-},[showCart, faveHide, filterHide])
+  }, [showCart, faveHide, filterHide]);
 
-
-// save cart and favourates to localstorage
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-  useEffect(() => {
-    localStorage.setItem("faves", JSON.stringify(faves));
-  }, [faves]);
+ 
 
   // filter by price
   const handleFilter = () => {
@@ -82,9 +59,9 @@ useEffect(() =>{
 
   // goto artwork details page
   const goToDetailsPage = (name) => {
-    let keyword = name.toLowerCase().replace(/s\+/g, "-")
-    navigate(`/works/artWorks/${keyword}`)
-  }
+    let keyword = name.toLowerCase().replace(/s\+/g, "-");
+    navigate(`/works/artWorks/${keyword}`);
+  };
 
   const handleFilterToggle = () => {
     setFilterHide((prev) => !prev);
@@ -110,35 +87,29 @@ useEffect(() =>{
     setSearch(query);
     setFilteredProducts(
       products.filter((item) => item.name.toLocaleLowerCase().includes(query))
-    )}
+    );
+  };
 
+  // Add to cart
   const handleClick = (id) => {
-    setCart((prevCart) => {
-      // check if product exists
-      const product = products.find((item) => item.id === id);
-
-      // check if there is already a product in cart
-      const exists = prevCart.find((item) => item.id === id);
-
-      if (exists) {
-        return prevCart.map((item) =>
-          item.id == id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      } else {
-        return [...prevCart, { ...product, quantity: 1 }];
-      }
-    });
+    const product = products.find((item) => item.id === id);
+    dispatch(addToCart(product));
   };
 
-  const deleteCartItem = (pid) => {
-    setCart(cart.filter((prev) => prev.id != pid));
+  // Remove from cart
+  const deleteCartItem = (id) => {
+    dispatch(removeFromCart(id));
+  };
+    // Remove fave
+  const deleteFaveItem = (id) => {
+    dispatch(removeFave(id));
   };
 
-  const deleteFaveItem = (pid) => {
-    setFaves(faves.filter((prev) => prev.id != pid));
+   const addFaves = (product) => {
+    dispatch(toggleFave(product));
   };
 
- const handleChange = (e) => {
+  const handleChange = (e) => {
     const val = Number(e.target.value);
     setPrice(val);
 
@@ -152,27 +123,31 @@ useEffect(() =>{
   };
 
   const closeSidebars = () => {
-    setShowCart(false)
-    setFaveHide(false)
-    setFilterHide(false)
-
-  }
+    setShowCart(false);
+    setFaveHide(false);
+    setFilterHide(false);
+  };
 
   const filterByCates = (name) => {
-    if(name == "All"){
-      setFilteredProducts(products)
-       setFilterHide(false);
-    }else{
-    setFilteredProducts(() =>
-      products.filter((item) => item.categories == name)
-    );
-    setFilterHide(false);
-  }
+    if (name == "All") {
+      setFilteredProducts(products);
+      setFilterHide(false);
+    } else {
+      setFilteredProducts(() =>
+        products.filter((item) => item.categories == name)
+      );
+      setFilterHide(false);
+    }
   };
 
   return (
     <div className="lg:flex pt-27 sm:pt-40 bg-[#FFFFF0] relative">
-      <div className={`absolute inset-0 z-50  ${showCart || faveHide || filterHide ? "block" : "hidden"}`} onClick={closeSidebars}></div>
+      <div
+        className={`absolute inset-0 z-50  ${
+          showCart || faveHide || filterHide ? "block" : "hidden"
+        }`}
+        onClick={closeSidebars}
+      ></div>
       {/* sidebar */}
       <div className="z-999">
         {/* sidebuttons */}
@@ -447,59 +422,66 @@ useEffect(() =>{
                   className="text-center leading[2] w-[100%] sm:w-[239px]"
                 >
                   <div className="relative group h-[280px] sm:h-[300px] bg-white">
-                    
                     <img
                       src={item.img}
                       alt="art image"
                       loading="lazy"
-                      className={`${filterdProducts.length === 1 ? "w-full" : ""} h-[100%] object-contain `}
+                      className={`${
+                        filterdProducts.length === 1 ? "w-full" : ""
+                      } h-[100%] object-contain `}
                     />
 
                     {/* goto details page on mobile devices */}
-                   <button onClick={() => goToDetailsPage(item.name)} className="absolute inset-0 sm:hidden block"></button>
-                        {/* favourates button */}
-                        {!item.sold  && ( <div className="absolute -top-[6px] sm:right-[9px] -left-2 text-white rounded-full h-[44px] w-[44px] flex items-center justify-center group">
-                      <button
-                        className="z-30 pointer"
-                        onClick={() => addFaves(item, item.id)}
-                      >
-                        <i
-                          className={`${
-                            faves.some((fav) => fav.id == item.id)
-                              ? "fa-solid"
-                              : "fa-regular"
-                          } fa-heart fa-lg text-[#b9900d]  sm:group-hover:text-[#fff]`}
-                        ></i>
-                      </button>
-                    </div>)}
-                     
+                    <button
+                      onClick={() => goToDetailsPage(item.name)}
+                      className="absolute inset-0 sm:hidden block"
+                    ></button>
+                    {/* favourates button */}
+                    {!item.sold && (
+                      <div className="absolute -top-[6px] sm:right-[9px] -left-2 text-white rounded-full h-[44px] w-[44px] flex items-center justify-center group">
+                        <button
+                          className="z-30 pointer"
+                          onClick={() => addFaves(item, item.id)}
+                        >
+                          <i
+                            className={`${
+                              faves.some((fav) => fav.id == item.id)
+                                ? "fa-solid"
+                                : "fa-regular"
+                            } fa-heart fa-lg text-[#b9900d]  sm:group-hover:text-[#fff]`}
+                          ></i>
+                        </button>
+                      </div>
+                    )}
 
                     {/* sold or not  */}
-                    {item.sold && ( <div className="absolute bottom-[7px] sm:right-[9px] left-1 ">
-                     <img src="/badge.png" alt="sold" />
-                    </div>)}
-                   
+                    {item.sold && (
+                      <div className="absolute bottom-[7px] sm:right-[9px] left-1 ">
+                        <img src="/badge.png" alt="sold" />
+                      </div>
+                    )}
+
                     {/* cart button only on mobile screens and not for sold items*/}
-                    {!item.sold  && ( 
-                    <div className="absolute -top-[7px] -right-[7px] text-white rounded-full h-[44px] w-[44px] flex items-center justify-center group sm:hidden">
-                      <button
-                        className="z-30 pointer"
-                        onClick={() => handleClick(item.id)}
-                      >
-                        <i className="fa-solid fa-cart-shopping fa-lg text-[#b9900d]  sm:group-hover:text-[#fff]"></i>
-                      </button>
-                    </div>
+                    {!item.sold && (
+                      <div className="absolute -top-[7px] -right-[7px] text-white rounded-full h-[44px] w-[44px] flex items-center justify-center group sm:hidden">
+                        <button
+                          className="z-30 pointer"
+                          onClick={() => handleClick(item.id)}
+                        >
+                          <i className="fa-solid fa-cart-shopping fa-lg text-[#b9900d]  sm:group-hover:text-[#fff]"></i>
+                        </button>
+                      </div>
                     )}
 
                     {/* when hovering */}
                     <div className="absolute inset-0 bg-[#000] bg-opacity-70 sm:flex flex-col justify-center items-center text-white opacity-0 pointer-events-none group-hover:opacity-70 group-hover:pointer-events-auto transition-opacity duration-300 hidden">
-                      {!item.sold  && ( 
-                      <button
-                        className="text-[30px] font-bold font-['Maghfirea'] tracking-[4px]"
-                        onClick={() => handleClick(item.id)}
-                      >
-                        Add To Cart
-                      </button>
+                      {!item.sold && (
+                        <button
+                          className="text-[30px] font-bold font-['Maghfirea'] tracking-[4px]"
+                          onClick={() => handleClick(item.id)}
+                        >
+                          Add To Cart
+                        </button>
                       )}
                       <button
                         className="text-[30px] font-bold font-['Maghfirea'] tracking-[4px]"
@@ -507,8 +489,6 @@ useEffect(() =>{
                       >
                         View Details
                       </button>
-
-                  
                     </div>
                   </div>
 
@@ -522,7 +502,6 @@ useEffect(() =>{
                       </p>
                     </div> */}
                   </div>
-                
                 </div>
               ))}
             </div>

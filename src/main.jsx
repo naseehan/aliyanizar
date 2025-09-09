@@ -4,8 +4,11 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from "react-router-dom";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { Provider } from 'react-redux';
+import {store} from './store/store.js';
 
 createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
   <StrictMode>
     <BrowserRouter>
      <ParallaxProvider>
@@ -13,4 +16,5 @@ createRoot(document.getElementById('root')).render(
     </ParallaxProvider>
     </BrowserRouter>
    </StrictMode>,
+   </Provider>
 )

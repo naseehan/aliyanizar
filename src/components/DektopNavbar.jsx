@@ -149,8 +149,8 @@ const DektopNavbar = () => {
 
             {/* Text on top of circle */}
             <div className="relative"></div>
-            <span className="absolute z-10 top-5 left-[33px]">A</span>
-            <span className="absolute top-8 left-[50px]">N</span>
+            <span className="absolute z-10 top-7 lg:top-5 left-[33px]">A</span>
+            <span className="absolute top-9 lg:top-8 left-[50px]">N</span>
           </Link>
         </li>
 

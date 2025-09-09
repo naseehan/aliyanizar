@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import icon1 from "../assets/calligraphy.webp";
-import icon2 from "../assets/illu.webp";
-import icon3 from "../assets/3d.webp";
-import icon4 from "../assets/staircase.webp";
-import paint from "../assets/paint.webp"
+import icon1 from "../assets/calligraphy.svg";
+import icon2 from "../assets/illu.svg";
+import icon3 from "../assets/3d.svg";
+import icon4 from "../assets/staircase.svg";
+import paint from "../assets/paint.svg"
 
 const Services = () => {
   return (
@@ -25,7 +25,7 @@ const Services = () => {
 
           <div className="p-5 grid gap-y-6">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea'] text-[#b9900d]">
-              <img src={paint} alt="paint" loading="lazy" />
+              <img src={paint} alt="paint" loading="lazy" className="w-[50px]"/>
               <h1 className="tracking-[3px]">PAINTINGS</h1>
             </div>
             <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
@@ -42,7 +42,7 @@ const Services = () => {
 
           <div className="p-5 grid gap-y-3">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
-              <img src={icon2} alt="" loading="lazy" />
+              <img src={icon2} alt={icon2} loading="lazy" className="w-[50px]"/>
               <h1 className="tracking-[3px]">ILLUSTRATIONS</h1>
             </div>
             <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
@@ -58,7 +58,7 @@ const Services = () => {
 
           <div className="p-5 grid gap-y-3">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
-              <img src={icon1} alt="" loading="lazy" />
+              <img src={icon1} alt={icon1} loading="lazy" className="w-[50px]"/>
               <h1 className="tracking-[3px]">CALLIGRAPHY</h1>
             </div>
             <p className="text-[14px] md:text-[17px]  font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
@@ -73,7 +73,7 @@ const Services = () => {
 
           <div className="p-5 grid gap-y-3">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
-              <img src={icon3} alt="" loading="lazy" />
+              <img src={icon3} alt={icon3} loading="lazy" className="w-[50px]"/>
               
               <h1 className="tracking-[3px]">3D VISUALIZATION</h1>
             </div>
@@ -90,7 +90,7 @@ const Services = () => {
 
           <div className="p-5 grid gap-y-3">
             <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
-              <img src={icon4} alt="" loading="lazy" />
+              <img src={icon4} alt="" loading="lazy" className="w-[50px]"/>
               <h1 className="tracking-[3px]">Interior Design Consultation</h1>
             </div>
             <p className="text-[14px] md:text-[17px] font-semibold font-[Ubuntu]  max-w-[474px] text-[#b9900d]">

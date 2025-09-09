@@ -17,47 +17,47 @@ const Navbar = () => {
       <DesktopNavbar />
 
       {/* mobile nav */}
-      <div className="sm:hidden">
+      <div className="sm:hidden relative h-[60px]">
         <img
           src={hamburger}
           alt="menu"
-          className="my-3.5 cursor-pointer"
+          className="py-3.5 cursor-pointer absolute right-2"
           onClick={handleClick}
           loading="lazy"
         />
         <nav
-          className={`overflow-hidden transition-all  duration-500 ease-in-out ${
+          className={`overflow-hidden transition-all  duration-500 ease-in-out absolute mt-[60px] bg-[#004953] ${
             open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <ul
-            className={`grid gap-4 justify-start py-12 px-4  text-[#D4AF37] font-normal text-[30px]  tracking-[3px] font-[Maghfirea,sans-serif] `}
+            className={`grid gap-4 justify-start py-12 px-[9px]  text-[#D4AF37] font-normal text-[30px] text-end tracking-[3px] font-[Maghfirea,sans-serif] `}
           >
             <li className="" onClick={handleClick}>
               <Link to="/">Home</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
 
             <li className="" onClick={handleClick}>
               <Link to="/works">Works</Link>
             </li>
 
-            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
 
             <li className="" onClick={handleClick}>
               <Link to="/about">About</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
 
             <li className="" onClick={handleClick}>
               <Link to="/shop">Shop</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
 
             <li className="" onClick={handleClick}>
               <Link to="/services">Services</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] w-[95vw] max-w-[1000px]"></div>
+            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
             <li className="" onClick={handleClick}>
               <Link to="/contact">Contact</Link>
             </li>

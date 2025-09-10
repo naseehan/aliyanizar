@@ -436,7 +436,7 @@ const Shop = () => {
                       onClick={() => goToDetailsPage(item.name)}
                       className="absolute inset-0 sm:hidden block"
                     ></button>
-                    {/* favourates button */}
+                    {/* favourites button */}
                     {!item.sold && (
                       <div className="absolute -top-[6px] sm:right-[9px] -left-2 text-white rounded-full h-[44px] w-[44px] flex items-center justify-center group">
                         <button

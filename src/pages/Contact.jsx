@@ -4,6 +4,39 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 const Contact = () => {
 
 const location = window.location.href
+let link = import.meta.env.VITE_LINK
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    phone: e.target.phone.value,
+    what: e.target.what.value,
+    message: e.target.message.value,
+  };
+
+  try {
+   const res = await fetch(link, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("✅ Message sent successfully!");
+      e.target.reset();
+    } else {
+      alert("❌ Error: " + data.error);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("❌ Failed to send message.");
+  }
+};
 
 
 
@@ -29,7 +62,7 @@ const location = window.location.href
 
         {/* form */}
       <div className="">
-          <form action="https://formsubmit.co/802d01dd2e487f17e9f0ebf88ae34b8c" method="POST" className="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] px-4 lg:px-0" >
+          <form onSubmit={handleSubmit} method="POST" className="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] px-4 lg:px-0" >
           <input type="hidden" name="_next" value={location}/>
             <div className='grid gap-2.5'>
             <label htmlFor="name" className="text-[#b9900d]">Name*</label>

@@ -49,6 +49,10 @@ const ArtWorkDetails = () => {
     // const product = products.find((item) => item.id === id);
     dispatch(addToCart(product));
   };
+  // add to favourites
+   const addFaves = (product) => {
+      dispatch(toggleFave(product));
+    };
 
   const closeSidebars = () => {
     setShowCart(false);
@@ -127,7 +131,7 @@ const ArtWorkDetails = () => {
             />
           </div>
           <div className="lg:z-10 lg:relative max-w-[600px] left-[40%] mx-auto  lg:mx-0">
-            <div className="py-12 px-20">
+            <div className="py-12 px-7 sm:px-20 text-center sm:text-start">
               <h1 className="font-['Maghfirea',sans-serif] text-[#004953] text-[25px] sm:text-3xl font-semibold tracking-[3px] capitalize">
                 {product.name}
               </h1>
@@ -137,14 +141,30 @@ const ArtWorkDetails = () => {
 
               {/* add to cart button not shown on sold products */}
               {!product.sold && (
-                <div className="mt-3.5 grid sm:flex gap-5">
-                  <span className="p-[13px] border border-[#D4AF37] max-w-[37px] sm:mx-0 mx-auto">{currentProductCount}</span>
+                <div className="mt-3.5 flex gap-5 justify-center">
+                  <span className="p-[13px] border border-[#D4AF37]">{currentProductCount}</span>
                   <div className="inline">
                     <button className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"   onClick={() => handleClick(product.id)}
                         >
                       Add To Cart
                     </button>
                   </div>
+
+                  {/* favourites button */}
+                  <div className="text-white flex justify-center">
+                        <button
+                          className="z-30 pointer"
+                          onClick={() => addFaves(product, product.id)}
+                        >
+                          <i
+                            className={`${
+                              faves.some((fav) => fav.id == product.id)
+                                ? "fa-solid"
+                                : "fa-regular"
+                            } fa-heart fa-2xl text-[#b9900d] `}
+                          ></i>
+                        </button>
+                      </div>
                 </div>
               )}
             </div>

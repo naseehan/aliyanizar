@@ -31,6 +31,37 @@ const ContactSection = () => {
     );
   }, []);
 
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    phone: e.target.phone.value,
+    what: e.target.what.value,
+    message: e.target.message.value,
+  };
+
+  try {
+   const res = await fetch("http://localhost:5000/sendmail", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("✅ Message sent successfully!");
+      e.target.reset();
+    } else {
+      alert("❌ Error: " + data.error);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("❌ Failed to send message.");
+  }
+};
 
 
   return (
@@ -56,7 +87,9 @@ const ContactSection = () => {
         </div>
 {/* 802d01dd2e487f17e9f0ebf88ae34b8c */}
         <div className="basis-[60%]">
-          <form action="https://formsubmit.co/naseehan700@gmail.com" method="POST" className="grid gap-3.5">
+          <form 
+          onSubmit={handleSubmit}
+          method="POST" className="grid gap-3.5">
             <label htmlFor="name" className="text-[#b9900d]" >Name*</label>
             <input type="text" name="name" id="name" className=" border p-2.5" required maxLength={30}/>
             <label htmlFor="email" className="text-[#b9900d]">Email Address*</label>

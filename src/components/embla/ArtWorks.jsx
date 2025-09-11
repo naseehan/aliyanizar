@@ -172,7 +172,7 @@ const ArtWorks = (props) => {
                   {item.name}
                 </h1>
                 <p className="text-[#b9900d] capitalize text-[14px] md:text-[17px]  font-medium font-[Ubuntu]">
-                  {item.categories}
+                  {item.dimensions}
                 </p>
               </div>
             </div>

@@ -35,7 +35,7 @@ const Footer = () => {
               src={icon4}
               alt="behance"
               loading="lazy"
-              className="cursor-pointer"
+              className="cursor-pointer w-[34px]"
             />
           </a>
           

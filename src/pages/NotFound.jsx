@@ -22,7 +22,7 @@ const NotFound = () => {
 	<div class="spoke"></div>
 </div>
 <h1 className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-3xl font-semibold mb-2.5 text-center">404 not found go to : </h1>
-<strong className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-3xl font-semibold"><a href="https://www.aliyanizarstudio.com">aliyanizarstudio</a></strong>
+<strong className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-3xl font-semibold"><a href="https://www.aliyanizarstudio.com">aliyanizarstudio.com</a></strong>
 </div>
   )
 }

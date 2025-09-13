@@ -1,7 +1,5 @@
-
-
-[class^="number-slide"],
-[class*=" number-slide"] {
+.home-slider [class^="number-slide"],
+.home-slider [class*=" number-slide"] {
   background: grey;
   display: flex;
   align-items: center;
@@ -12,6 +10,12 @@
   height: 500px;
   max-height: 100vh;
 }
+/* @media (max-width: 637px) {
+  .home-slider [class^="number-slide"],
+  [class*="number-slide"] {
+    height: 500px !important;
+  }
+} */
 
 /* .number-slide1 {
   background: rgb(64, 175, 255);
@@ -70,8 +74,6 @@
     rgba(174, 63, 255, 1) 100%
   );
 }
-
-
 
 /* .keen-slider__slide {
   opacity: 0.3;

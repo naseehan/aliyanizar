@@ -94,7 +94,7 @@ const Murals = () => {
       </div>
 
       {/* carousel */}
-      <div ref={sliderRef} className="keen-slider py-8" id="slider">
+      <div ref={sliderRef} className="keen-slider murals-slider py-8" id="slider">
         {murals.map((item) => (
           <div
             key={item.id}

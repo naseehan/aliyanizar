@@ -134,7 +134,7 @@ const Slider = () => {
       </div>
 
       {/* carousel */}
-      <div ref={sliderRef} className="keen-slider py-8" id="slider">
+      <div ref={sliderRef} className="keen-slider home-slider py-8" id="slider">
         {products.map(item => (
           <div
             key={item.id}

@@ -18,6 +18,7 @@ import ArtWorks from "./components/embla/ArtWorks";
 import DesignWork from "./pages/DesignWork";
 import DesignWorkDetails from "./pages/DesignWorkDetails";
 import NotFound from "./pages/NotFound";
+import Murals from "./pages/Murals";
 // import ProductSlider from "./components/ProductSlider";
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
         <Route path="/works/designWorks/:slug" element={<DesignWorkDetails />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/murals" element={<Murals />} />
       </Routes>
       <Footer />
     </div>

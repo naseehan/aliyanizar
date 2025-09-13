@@ -10,10 +10,10 @@ gsap.registerPlugin(ScrollTrigger);
 const Projects = () => {
 
  let navigate = useNavigate()
-  const handleClick = (slug) => {
-     let keyword = slug.toLowerCase().replace(/s\+/g, "-")
-    navigate(`/works/designWorks/${keyword}`)
-  };
+  // const handleClick = (slug) => {
+  //    let keyword = slug.toLowerCase().replace(/s\+/g, "-")
+  //   navigate(`/works/designWorks/${keyword}`)
+  // };
 
 const headingRef = React.useRef();
 const buttonRef = React.useRef()
@@ -71,7 +71,8 @@ useGSAP(() => {
 
 {/* project section */}
 <div className="max-w-[1000px] my-12 mx-auto px-3 sm:px-8 lg:px-0" ref={projectRef}
-onClick={() => handleClick("project-title")}>
+// onClick={() => handleClick("project-title")}
+>
   <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-5">
     {/* {[...Array(4)].map((_, i) => ( */}
       <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
@@ -105,9 +106,11 @@ onClick={() => handleClick("project-title")}>
           <h3 className="text-[40px] font-bold font-[Flaviotte] tracking-[4px]">
             Wall Murals
           </h3>
+          <Link to="/murals">
           <p className="text-[20px] font-semibold text-center">
             Learn More
           </p>
+          </Link>
         </div>
 
       </div>

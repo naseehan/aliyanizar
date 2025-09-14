@@ -12,14 +12,7 @@
   height: 700px !important;
   max-height: 100vh;
 }
-@media (max-width:637px){
- .murals-slider [class^="number-slide"],
-.murals-slider [class*="number-slide"]{
-  height: 837px !important;
-  max-height: 200vh;
-  align-items: start;
-}
-}
+
 
 
 .arrow {
@@ -45,3 +38,19 @@
 /* .arrow--disabled {
   fill: rgba(255, 255, 255, 0.5);
 } */
+
+@media (max-width:637px){
+ .murals-slider [class^="number-slide"],
+.murals-slider [class*="number-slide"]{
+  height: 440px !important;
+  max-height: 200vh;
+  align-items: start;
+}
+.arrow--left {
+  left: 0px;
+}
+
+.arrow--right {
+  right: 0px;
+}
+}

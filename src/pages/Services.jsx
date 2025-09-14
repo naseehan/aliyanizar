@@ -5,10 +5,12 @@ import icon2 from "../assets/illu.svg";
 import icon3 from "../assets/3d.svg";
 import icon4 from "../assets/staircase.svg";
 import paint from "../assets/paint.svg"
+import GoBack from "../components/GoBack";
 
 const Services = () => {
   return (
-    <div className="bg-[#FFFFF0]">
+    <div className="bg-[#FFFFF0] relative">
+      <GoBack />
       <div className="max-w-[1000px] pt-40  mx-auto">
         {/* header */}
 

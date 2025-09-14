@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import GoBack from '../components/GoBack'
 
 const Contact = () => {
 
@@ -41,8 +42,8 @@ const handleSubmit = async (e) => {
 
 
   return (
-    <div className='  bg-[#FFFFF0]'>
-
+    <div className='relative  bg-[#FFFFF0]'>
+<GoBack />
 <div className='max-w-[1000px] pt-25 sm:pt-40 pb-10 mx-auto'>
       {/* container */}
       <div className='grid gap-12'>

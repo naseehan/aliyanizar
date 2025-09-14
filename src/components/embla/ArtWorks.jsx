@@ -8,6 +8,7 @@ import {
 import "./embla.css";
 import { products } from "../../pages/shopItems";
 import { Link, useNavigate } from "react-router-dom";
+import GoBack from "../GoBack";
 // import { DotButton, useDotButton } from './EmblaCarouselDotButton'
 
 const TWEEN_FACTOR_BASE = 0.52;
@@ -108,7 +109,8 @@ const ArtWorks = (props) => {
   }, [emblaApi, tweenScale]);
 
   return (
-    <div className="bg-[#FFFFF0] pt-27 sm:pt-40">
+    <div className="bg-[#FFFFF0] pt-27 sm:pt-40 relative">
+      <GoBack />
       {/* header */}
       <div className="text-center max-w-[615px] mx-auto">
         <h1 className="text-[60px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">

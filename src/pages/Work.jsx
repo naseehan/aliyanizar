@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import GoBack from "../components/GoBack";
 
 const Work = () => {
  
@@ -11,6 +12,7 @@ const Work = () => {
 
   return (
     <div className="bg-[#FFFFF0] relative">
+      <GoBack />
       {/* <button onClick={handleBack} className="absolute top-28 left-3.5">go back</button> */}
       <div className="max-w-[1000px] pt-40  mx-auto">
         {/* heading */}

@@ -2,10 +2,12 @@ import React from "react";
 import avatar from "../assets/aliya.webp";
 import diamond from "../assets/diamond.webp"
 import "../App.css"
+import GoBack from "../components/GoBack";
 
 const About = () => {
   return (
-    <div className="bg-[#FFFFF0]">
+    <div className="bg-[#FFFFF0] relative">
+      <GoBack />
       <div className="max-w-[1000px] pt-30 mx-auto">
         {/* about section */}
         <div

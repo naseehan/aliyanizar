@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../store/cartSlice";
 import { toggleFave, removeFave } from "../store/favesSlice";
+import GoBack from "../components/GoBack";
 
 const Shop = () => {
   const [price, setPrice] = useState(35);
@@ -142,6 +143,7 @@ const Shop = () => {
 
   return (
     <div className="lg:flex pt-27 sm:pt-40 bg-[#FFFFF0] relative">
+      <GoBack />
       <div
         className={`absolute inset-0 z-50  ${
           showCart || faveHide || filterHide ? "block" : "hidden"

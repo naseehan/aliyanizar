@@ -109,7 +109,7 @@ const Murals = () => {
                 alt="artwork"
               />
               <img
-                className="h-[218px] mt-2.5  sm:h-[500px] w-full object-contain sm:absolute top-0 left-0 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100 "
+                className="hidden sm:block h-[218px] mt-2.5  sm:h-[500px] w-full object-contain sm:absolute top-0 left-0 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100 "
                 src={item.hoverImg}
                 loading="lazy"
                 alt="artwork"
@@ -117,14 +117,14 @@ const Murals = () => {
             </div>
 
             {/* Caption (always visible) */}
-            <div className="bg-[#3d3219]  px-4 py-3 text-center mt-2 rounded h-auto">
-              <h3 className="text-[30px] font-bold font-[Flaviotte] tracking-[4px] text-white uppercase">
+            <div className="px-4 py-3 text-center mt-2 rounded h-auto">
+              <h3 className="text-[30px] font-bold font-['Maghfirea',sans-serif] tracking-[4px] text-[#b9900d] uppercase">
                 {item.name}
               </h3>
-              <p className="text-[18px] font-semibold text-white">
+              <p className="text-[18px] font-medium text-[#b9900d]">
                 {item.categories}
               </p>
-              <p className="text-[18px] font-semibold text-white">
+              <p className="text-[18px] font-medium text-[#b9900d]">
                 {item.size}
               </p>
             </div>

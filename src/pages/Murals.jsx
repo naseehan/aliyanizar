@@ -103,7 +103,7 @@ const Murals = () => {
 
             <div className="w-full h-full aspect-[4/3] overflow-hidden group relative">
               <img
-                className="h-[218px] lg:h-[500px] w-full object-contain transition-opacity duration-500 sm:group-hover:opacity-0"
+                className="h-[232px] lg:h-[500px] w-full object-contain transition-opacity duration-500 sm:group-hover:opacity-0"
                 src={item.img}
                 loading="lazy"
                 alt="artwork"

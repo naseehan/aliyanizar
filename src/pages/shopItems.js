@@ -11,7 +11,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: false,
-    desc: "Acrylic painting of water lilies painted with modelling paste in a peacock-blue pond and swirling koi fish. A sense of harmony is found in the contrasting colors of nature."
+    desc: "Acrylic painting of water lilies painted with modelling paste in a peacock-blue pond and swirling koi fish. A sense of harmony is found in the contrasting colors of nature.",
+    forShow: false
   },
   {
     id: 2,
@@ -24,7 +25,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Freehand brush pen illustration, with strokes rushed and struck on the paper surface—an experiment of pen strokes and their dramatic effects."
+    desc: "Freehand brush pen illustration, with strokes rushed and struck on the paper surface—an experiment of pen strokes and their dramatic effects.",
+    forShow: false
   },
   {
     id: 3,
@@ -38,7 +40,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: false,
-    desc: "Bas-relief in gypsum of a peony flower with gold leaf background. Hand modelled with gypsum paste and painted in acrylics."
+    desc: "Bas-relief in gypsum of a peony flower with gold leaf background. Hand modelled with gypsum paste and painted in acrylics.",
+    forShow: false
   },
   {
     id: 4,
@@ -52,7 +55,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: false,
-    desc: "Acrylic calligraphy, 'Wa huwa ala kulli shayin qadeer' (وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ)."
+    desc: "Acrylic calligraphy, 'Wa huwa ala kulli shayin qadeer' (وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ).",
+    forShow: false
   },
   {
     id: 5,
@@ -65,7 +69,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Freehand brush pen illustration, with strokes rushed and struck on the paper surface—an experiment of pen strokes and their dramatic effects."
+    desc: "Freehand brush pen illustration, with strokes rushed and struck on the paper surface—an experiment of pen strokes and their dramatic effects.",
+    forShow: false
   },
   {
     id: 6,
@@ -79,7 +84,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: false,
-    desc: "Arabesque floral motifs."
+    desc: "Arabesque floral motifs.",
+    forShow: false
   },
   {
     id: 7,
@@ -92,7 +98,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Freehand brush pen illustration, with strokes rushed and struck on the paper surface—an experiment of pen strokes and their dramatic effects."
+    desc: "Freehand brush pen illustration, with strokes rushed and struck on the paper surface—an experiment of pen strokes and their dramatic effects.",
+    forShow: false
   },
   {
     id: 8,
@@ -106,7 +113,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: false,
-    desc: "Textured fabric art."
+    desc: "Textured fabric art.",
+    forShow: false
   },
   {
     id: 9,
@@ -120,7 +128,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: false,
-    desc: "Acrylic calligraphy, 'Bismillah al-Rahman al-Rahim' (بِسْمِ ٱللهِ ٱلرَّحْمَٰنِ ٱلرَّحِيْمِ)."
+    desc: "Acrylic calligraphy, 'Bismillah al-Rahman al-Rahim' (بِسْمِ ٱللهِ ٱلرَّحْمَٰنِ ٱلرَّحِيْمِ).",
+    forShow: false
   },
   {
     id: 10,
@@ -133,7 +142,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Painting of a broken statue with plants growing out of it symbolizing regrowth and a metaphor for thoughts that we grow in our mind, which determines the personality of our soul."
+    desc: "Painting of a broken statue with plants growing out of it symbolizing regrowth and a metaphor for thoughts that we grow in our mind, which determines the personality of our soul.",
+    forShow: false
   },
   {
     id: 11,
@@ -147,7 +157,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: false,
-    desc: "Linoprinted art."
+    desc: "Linoprinted art.",
+    forShow: false
   },
   {
     id: 12,
@@ -160,7 +171,8 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Acrylic calligraphy, 'Fa Sabrun Jameel' (فَصَبْرٌ جَمِيلٌ)."
+    desc: "Acrylic calligraphy, 'Fa Sabrun Jameel' (فَصَبْرٌ جَمِيلٌ).",
+    forShow: false
   },
   {
     id: 13,
@@ -173,10 +185,66 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Acrylic calligraphy, of the name ‘Fathima’."
+    desc: "Acrylic calligraphy, of the name ‘Fathima’.",
+    forShow: false
+  },
+  {
+    id: 14,
+    name: "cat eyes",
+    img: "/products/Cat Eyes.webp",
+    categories: "Paintings",
+    dimensions: "Calligraphy on canvas, 15cmx15cm",
+    ogPrice: 30,
+    offerPrice: 15,
+    offer: 50,
+    quantity: 1,
+    sold: true,
+    desc: "Acrylic calligraphy, of the name ‘Fathima’.",
+    forShow: true
+  },
+  {
+    id: 15,
+    name: "conform 1",
+    img: "/products/Conform 1.webp",
+    categories: "Paintings",
+    dimensions: "Calligraphy on canvas, 15cmx15cm",
+    ogPrice: 30,
+    offerPrice: 15,
+    offer: 50,
+    quantity: 1,
+    sold: true,
+    desc: "Acrylic calligraphy, of the name ‘Fathima’.",
+    forShow: true
+  },
+  {
+    id: 16,
+    name: "conform 2",
+    img: "/products/Conform 2.webp",
+    categories: "Paintings",
+    dimensions: "Calligraphy on canvas, 15cmx15cm",
+    ogPrice: 30,
+    offerPrice: 15,
+    offer: 50,
+    quantity: 1,
+    sold: true,
+    desc: "Acrylic calligraphy, of the name ‘Fathima’.",
+    forShow: true
+  },
+  {
+    id: 17,
+    name: "orange tree",
+    img: "/products/Orange Tree-mixed media.webp",
+    categories: "Mixed Media",
+    dimensions: "Calligraphy on canvas, 15cmx15cm",
+    ogPrice: 30,
+    offerPrice: 15,
+    offer: 50,
+    quantity: 1,
+    sold: true,
+    desc: "Acrylic calligraphy, of the name ‘Fathima’.",
+    forShow: true
   },
 ];
-
 
 export const categories = [
   "All",

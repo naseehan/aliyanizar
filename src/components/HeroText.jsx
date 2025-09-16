@@ -55,26 +55,7 @@ const HeroText = () => {
 
 
 
-  //
-  useEffect(() => {
-    // const element = motionRef.current;
-    // const text = element.textContent;
-    // element.innerHTML = "";
-    // text.split("").forEach((char) => {
-    //   const span = document.createElement("span");
-    //   span.textContent = char === " " ? "\u00A0" : char; // preserve space
-    //   span.style.display = "inline-block";
-    //   element.appendChild(span);
-    // });
-    // anime({
-    //   targets: element.querySelectorAll("span"),
-    //   translateY: [50, 0],
-    //   opacity: [0, 1],
-    //   easing: "easeOutExpo",
-    //   duration: 1000,
-    //   delay: anime.stagger(120),
-    // });
-  }, []);
+
 
   // Bottom arc text
   useEffect(() => {

@@ -8,18 +8,18 @@ const GoBack = () => {
   };
 
   return (
-   <div className="absolute sm:fixed top-19 sm:top-27 left-2.5 sm:left-[35px]">
+   <div className="absolute sm:fixed top-17 sm:top-27 left-2.5 sm:left-[35px] z-40">
         <button
         onClick={handleClick}
-          class="text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+          class="text-center relative text-black text-xl font-semibold group flex sm:h-[50px] sm:w-[50px] h-10 w-10 items-center justify-center rounded-full bg-[#D4AF37] shadow-[0_0_0_4px_rgba(180,160,255,0.25)] transition-all duration-300 ease-in-out hover:w-[140px] hover:rounded-[50px] hover:bg-[#D4AF37] cursor-pointer overflow-hidden"
           type="button"
         >
-          <div class="bg-[#D4AF37] rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[168px] z-10 duration-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1024 1024"
               height="25px"
               width="25px"
+              className='transition-transform duration-300 ease-in-out group-hover:-translate-x-[200%]  bg-[#D4AF37] rounded-xl h-12 w-[20px] flex items-center justify-center sm:absolute left-3 top-[1px]  z-10'
             >
               <path
                 d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
@@ -30,8 +30,12 @@ const GoBack = () => {
                 fill="#fff"
               ></path>
             </svg>
-          </div>
-          <p class="translate-x-2">Go Back</p>
+
+            <span
+    className="absolute bottom-[-20px] text-white text-[0px] transition-all duration-300 ease-in-out group-hover:static group-hover:text-[13px] group-hover:opacity-100"
+  >
+    Go Back
+  </span>
         </button>
       </div>
   )

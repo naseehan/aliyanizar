@@ -154,7 +154,7 @@ const Shop = () => {
       <div className="z-999">
         {/* sidebuttons */}
         <div
-          className={`z-999 transition-all duration-500 ease-in-out fixed top-[50%]  grid gap-2.5 ${
+          className={`z-40 transition-all duration-500 ease-in-out fixed top-[50%]  grid gap-2.5 ${
             showCart || faveHide || filterHide
               ? "right-[268px] sm:right-[329px]"
               : "right-0"

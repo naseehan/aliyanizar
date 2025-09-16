@@ -10,7 +10,7 @@ const Sidebar = ({
 }) => {
   return (
     <div
-      className={`z-999 fixed top-0 h-screen w-[270px] overflow-auto sm:w-[330px] bg-white transition-all duration-500 ease-in-out ${
+      className={`z-40 fixed top-0 h-screen w-[270px] overflow-auto sm:w-[330px] bg-white transition-all duration-500 ease-in-out ${
         toggle ? "right-0 opacity-100" : "-right-[330px] opacity-0"
       }`}
     >

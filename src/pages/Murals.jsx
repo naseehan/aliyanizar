@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import "./murals.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { murals } from "./muralsDetails";
+import GoBack from "../components/GoBack";
 
 const animation = { duration: 30000, easing: (t) => t };
 
@@ -80,8 +81,9 @@ const Murals = () => {
   //   }, [instanceRef]);
 
   return (
-    <div className="bg-[#FFFFF0] pt-27 sm:pt-40">
+    <div className="bg-[#FFFFF0] pt-27 sm:pt-40 relative">
       {/* heading */}
+      <GoBack />
       <div className="pb-10 mx-auto text-center">
         <h1
           className="text-[50px] font-bold tracking-[5px] text-[#D4AF37] font-['Maghfirea',sans-serif] uppercase"

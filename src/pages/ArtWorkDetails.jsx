@@ -67,10 +67,10 @@ const ArtWorkDetails = () => {
         onClick={closeSidebars}
       ></div>
       {/* sidebar */}
-      <div className="z-999">
+      <div className="z-40">
         {/* sidebuttons */}
         <div
-          className={`z-999 transition-all duration-500 ease-in-out fixed top-[50%]  grid gap-2.5 ${
+          className={`z-40 transition-all duration-500 ease-in-out fixed top-[50%]  grid gap-2.5 ${
             showCart || faveHide ? "right-[268px] sm:right-[329px]" : "right-0"
           }`}
         >

@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import avatar from "../assets/aliya.webp"
-import diamond from "../assets/diamond.webp"
 import "../App.css"
 
 gsap.registerPlugin(ScrollTrigger);

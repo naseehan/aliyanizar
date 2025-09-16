@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import GoBack from "../components/GoBack";
 
 const DesignWork = () => {
   let navigate = useNavigate();
@@ -9,7 +10,8 @@ const DesignWork = () => {
   };
 
   return (
-    <div className="bg-[#FFFFF0]">
+    <div className="bg-[#FFFFF0] relative">
+      <GoBack />
       <div className="max-w-[1300px] pt-27 sm:pt-40 px-4 mx-auto">
         {/* header */}
         <div className="text-center max-w-[615px] mx-auto">

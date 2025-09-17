@@ -49,8 +49,8 @@ const DesignWork = () => {
 
           <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
             <img
-              src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg"
-              alt=""
+              src="/murals/Dhikr.webp"
+              alt="murals"
               loading="lazy"
               className="w-full h-full"
             />

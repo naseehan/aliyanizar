@@ -184,7 +184,7 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Cartoony cat eye painting on a tiny easel canvas",
+    desc: "Illustration with  marker pens and brush pens on paper. Inspired  by mountain valleys and wild nature.",
     forShow: true,
   },
   {

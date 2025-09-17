@@ -52,7 +52,7 @@ const DesignWork = () => {
               src="/murals/Dhikr.webp"
               alt="murals"
               loading="lazy"
-              className="w-full h-full"
+              className="w-full h-full object-cover"
             />
             {/* when hovering */}
             <div className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-70  sm:opacity-0  sm:group-hover:opacity-70 sm:group-hover:pointer-events-auto transition-opacity duration-300">

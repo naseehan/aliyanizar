@@ -154,16 +154,15 @@ const ArtWorks = (props) => {
 
       <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
 
-      <div className="max-w-[1000px] mx-auto grid gap-[60px] pt-[95px]">
+      <div className="max-w-[1000px] mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(293px,1fr))] gap-[40px] pt-[95px]">
         {products.map((item) => (
           <div key={item.id}>
             <div
-              className="
-            md:flex grid justify-center items-center md:justify-normal text-center gap-[3%] md:gap-x-[240px] pb-[39px]
+              className="grid justify-center items-center  text-center gap-[3%] md:gap-x-[240px] pb-[39px] min-h-[570px]
             "
             >
-              <div className="relative">
-                <img src={item.img} alt={item.name} className="w-[300px]" />
+              <div className="relative flex justify-center">
+                <img src={item.img} alt={item.name} className="w-[300px] h-[380px] object-contain bg-white" />
                 <button
                   onClick={() => handleClick(item.name)}
                   className="absolute inset-0"

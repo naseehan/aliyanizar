@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 const DesignWorkDetails = () => {
   let { slug } = useParams();
+  let {title} = useParams()
+  
   return (
     <div className="relative  bg-[#FFFFF0] px-4">
       <div className="max-w-[1200px] pt-27 sm:pt-40  mx-auto">
@@ -20,7 +22,7 @@ const DesignWorkDetails = () => {
 
         {/* description */}
         <div className="text-center mx-auto my-20 sm:my-40 max-w-[500px]">
-            <h1 className="font-['Maghfirea',sans-serif] text-[#004953] text-[25px] sm:text-3xl font-semibold tracking-[3px] capitalize my-8">{slug}</h1>
+            <h1 className="font-['Maghfirea',sans-serif] text-[#004953] text-[25px] sm:text-3xl font-semibold tracking-[3px] capitalize my-8">{title}</h1>
             <p className="text-[#987300] font-[Ubuntu] text-[18px] sm:text-[20px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus tempora fugiat nulla alias deserunt quisquam, accusamus inventore nemo commodi mollitia fugit voluptates obcaecati delectus, impedit assumenda sit suscipit. Minus, eaque?
             Sunt dignissimos, officiis reiciendis, at molestias voluptas doloremque ratione odio dolorem distinctio nemo porro nisi, deserunt ipsa. Officiis, quae minus perspiciatis itaque nemo placeat quasi, velit, reprehenderit dicta asperiores corporis.
             Reiciendis tenetur ad inventore earum illo culpa, repudiandae, sit ex nobis fugiat iure ficiis, voluptates sit hic iure atque iam. Aperiam?

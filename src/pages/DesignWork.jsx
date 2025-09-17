@@ -9,6 +9,10 @@ const DesignWork = () => {
     navigate(`${keyword}`);
   };
 
+  const handleInteriors = () => {
+    navigate()
+  }
+
   return (
     <div className="bg-[#FFFFF0] relative">
       <GoBack />
@@ -35,7 +39,7 @@ const DesignWork = () => {
               <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px]">
                 Interiors
               </h3>
-              <Link to="interior designs">
+              <Link to="interiors" >
               <p className="text-[20px] font-semibold text-center">
                 Learn More
               </p>

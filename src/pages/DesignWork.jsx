@@ -29,7 +29,7 @@ const DesignWork = () => {
 
           <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
             <img
-              src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg"
+              src="/comingSoon.jpeg"
               alt=""
               loading="lazy"
               className="w-full h-full"
@@ -39,11 +39,11 @@ const DesignWork = () => {
               <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px]">
                 Interiors
               </h3>
-              <Link to="interiors" >
+              {/* <Link to="interiors" >
               <p className="text-[20px] font-semibold text-center">
                 Learn More
               </p>
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -69,7 +69,7 @@ const DesignWork = () => {
 
           <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
             <img
-              src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg"
+              src="/comingSoon.jpeg"
               alt=""
               loading="lazy"
               className="w-full h-full"
@@ -79,11 +79,11 @@ const DesignWork = () => {
               <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px]">
                 Crafts
               </h3>
-              <Link to="crafts">
+              {/* <Link to="crafts">
               <p className="text-[20px] font-semibold text-center">
                 Learn More
               </p>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

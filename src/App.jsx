@@ -20,6 +20,8 @@ import DesignWorkDetails from "./pages/DesignWorkDetails";
 import NotFound from "./pages/NotFound";
 import Murals from "./pages/Murals";
 import Interiors from "./pages/Interiors";
+import { Analytics } from "@vercel/analytics/react"
+
 // import ProductSlider from "./components/ProductSlider";
 
 const App = () => {
@@ -59,6 +61,7 @@ const App = () => {
           <Route path="/works/designWorks/:title/:slug" element={<DesignWorkDetails />} />
       </Routes>
       <Footer />
+      <Analytics />
     </div>
   );
 };

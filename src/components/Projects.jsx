@@ -76,7 +76,7 @@ useGSAP(() => {
   <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-5">
       <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
         <img
-          src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg"
+          src="/comingSoon.jpeg"
           alt=""
           loading="lazy"
           className="w-full h-full"
@@ -86,19 +86,19 @@ useGSAP(() => {
           <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px]">
             Interiors
           </h3>
-          <p className="text-[20px] font-semibold text-center">
+          {/* <p className="text-[20px] font-semibold text-center">
             Learn More
-          </p>
+          </p> */}
         </div>
 
       </div>
 
        <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
         <img
-          src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg"
-          alt=""
+          src="/murals/Dhikr.webp"
+          alt="murals"
           loading="lazy"
-          className="w-full h-full"
+          className="w-full h-full object-cover"
         />
         {/* when hovering */}
         <div className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-70  sm:opacity-0  sm:group-hover:opacity-70 sm:group-hover:pointer-events-auto transition-opacity duration-300">
@@ -116,8 +116,8 @@ useGSAP(() => {
 
        <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
         <img
-          src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg"
-          alt=""
+          src="/comingSoon.jpeg"
+          alt="crafts"
           loading="lazy"
           className="w-full h-full"
         />
@@ -126,9 +126,9 @@ useGSAP(() => {
           <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px]">
             Crafts
           </h3>
-          <p className="text-[20px] font-semibold text-center">
+          {/* <p className="text-[20px] font-semibold text-center">
             Learn More
-          </p>
+          </p> */}
         </div>
 
       </div>

@@ -1,0 +1,6 @@
+# robots.txt for Aliya Nizar Studio
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.aliyanizarstudio.com//sitemap.xml

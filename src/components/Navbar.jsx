@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import hamburger from "../assets/hamburger.webp";
 import "../App.css";
 import DesktopNavbar from "./DektopNavbar";
 
 const Navbar = () => {
-  const [open, isOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
-    isOpen((prev) => !prev);
+    setIsOpen((prev) => !prev);
   };
 
+    // lock scrolling when clicked outside
+    useEffect(() => {
+      if (isOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+      return () => {
+        document.body.style.overflow = "auto"; // cleanup
+      };
+    }, [isOpen]);
+
   return (
-    <div className="bg-[#004953] fixed z-[99] top-0 left-0 right-0 w-screen">
+    <div className="bg-[#004953] fixed z-[60] top-0 left-0 right-0 w-screen ">
+        {/* overlay for closing navbar when clicked outside */}
+       <div
+        className={`absolute inset-0 z-50 h-[100vh] ${
+          isOpen ? "block" : "hidden"
+        }`}
+        onClick={handleClick}
+      ></div>
       {/* desktop nav */}
       <DesktopNavbar />
 
@@ -26,10 +45,11 @@ const Navbar = () => {
           loading="lazy"
         />
         <nav
-          className={`overflow-hidden transition-all  duration-500 ease-in-out absolute mt-[60px] bg-[#004953] ${
-            open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          className={`overflow-hidden transition-all  duration-500 ease-in-out absolute mt-[60px] bg-[#004953] z-[60] ${
+            isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
+        
           <ul
             className={`grid gap-4 justify-start py-12 px-[9px]  text-[#D4AF37] font-normal text-[30px] text-end tracking-[3px] font-[Maghfirea,sans-serif] `}
           >

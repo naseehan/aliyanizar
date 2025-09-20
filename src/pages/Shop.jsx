@@ -14,8 +14,9 @@ const Shop = () => {
   const [price, setPrice] = useState(35);
   const [cateHide, setCateHide] = useState(true);
   const [priceHide, setPriceHide] = useState(true);
-  const [faveHide, setFaveHide] = useState(false);
-  const [filterHide, setFilterHide] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isFaveOpen, setIsFaveOpen] = useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const dispatch = useDispatch();
   const faves = useSelector((state) => state.faves.items);
@@ -23,14 +24,14 @@ const Shop = () => {
 
   const [filterdProducts, setFilteredProducts] = useState(products);
 
-  const [showCart, setShowCart] = useState(false);
+  
   const [search, setSearch] = useState();
   let navigate = useNavigate();
 
 
   // hide sidebars when clicked outside
   useEffect(() => {
-    if (showCart || faveHide || filterHide) {
+    if (isCartOpen || isFaveOpen || isFilterOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -38,7 +39,7 @@ const Shop = () => {
     return () => {
       document.body.style.overflow = "auto"; // cleanup
     };
-  }, [showCart, faveHide, filterHide]);
+  }, [isCartOpen, isFaveOpen, isFilterOpen]);
 
  
 
@@ -46,7 +47,7 @@ const Shop = () => {
   const handleFilter = () => {
     let product = products.filter((item) => item.offerPrice <= price);
     setFilteredProducts(product);
-    setFilterHide(false);
+    setIsFilterOpen(false);
   };
   // show || hide price filter
   const hidePriceFilter = () => {
@@ -65,21 +66,21 @@ const Shop = () => {
   };
 
   const handleFilterToggle = () => {
-    setFilterHide((prev) => !prev);
-    setFaveHide(false);
-    setShowCart(false);
+    setIsFilterOpen((prev) => !prev);
+    setIsFaveOpen(false);
+    setIsCartOpen(false);
   };
   // show || hide cart sidebar
   const handleCartToggle = () => {
-    setShowCart((prev) => !prev);
-    setFaveHide(false);
-    setFilterHide(false);
+    setIsCartOpen((prev) => !prev);
+    setIsFaveOpen(false);
+    setIsFilterOpen(false);
   };
   // show || hide fave sidebar
   const handleFaveToggle = () => {
-    setFaveHide((prev) => !prev);
-    setShowCart(false);
-    setFilterHide(false);
+    setIsFaveOpen((prev) => !prev);
+    setIsCartOpen(false);
+    setIsFilterOpen(false);
   };
 
   // search function
@@ -124,20 +125,20 @@ const Shop = () => {
   };
 
   const closeSidebars = () => {
-    setShowCart(false);
-    setFaveHide(false);
-    setFilterHide(false);
+    setIsCartOpen(false);
+    setIsFaveOpen(false);
+    setIsFilterOpen(false);
   };
 
   const filterByCates = (name) => {
     if (name == "All") {
       setFilteredProducts(products);
-      setFilterHide(false);
+      setIsFilterOpen(false);
     } else {
       setFilteredProducts(() =>
         products.filter((item) => item.categories == name)
       );
-      setFilterHide(false);
+      setIsFilterOpen(false);
     }
   };
 
@@ -146,7 +147,7 @@ const Shop = () => {
       <GoBack />
       <div
         className={`absolute inset-0 z-50  ${
-          showCart || faveHide || filterHide ? "block" : "hidden"
+          isCartOpen || isFaveOpen || isFilterOpen ? "block" : "hidden"
         }`}
         onClick={closeSidebars}
       ></div>
@@ -155,7 +156,7 @@ const Shop = () => {
         {/* sidebuttons */}
         <div
           className={`z-40 transition-all duration-500 ease-in-out fixed top-[50%]  grid gap-2.5 ${
-            showCart || faveHide || filterHide
+            isCartOpen || isFaveOpen || isFilterOpen
               ? "right-[268px] sm:right-[329px]"
               : "right-0"
           }`}
@@ -166,7 +167,7 @@ const Shop = () => {
                 {cart.length}
               </p>
             )}
-            <button onClick={handleCartToggle} className="">
+            <button onClick={handleCartToggle} className="" aria-label="Open cart"> 
               <i className="fa-solid fa-cart-shopping fa-lg text-[#b9900d]"></i>
             </button>
           </div>
@@ -192,7 +193,7 @@ const Shop = () => {
         {/*cart sidebar */}
 
         <Sidebar
-          toggle={showCart}
+          toggle={isCartOpen}
           length={cart.length}
           arrayOfItems={cart}
           deleteItem={deleteCartItem}
@@ -203,7 +204,7 @@ const Shop = () => {
         {/*faviorates sidebar */}
 
         <Sidebar
-          toggle={faveHide}
+          toggle={isFaveOpen}
           length={faves.length}
           arrayOfItems={faves}
           deleteItem={deleteFaveItem}
@@ -214,7 +215,7 @@ const Shop = () => {
         {/* filter sidebar mobile device only */}
         <div
           className={`sm:hidden z-999 fixed top-0 h-screen w-[270px] sm:w-[330px] bg-white transition-all duration-500 ease-in-out ${
-            filterHide ? "right-0 opacity-100" : "-right-[330px] opacity-0"
+            isFilterOpen ? "right-0 opacity-100" : "-right-[330px] opacity-0"
           }`}
         >
           <div className="mt-14">

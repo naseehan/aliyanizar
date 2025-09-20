@@ -19,13 +19,13 @@ export const products = [
     img: "/products/Conform 1.webp",
     categories: "Mixed Media",
     dimensions:
-      "Abstract mixed media art with dried roses and metallic gold paint. The artwork symbolizes femininity, power, and conformity in society.",
+      "Mixed media on paper, 70cmx50cm",
     ogPrice: 30,
     offerPrice: 15,
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Acrylic calligraphy, of the name ‘Fathima’.",
+    desc: "Abstract mixed media art with dried roses and metallic gold paint. The artwork symbolizes femininity, power, and conformity in society.",
     forShow: true,
   },
   {

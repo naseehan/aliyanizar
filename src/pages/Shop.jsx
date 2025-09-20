@@ -43,16 +43,8 @@ const Shop = () => {
 
  
 
-  // filter by price
-  const handleFilter = () => {
-    let product = products.filter((item) => item.offerPrice <= price);
-    setFilteredProducts(product);
-    setIsFilterOpen(false);
-  };
-  // show || hide price filter
-  const hidePriceFilter = () => {
-    setPriceHide(!priceHide);
-  };
+
+
 
   // show || hide categories filter
   const toggleCates = () => {
@@ -254,47 +246,7 @@ const Shop = () => {
                 </ul>
               </div>
 
-              {/* filter by price */}
-              {/* <div className="px-[3.25rem] mt-[1rem]  grid gap-3">
-                <div className="flex items-center gap-[18px] mb-2.5">
-                  <h1 className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-[22px] font-semibold ">
-                    Price
-                  </h1>
-                  <button onClick={hidePriceFilter}>
-                    <i className="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-
-                <div
-                  className={`transition-all duration-300 ease-out ${
-                    priceHide
-                      ? "max-h-0 opacity-0"
-                      : "max-h-[500px] opacity-100"
-                  }`}
-                >
-                  <input
-                    type="range"
-                    name="range"
-                    id="range"
-                    min="10"
-                    max="35"
-                    value={price}
-                    onChange={handleChange}
-                    className="search-input w-full relative"
-                  />
-                  <p className="text-[#6d6d65] font-[Ubuntu]">
-                    Price : AED10 - AED{price}
-                  </p>
-                  <div className="flex">
-                    <button
-                      className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
-                      onClick={handleFilter}
-                    >
-                      Filter
-                    </button>
-                  </div>
-                </div>
-              </div> */}
+          
             </div>
           </div>
         </div>
@@ -370,49 +322,7 @@ const Shop = () => {
                 </ul>
               </div>
 
-              {/* filter by price */}
-              {/* <div className="px-[3.25rem] mt-[1rem]  grid gap-3">
-                <div className="flex items-center gap-[18px] mb-2.5">
-                  <h1 className="text-[#b9900d] font-['Maghfirea',sans-serif] tracking-[2px] text-[22px] font-semibold ">
-                    Price
-                  </h1>
-                  <button onClick={hidePriceFilter}>
-                    <i className="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-
-                <div
-                  className={`transition-all duration-300 ease-out ${
-                    priceHide
-                      ? "max-h-0 opacity-0"
-                      : "max-h-[500px] opacity-100"
-                  }`}
-                >
-
-                  <input
-                   type="range"
-                    name="range"
-                    id="range"
-                    min="10"
-                    max="35"
-                    value={price}
-                    onChange={handleChange}
-                    className="w-full search-input"
-                  />
-
-                  <p className="text-[#6d6d65] font-[Ubuntu]">
-                    Price : AED10 - AED{price}
-                  </p>
-                  <div className="flex">
-                    <button
-                      className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200"
-                      onClick={handleFilter}
-                    >
-                      Filter
-                    </button>
-                  </div>
-                </div>
-              </div> */}
+      
             </div>
           </div>
 
@@ -500,11 +410,7 @@ const Shop = () => {
                     <h3 className="font-['Maghfirea',sans-serif] text-[#004953] text-[25px] sm:text-3xl font-semibold tracking-[3px] capitalize">
                       {item.name}
                     </h3>
-                    {/* <div className="flex justify-center text-[18px] sm:text-[20px] gap-3">
-                      <p className="text-[#987300] font-[Ubuntu]">
-                       Price on Request
-                      </p>
-                    </div> */}
+            
                   </div>
                 </div>
               )))}

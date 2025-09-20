@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   NextButton,
@@ -81,9 +81,9 @@ const ArtWorks = (props) => {
         }
         let tweenValue;
         if (isMobile) {
-           tweenValue = 1.4 - Math.abs(diffToTarget * tweenFactor.current);
+          tweenValue = 1.4 - Math.abs(diffToTarget * tweenFactor.current);
         } else {
-           tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+          tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
         }
         const scale = numberWithinRange(tweenValue, 0, 1).toString();
         const tweenNode = tweenNodes.current[slideIndex];
@@ -107,6 +107,38 @@ const ArtWorks = (props) => {
       .on("scroll", tweenScale)
       .on("slideFocus", tweenScale);
   }, [emblaApi, tweenScale]);
+
+  let length = products.length;
+  let perPage = 9;
+  let totalPage = Math.ceil(length / perPage);
+
+  let pages = Array.from({ length: totalPage }, (_, i) => i + 1);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [firstProduct, setFirstProduct] = useState(0);
+  const [lastProduct, setLastProduct] = useState(9);
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prev) => prev - 1);
+      setFirstProduct((prev) => prev - 9);
+      setLastProduct((prev) => prev - 9);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPage) {
+      setCurrentPage((prev) => prev + 1);
+      setFirstProduct((prev) => prev + 9);
+      setLastProduct((prev) => prev + 9);
+    }
+  };
+
+  const handleChangeProduct = (page) => {
+    setCurrentPage(page);
+    setLastProduct(page * 9);
+    setFirstProduct((page - 1) * 9);
+  };
 
   return (
     <div className="bg-[#FFFFF0] pt-27 sm:pt-40 relative">
@@ -155,14 +187,18 @@ const ArtWorks = (props) => {
       <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
 
       <div className="max-w-[1000px] mx-auto grid [grid-template-columns:repeat(auto-fit,minmax(293px,1fr))] gap-[40px] pt-[95px]">
-        {products.map((item) => (
+        {products.slice(firstProduct, lastProduct).map((item) => (
           <div key={item.id}>
             <div
               className="grid justify-center items-center  text-center gap-[3%] md:gap-x-[240px] pb-[39px] min-h-[570px]
             "
             >
               <div className="relative flex justify-center">
-                <img src={item.img} alt={item.name} className="w-[300px] h-[380px] object-contain bg-white" />
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="w-[300px] h-[380px] object-contain bg-white"
+                />
                 <button
                   onClick={() => handleClick(item.name)}
                   className="absolute inset-0"
@@ -180,6 +216,27 @@ const ArtWorks = (props) => {
             <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
           </div>
         ))}
+      </div>
+      {/* pagination */}
+      <div className="flex max-w-[1000px] mx-auto justify-center mt-[70px] gap-5">
+        <button onClick={handlePrevious} disabled={currentPage === 1}>
+          ←{" "}
+        </button>
+        <div className="flex gap-5">
+          {pages.map((item) => (
+            <span
+            key={item}
+              className={`${currentPage == item ? "bg-[#d8d8d8]" : ""} p-2.5`}
+              onClick={() => handleChangeProduct(item)}
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        <button onClick={handleNext} disabled={currentPage === totalPage}>
+          {" "}
+          →{" "}
+        </button>
       </div>
     </div>
   );

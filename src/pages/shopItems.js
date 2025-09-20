@@ -10,7 +10,7 @@ export const products = [
     offer: 50,
     quantity: 1,
     sold: true,
-    desc: "Mixed media art with gypsum, exploring patterns in nature. The artwork features an orange tree growing out of a non-flowing water fountain, showing revival or rebirth. The fountain is backed by mosaic-patterned tile grids, representing a vibrant past or heritage.",
+    desc: "Mixed media art with gypsum, exploring patterns in nature. The artwork features an orange tree growing out of a non-flowing water fountain, showing revival or rebirth. The fountain is backed by mosaic-patterned tile ,age.",
     forShow: true,
   },
   {
@@ -173,8 +173,8 @@ export const products = [
     desc: "Textured fabric art.",
     forShow: false,
   },
-   {
-    id: 19,
+  {
+    id: 13,
     name: "be into the wild",
     img: "/products/Be Into the Wild.webp",
     categories: "Illustration",
@@ -188,7 +188,7 @@ export const products = [
     forShow: true,
   },
   {
-    id: 13,
+    id: 14,
     name: "bismillah",
     img: "/products/Bismillah-.webp",
     thumbnail: "/products/Bismillah- thumb.jpg",
@@ -203,7 +203,7 @@ export const products = [
     forShow: false,
   },
   {
-    id: 14,
+    id: 15,
     name: "grow a thought",
     img: "/products/Grow A Thought-painting.webp",
     categories: "Acrylics",
@@ -217,7 +217,7 @@ export const products = [
     forShow: false,
   },
   {
-    id: 15,
+    id: 16,
     name: "contrast",
     img: "/products/Contrast.webp",
     thumbnail: "/products/Contrast thumb.jpg",
@@ -232,7 +232,7 @@ export const products = [
     forShow: false,
   },
   {
-    id: 16,
+    id: 17,
     name: "jameel",
     img: "/products/Jameel.webp",
     categories: "Calligraphy",
@@ -246,7 +246,7 @@ export const products = [
     forShow: false,
   },
   {
-    id: 17,
+    id: 18,
     name: "fathima",
     img: "/products/Fathima.webp",
     categories: "Calligraphy",
@@ -260,7 +260,7 @@ export const products = [
     forShow: false,
   },
   {
-    id: 18,
+    id: 19,
     name: "petals of alhamdulillah",
     img: "/products/Alhamdulillah.webp",
     categories: "Calligraphy",
@@ -274,7 +274,7 @@ export const products = [
     forShow: true,
   },
   {
-    id: 19,
+    id: 20,
     name: "elements",
     img: "/products/Elements.webp",
     categories: "Calligraphy",
@@ -288,7 +288,7 @@ export const products = [
     forShow: true,
   },
   {
-    id: 20,
+    id: 21,
     name: "zone in halos",
     img: "/products/Zone in Halos.webp",
     categories: "Mixed Media",
@@ -302,6 +302,7 @@ export const products = [
     forShow: true,
   },
 ];
+
 
 export const categories = [
   "All",

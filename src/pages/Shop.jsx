@@ -11,9 +11,7 @@ import { toggleFave, removeFave } from "../store/favesSlice";
 import GoBack from "../components/GoBack";
 
 const Shop = () => {
-  const [price, setPrice] = useState(35);
   const [cateHide, setCateHide] = useState(true);
-  const [priceHide, setPriceHide] = useState(true);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isFaveOpen, setIsFaveOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -40,10 +38,6 @@ const Shop = () => {
       document.body.style.overflow = "auto"; // cleanup
     };
   }, [isCartOpen, isFaveOpen, isFilterOpen]);
-
- 
-
-
 
 
   // show || hide categories filter
@@ -103,18 +97,6 @@ const Shop = () => {
     dispatch(toggleFave(product));
   };
 
-  const handleChange = (e) => {
-    const val = Number(e.target.value);
-    setPrice(val);
-
-    // calculate percentage relative to min/max
-    const min = Number(e.target.min);
-    const max = Number(e.target.max);
-    const percent = ((val - min) / (max - min)) * 100;
-
-    // update CSS variable
-    e.target.style.setProperty("--value", `${percent}%`);
-  };
 
   const closeSidebars = () => {
     setIsCartOpen(false);
@@ -147,7 +129,7 @@ const Shop = () => {
       <div className="z-999">
         {/* sidebuttons */}
         <div
-          className={`z-40 transition-all duration-500 ease-in-out fixed top-[50%]  grid gap-2.5 ${
+          className={`z-[70] transition-all duration-500 ease-in-out fixed top-[50%]  grid gap-2.5 ${
             isCartOpen || isFaveOpen || isFilterOpen
               ? "right-[268px] sm:right-[329px]"
               : "right-0"

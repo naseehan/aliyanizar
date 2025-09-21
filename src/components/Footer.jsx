@@ -44,7 +44,6 @@ const Footer = () => {
           ©2025 aliyanizarstudio. All Rights Reserved
         </p>
       </div>
-      
     </div>
   );
 };

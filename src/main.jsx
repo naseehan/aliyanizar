@@ -15,6 +15,6 @@ createRoot(document.getElementById('root')).render(
     <App />
     </ParallaxProvider>
     </BrowserRouter>
-   </StrictMode>,
+   </StrictMode>
    </Provider>
 )

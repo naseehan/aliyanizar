@@ -234,7 +234,7 @@ export const products = [
   {
     id: 17,
     name: "jameel",
-    img: "/products/Jameel.webp",
+    img: "/products/Jameel1.webp",
     categories: "Calligraphy",
     dimensions: "Calligraphy on canvas, 30cmx15cm",
     ogPrice: 30,

@@ -24,7 +24,7 @@ const Navbar = () => {
     }, [isOpen]);
 
   return (
-    <div className="bg-[#004953] fixed z-[60] top-0 left-0 right-0 w-screen ">
+    <div className="bg-[#004953] fixed z-[80] top-0 left-0 right-0 w-screen ">
         {/* overlay for closing navbar when clicked outside */}
        <div
         className={`absolute inset-0 z-50 h-[100vh] ${

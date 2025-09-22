@@ -155,7 +155,7 @@ const Slider = () => {
               className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-0 pointer-events-none
              group-hover:opacity-70 group-hover:pointer-events-auto transition-opacity duration-300"
             >
-              <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px] text-white capitalize">
+              <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px] text-white capitalize text-center">
                 {item.name}
               </h3>
               <p className="text-[20px] font-semibold text-center">LEARN MORE</p>

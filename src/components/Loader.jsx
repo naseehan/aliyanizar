@@ -73,22 +73,6 @@ export default function Loader() {
 
         <span className="absolute z-10 top-8 left-[50px]" ref={ARef}>A</span>
         <span className="absolute top-14 left-[82px]" ref={NRef}>N</span>
-
-        {/* Progress Circle */}
-        {/* <svg className="absolute w-48 h-48" viewBox="0 0 100 100">
-          <circle
-            cx="50"
-            cy="50"
-            r="45"
-            stroke="#D4AF37"
-            strokeWidth="2"
-            fill="transparent"
-            strokeLinecap="round"
-            strokeDasharray="283" // circumference of circle
-            strokeDashoffset="283" // fully hidden at start
-            className="animate-draw"
-          />
-        </svg> */}
       </div>
     </div>
   );

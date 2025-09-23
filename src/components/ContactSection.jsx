@@ -67,7 +67,7 @@ const handleSubmit = async (e) => {
   return (
     <div className="bg-[#FFFFF0] relative">
       <div className="hidden md:block">
-              <img src="/spinning-circle.webp" alt="spinning" className="absolute w-[371px] bottom-5 left-[-104px]" />
+              <img src="/spinning-circle.webp" alt="spinning" className="absolute w-[310px] bottom-5 left-[-69px]" />
             </div>
       <div className="invisible">services</div>
 

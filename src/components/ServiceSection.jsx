@@ -55,7 +55,7 @@ const ServiceSection = () => {
   return (
     <div className="bg-[#FFFFF0] relative">
       <div className="hidden md:block">
-        <img src="/spinning-circle.webp" alt="spinning image" loading="lazy" className="absolute w-[250px] bottom-29 right-0" />
+        <img src="/spinning-circle.webp" alt="spinning image" loading="lazy" className="absolute w-[200px] bottom-29 right-4" />
       </div>
       {/* heading */}
       <div className=" mx-auto text-center">

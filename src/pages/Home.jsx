@@ -72,20 +72,18 @@ const Home = () => {
             },
           ]}
         />
-        <div ref={image1} className="absolute w-[170px] top-[30%] left-[10%]">
+        <div ref={image1} className="absolute w-[130px] top-[30%] left-[10%]">
         <img
           src="/spinning-circle.webp"
           alt="spinning circle"
           className=" rounded-full animate-spin-slow hidden lg:block"
-          width="170"
         />
         </div>
-        <div ref={image2} className="absolute w-[170px] top-[30%] right-[10%] ">
+        <div ref={image2} className="absolute w-[130px] top-[30%] right-[10%] ">
         <img
           src="/spinning-circle.webp"
           alt="spinning circle"
           className="rounded-full animate-spin-slow2 hidden lg:block"
-          width="170"
         />
         </div>
       </div>

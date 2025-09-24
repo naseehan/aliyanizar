@@ -82,7 +82,7 @@ const handleSubmit = async (e) => {
           </h1>
            <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Whether you’re looking to add art to your life, style your space, or visualize a new idea—we’d love to hear from you. </p>
              {/* <br /> */}
-         <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Contact me at  <strong>aliyanizar023@gmail.com</strong> </p>
+         <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Contact me at  <strong>Info@aliyanizarstudio.com</strong> </p>
          <p className='font-medium font-[Ubuntu] text-[#b9900d]'>Or feel free to leave a message via the form.</p>
         </div>
 {/* 802d01dd2e487f17e9f0ebf88ae34b8c */}

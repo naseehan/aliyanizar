@@ -55,7 +55,7 @@ const DesignWork = () => {
               className="w-full h-full object-cover"
             />
             {/* when hovering */}
-            <div className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white opacity-70  sm:opacity-0  sm:group-hover:opacity-70 sm:group-hover:pointer-events-auto transition-opacity duration-300">
+            <div className="absolute inset-0 bg-[#3d3219] bg-opacity-70 flex flex-col justify-center items-center text-white opacity-70  sm:opacity-0  sm:group-hover:opacity-70 sm:group-hover:pointer-events-auto transition-opacity duration-300">
               <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px]">
                 Wall Murals
               </h3>

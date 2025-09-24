@@ -21,6 +21,9 @@ import NotFound from "./pages/NotFound";
 import Murals from "./pages/Murals";
 import Interiors from "./pages/Interiors";
 import { Analytics } from "@vercel/analytics/react"
+// react toast
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import ProductSlider from "./components/ProductSlider";
 
@@ -62,6 +65,21 @@ const App = () => {
       </Routes>
       <Footer />
       <Analytics />
+
+  <ToastContainer
+        position="top-right" 
+        autoClose={3000}      // time in ms before auto-dismiss
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"       // options: "light", "dark", "colored"
+      />
+
+
     </div>
   );
 };

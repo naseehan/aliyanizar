@@ -6,6 +6,8 @@ import Sidebar from "../components/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../store/cartSlice";
 import { toggleFave, removeFave } from "../store/favesSlice";
+import { toast } from "react-toastify";
+
 
 const ArtWorkDetails = () => {
   let { slug } = useParams();
@@ -47,8 +49,12 @@ const ArtWorkDetails = () => {
   // Add to cart
   const handleClick = (id) => {
     // const product = products.find((item) => item.id === id);
-    dispatch(addToCart(product));
+    const result =  dispatch(addToCart(product));
+     if (result.meta?.exceeded) {
+    toast.error("You can only add up to 5 of this item.");
+  }
   };
+
   // add to favourites
    const addFaves = (product) => {
       dispatch(toggleFave(product));

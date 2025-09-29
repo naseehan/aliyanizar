@@ -11,7 +11,7 @@ const GoBack = () => {
    <div className="absolute sm:fixed top-17 sm:top-27 left-2.5 sm:left-[35px] z-40">
         <button
         onClick={handleClick}
-          class="text-center relative text-black text-xl font-semibold group flex sm:h-[50px] sm:w-[50px] h-10 w-10 items-center justify-center rounded-full bg-[#D4AF37] shadow-[0_0_0_4px_rgba(180,160,255,0.25)] transition-all duration-300 ease-in-out hover:w-[140px] hover:rounded-[50px] hover:bg-[#D4AF37] cursor-pointer overflow-hidden"
+          className="text-center relative text-black text-xl font-semibold group flex sm:h-[50px] sm:w-[50px] h-10 w-10 items-center justify-center rounded-full bg-[#D4AF37] shadow-[0_0_0_4px_rgba(180,160,255,0.25)] transition-all duration-300 ease-in-out hover:w-[140px] hover:rounded-[50px] hover:bg-[#D4AF37] cursor-pointer overflow-hidden"
           type="button"
         >
             <svg

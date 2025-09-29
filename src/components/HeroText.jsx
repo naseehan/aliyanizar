@@ -5,7 +5,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../App.css";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
+gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroText = () => {
@@ -49,11 +51,10 @@ const HeroText = () => {
           start: "top 100%",
           toggleActions: "play none none none",
         },
+        transformOrigin: "center center",
       }
     );
   }, []);
-
-
 
 
 
@@ -106,12 +107,18 @@ const HeroText = () => {
   }, []);
 
 
+
+
+
+
   return (
     <div
       className="mt-30 text-center block"
       // ref={root}
     >
       <div className="relative mb-[30px]">
+
+  
         <p
           ref={reverseRef}
           className="text-[27px] font-bold text-[#cb9b4a] font-[Maghfirea,sans-serif]"

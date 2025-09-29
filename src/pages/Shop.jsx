@@ -4,8 +4,9 @@ import { products } from "./shopItems";
 import { categories } from "./shopItems";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
+
 import { addToCart, removeFromCart } from "../store/cartSlice";
 import { toggleFave, removeFave } from "../store/favesSlice";
 import GoBack from "../components/GoBack";
@@ -21,14 +22,15 @@ const Shop = () => {
   const cart = useSelector((state) => state.cart.items);
 
   const [filterdProducts, setFilteredProducts] = useState(products);
-
-  
   const [search, setSearch] = useState();
+
   let navigate = useNavigate();
 
 
   // hide sidebars when clicked outside
   useEffect(() => {
+
+
     if (isCartOpen || isFaveOpen || isFilterOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -80,8 +82,15 @@ const Shop = () => {
 
   // Add to cart
   const handleClick = (id) => {
+
     const product = products.find((item) => item.id === id);
-    dispatch(addToCart(product));
+    const result =  dispatch(addToCart(product));
+
+  if (result.meta?.exceeded) {
+    toast.error("You can only add up to 5 of this item.");
+  }
+    
+   
   };
 
   // Remove from cart

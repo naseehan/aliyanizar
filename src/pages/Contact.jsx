@@ -27,6 +27,7 @@ const Contact = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         }).then((res) => {
+          if( res.status === 429 ) throw new Error("Too many requests");
           if (!res.ok) throw new Error("Server error");
           return res.json();
         }),
@@ -38,9 +39,14 @@ const Contact = () => {
       );
 
       e.target.reset();
-    } catch (err) {
-      console.error(err);
-    } finally {
+    }  catch (err) {
+  if (err.message === "Too many requests") {
+    toast.error("⏱️ You're sending messages too fast. Please wait a minute before trying again.");
+  } else {
+    toast.error("❌ Something went wrong. Please try again!");
+  }
+  console.error(err);
+} finally {
       setLoading(false);
     }
   };

@@ -9,11 +9,7 @@ import GoBack from "../components/GoBack";
 const animation = { duration: 30000, easing: (t) => t };
 
 const Murals = () => {
-  let navigate = useNavigate();
-  //   const handleClick = (slug) => {
-  //     let keyword = slug.toLowerCase().replace(/s\+/g, "-");
-  //     navigate(`/works/artWorks/${keyword}`);
-  //   };
+
 
   const headingRef = React.useRef();
   const buttonRef = React.useRef();
@@ -30,55 +26,16 @@ const Murals = () => {
       perView: 1,
       spacing: 80,
     },
-    // breakpoints: {
-    //   "(max-width: 1024px)": {
-    //     slides: {
-    //       perView: 2,
-    //       spacing: 16,
-    //     },
-    //   },
-    //   "(max-width: 640px)": {
-    //     slides: {
-    //       perView: 1,
-    //       spacing: 10,
-    //     },
-    //   },
-    // },
+
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
     created() {
       setLoaded(true);
     },
-    // updated(s) {
-    //   s.moveToIdx(s.track.details.abs + 5, true, animation);
-    // },
-    // animationEnded(s) {
-    //   s.moveToIdx(s.track.details.abs + 5, true, animation);
-    // },
   });
 
-  // Pause on hover
-  //   React.useEffect(() => {
-  //     if (!instanceRef.current) return;
-  //     const sliderEl = instanceRef.current.container;
 
-  //     const stop = () => instanceRef.current?.animator.stop();
-  //     const resume = () =>
-  //       instanceRef.current?.moveToIdx(
-  //         instanceRef.current.track.details.abs + 5,
-  //         true,
-  //         animation
-  //       );
-
-  //     sliderEl.addEventListener("mouseover", stop);
-  //     sliderEl.addEventListener("mouseleave", resume);
-
-  //     return () => {
-  //       sliderEl.removeEventListener("mouseover", stop);
-  //       sliderEl.removeEventListener("mouseleave", resume);
-  //     };
-  //   }, [instanceRef]);
 
   return (
     <div className="bg-[#FFFFF0] pt-27 sm:pt-40 relative">
@@ -157,18 +114,6 @@ const Murals = () => {
         )}
       </div>
 
-      {/* overlay */}
-      {/* {murals.map(item => (
-            <div
-              className=" bg-[#3d3219] bg-opacity-70 flex flex-col justify-around items-center text-white"
-            >
-              <h3 className="text-[40px] font-bold font-[Flaviotte] tracking-[4px] text-white uppercase">
-                {item.name}
-              </h3>
-              <p className="text-[20px] font-semibold text-center">{item.categories}</p>
-               <p className="text-[20px] font-semibold text-center">{item.size}</p>
-            </div>
-))} */}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import cors from "cors";
 import { Resend } from "resend";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-
+import rateLimit from "express-rate-limit";
 dotenv.config();
 
 const app = express();
@@ -25,7 +25,21 @@ const artSchema = new mongoose.Schema({
   thumbnail: String,
 });
 
-app.post("/sendmail", async (req, res) => {
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minutes
+  max: 1, // Limit each IP to 1 requests per windowMs
+    handler: (req, res) => {
+      console.log("Rate limit reached for IP:", req.ip);
+    res.status(429).json({
+      
+      error: "Too many requests from this IP, please try again later."
+    });
+  },
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false,  // Disable `X-RateLimit-*` headers
+});
+
+app.post("/sendmail", limiter , async (req, res) => {
   const { name, email, phone, what, message } = req.body;
 
   if (!name || !email || !message) {

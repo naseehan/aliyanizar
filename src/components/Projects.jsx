@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../App.css'
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -9,11 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
 
- let navigate = useNavigate()
-  // const handleClick = (slug) => {
-  //    let keyword = slug.toLowerCase().replace(/s\+/g, "-")
-  //   navigate(`/works/designWorks/${keyword}`)
-  // };
+
 
 const headingRef = React.useRef();
 const buttonRef = React.useRef()

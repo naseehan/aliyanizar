@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import avatar from "../assets/aliya.webp";
+import avatar from "../assets/aliya1.webp";
 import "../App.css";
 
 gsap.registerPlugin(ScrollTrigger);

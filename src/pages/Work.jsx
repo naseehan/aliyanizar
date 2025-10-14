@@ -19,11 +19,11 @@ const Work = () => {
 
         <div className="lg:flex grid justify-center items-center">
           <div className="relative w-[360px] lg:w-auto">
-            <img src="/container.webp" alt="work container" />
+            <img src="/container1.webp" alt="work container" />
             <Link to="artWorks" className="absolute top-[44%] left-[28%] text-[22px] lg:text-[34px] font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase">Artworks</Link>
           </div>
           <div className="relative w-[360px] lg:w-auto">
-            <img src="/container.webp" alt="project container" />
+            <img src="/container1.webp" alt="project container" />
             <Link to="designWorks" className="absolute top-[42%] lg:left-[32%] left-[31%]  text-center  text-[22px] lg:text-[34px]  font-bold tracking-[8px] text-[#c16d3c] font-['Maghfirea',sans-serif] uppercase"style={{lineHeight: 1}}>Design <br /> Projects</Link>
           </div>
         </div>

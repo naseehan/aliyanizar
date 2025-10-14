@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../assets/aliya.webp";
+import avatar from "../assets/aliya1.webp";
 import diamond from "../assets/diamond.webp"
 import "../App.css"
 import GoBack from "../components/GoBack";

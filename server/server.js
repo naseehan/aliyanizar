@@ -1,50 +1,35 @@
 import express from "express";
 import cors from "cors";
-import { Resend } from "resend";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
 import rateLimit from "express-rate-limit";
 import nodemailer from "nodemailer";
-import SibApiV3Sdk from "sib-api-v3-sdk";
-dotenv.config();
 
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.error(err));
-
-const artSchema = new mongoose.Schema({
-  name: String,
-  category: String,
-  sold: Boolean,
-  image: String,
-  thumbnail: String,
-});
-
+// Limit form submissions
 const limiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minutes
-  max: 1, // Limit each IP to 1 requests per windowMs
+  windowMs: 60 * 1000, // 1 minute
+  max: 1,
   handler: (req, res) => {
-    console.log("Rate limit reached for IP:", req.ip);
-    res.status(429).json({
-      error: "Too many requests from this IP, please try again later.",
-    });
+    res.status(429).json({ error: "Too many requests, try again later." });
   },
-  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-  legacyHeaders: false, // Disable `X-RateLimit-*` headers
 });
 
-const client = SibApiV3Sdk.ApiClient.instance;
-client.authentications["api-key"].apiKey = process.env.BREVO_API_KEY;
-
-const api = new SibApiV3Sdk.TransactionalEmailsApi();
+// Configure Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",  // NOT localhost
+  port: 587,
+  secure: false, // true if port is 465
+  auth: {
+    user: process.env.EMAIL_SENDER, // verified Gmail
+    pass: process.env.EMAIL_PASS,   // App Password
+  },
+});
 
 app.post("/sendmail", limiter, async (req, res) => {
   const { name, email, phone, what, message } = req.body;
@@ -53,34 +38,19 @@ app.post("/sendmail", limiter, async (req, res) => {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  // const transporter = nodemailer.createTransport({
-  //   service:"gmail",
-  //   auth: {
-  //       user: process.env.EMAIL_RECEIVER,
-  //       pass: process.env.EMAIL_PASS,
-  //     },
-  // })
-
-  //   const mailOptions = {
-  //     from: process.env.EMAIL_RECEIVER,
-  //     replyTo: email, // the person filling out your form
-  //     to: "aliyanizar023@gmail.com",
-  //     subject: `New message from ${name}`,
-  //     text: `From: ${name} (${email})\n${phone || "Not provided"}\n${what}\n\n${message}`,
-  //   };
+  const mailOptions = {
+    from: process.env.EMAIL_SENDER, // your verified email
+    to: ["naseehan700@gmail.com", "aliyanizar023@gmail.com"], // you + client
+    subject: `New message from ${name}`,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nRegarding: ${what || ""}\nMessage:\n${message}`,
+    // replyTo: email // OPTIONAL if you want to reply directly to user
+  };
 
   try {
-    await api.sendTransacEmail({
-      sender: { email: "naseehan700@gmail.com" },
-      to: [
-        { email: `${process.env.EMAIL_RECEIVER}` },
-        { email: "naseehan700@gmail.com" },
-      ],
-      subject: `New message from ${name}`,
-      textContent: `Name: ${name}\nEmail: ${email}\nRegarding: ${what || ""}\nMessage:\n${message}`
-    });
-    res.json({ success: true });
+    await transporter.sendMail(mailOptions);
+    res.json({ success: true, message: "✅ Email sent successfully!" });
   } catch (error) {
+    console.error("Email send error:", error);
     res.status(500).json({
       success: false,
       message: `❌ Failed to send email: ${error.message}`,

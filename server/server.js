@@ -4,6 +4,7 @@ import { Resend } from "resend";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import rateLimit from "express-rate-limit";
+import nodemailer from "nodemailer";
 dotenv.config();
 
 const app = express();
@@ -39,32 +40,40 @@ const limiter = rateLimit({
   legacyHeaders: false,  // Disable `X-RateLimit-*` headers
 });
 
-app.post("/sendmail", limiter , async (req, res) => {
+app.post("/sendmail" ,limiter, async (req, res) => {
   const { name, email, phone, what, message } = req.body;
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  try {
-    await resend.emails.send({
-      from: "Website Contact <onboarding@resend.dev>",
-      to: process.env.EMAIL_RECEIVER,
-      subject: `New message from ${name}`,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone || "Not provided"}
-        Regarding: ${what}
-        Message: ${message}
-      `,
-    });
+const transporter = nodemailer.createTransport({
+  service:"gmail",
+  auth: {
+      user: process.env.EMAIL_RECEIVER,
+      pass: process.env.EMAIL_PASS,
+    },
+})
 
-    res.json({ success: true, message: "Email sent!" });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to send email" });
+  const mailOptions = {
+    from: process.env.EMAIL_RECEIVER,
+    replyTo: email, // the person filling out your form
+    to: "aliyanizar023@gmail.com",
+    subject: `New message from ${name}`,
+    text: `From: ${name} (${email})\n${phone || "Not provided"}\n${what}\n\n${message}`,
+  };
+
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ success: true, message: "✅ Email sent successfully!" });
+  } catch (error) {
+  res.status(500).json({
+    success: false,
+    message: `❌ Failed to send email: ${error.message}`,
+  });
   }
 });
+
 
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));

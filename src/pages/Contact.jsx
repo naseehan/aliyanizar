@@ -19,7 +19,7 @@ const Contact = () => {
       what: e.target.what.value,
       message: e.target.message.value,
     };
-
+// https://aliyanizar.onrender.com/sendmail
     try {
       await toast.promise(
         fetch("https://aliyanizar.onrender.com/sendmail", {

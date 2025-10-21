@@ -40,7 +40,7 @@ app.post("/sendmail", limiter, async (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_SENDER, // your verified email
-    to: ["naseehan700@gmail.com", "aliyanizar023@gmail.com"], // you + client
+    to: "naseehan700@gmail.com", // you + client
     subject: `New message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nRegarding: ${what || ""}\nMessage:\n${message}`,
     // replyTo: email // OPTIONAL if you want to reply directly to user

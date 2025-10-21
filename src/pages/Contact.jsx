@@ -22,7 +22,7 @@ const Contact = () => {
 // https://aliyanizar.onrender.com/sendmail
     try {
       await toast.promise(
-        fetch("http://localhost:5000/sendmail", {
+        fetch("https://aliyanizar.onrender.com/sendmail", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),

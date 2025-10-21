@@ -11,15 +11,15 @@ const Services = lazy(() => import("./pages/Services"));
 import Work from "./pages/Work";
 import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
-import ArtWorkDetails from "./pages/ArtWorkDetails";
+const ArtWorkDetails = lazy(() => import("./pages/ArtWorkDetails")) ;
 import CustomCursor from "./components/customCursor";
 const Shop = lazy(() => import("./pages/Shop"));
-import ArtWorks from "./components/embla/ArtWorks";
-import DesignWork from "./pages/DesignWork";
-import DesignWorkDetails from "./pages/DesignWorkDetails";
-import NotFound from "./pages/NotFound";
-import Murals from "./pages/Murals";
-import Interiors from "./pages/Interiors";
+const ArtWorks = lazy(() => import("./components/embla/ArtWorks"))
+const DesignWork = lazy(() => import("./pages/DesignWork"))
+const DesignWorkDetails = lazy(() =>import("./pages/DesignWorkDetails"));
+const NotFound = lazy(() => import("./pages/NotFound")) ;
+const Murals = lazy(() => import("./pages/Murals")) ;
+const Interiors = lazy(() => import("./pages/Interiors")) ;
 import { Analytics } from "@vercel/analytics/react";
 // react toast
 import { ToastContainer } from "react-toastify";

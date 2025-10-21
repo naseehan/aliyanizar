@@ -141,7 +141,7 @@ const DektopNavbar = () => {
           >
             {/* Circle logo image */}
             <img
-              src="/logo.webp"
+              src="/logo1.webp"
               alt="logo"
               className="absolute h-[94px] rounded-full"
               // height="94"

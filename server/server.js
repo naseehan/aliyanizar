@@ -37,7 +37,7 @@ app.post("/sendmail", async (req, res) => {
     // Send email using Resend
     const data = await resend.emails.send({
       from: "Website Contact <onboarding@resend.dev>", // use your verified sender if available
-      to: "naseehan700@gmail.com",
+      to: "aliyanizar023@gmail.com",
       subject: `New message from ${name}`,
       text: `
 Name: ${name}

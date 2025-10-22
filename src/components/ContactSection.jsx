@@ -61,6 +61,11 @@ const ContactSection = () => {
 
       e.target.reset();
     } catch (err) {
+      if (err.message === "Too many requests") {
+        toast.error("⏱️ You're sending messages too fast. Please wait a minute before trying again.");
+      } else {
+        toast.error("❌ Something went wrong. Please try again!");
+      }
       console.error(err);
     } finally {
       setLoading(false);

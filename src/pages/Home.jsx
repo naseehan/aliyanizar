@@ -1,9 +1,9 @@
-import React, {Suspense, lazy} from "react";
+import React, { useEffect, Suspense, lazy } from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import "../App.css";
 import HeroText from "../components/HeroText";
-const Slider  = lazy(() => import("../components/Slider"));
-const AboutSection = lazy(() => import ("../components/AboutSection"));
+const Slider = lazy(() => import("../components/Slider"));
+const AboutSection = lazy(() => import("../components/AboutSection"));
 const Projects = lazy(() => import("../components/Projects"));
 const ServiceSection = lazy(() => import("../components/ServiceSection"));
 const ContactSection = lazy(() => import("../components/ContactSection"));
@@ -18,7 +18,33 @@ const Home = () => {
   const image1 = React.useRef();
   const image2 = React.useRef();
 
-   useGSAP(() => {
+  // ✅ Dynamically preload home images and clean up after leaving
+  useEffect(() => {
+    const imagesToPreload = [
+      "/bgwork.webp",
+      "/spinning-circle1.webp",
+      "/logo.webp",
+    ];
+
+    // Create and append preload links
+    const links = imagesToPreload.map((src) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = src;
+      link.fetchPriority = "high";
+      document.head.appendChild(link);
+      return link;
+    });
+
+    // ✅ Cleanup function: remove them from <head> on unmount
+    return () => {
+      links.forEach((link) => link.remove());
+    };
+  }, []);
+
+  // ✅ Animations
+  useGSAP(() => {
     gsap.fromTo(
       image1.current,
       { y: 200, opacity: 0 },
@@ -36,8 +62,7 @@ const Home = () => {
     );
   }, []);
 
-
-   useGSAP(() => {
+  useGSAP(() => {
     gsap.fromTo(
       image2.current,
       { y: 200, opacity: 0 },
@@ -54,47 +79,43 @@ const Home = () => {
       }
     );
   }, []);
+
   return (
     <div className="relative">
       <div className="parallaxWrapper relative">
         <ParallaxBanner
           className="parallax aspect-[2/1] h-screen"
           layers={[
-          
-            {
-              speed: -30,
-              children: <HeroText />,
-            },
-           
-            {
-              image: "/bgwork.webp",
-              speed: -2,
-            },
+            { speed: -30, children: <HeroText /> },
+            { image: "/bgwork.webp", speed: -2 },
           ]}
         />
+
         <div ref={image1} className="absolute w-[130px] top-[30%] left-[10%]">
-        <img
-          src="/spinning-circle1.webp"
-          alt="spinning circle"
-          className=" rounded-full animate-spin-slow hidden lg:block"
-        />
+          <img
+            src="/spinning-circle1.webp"
+            alt="spinning circle"
+            className="rounded-full animate-spin-slow hidden lg:block"
+          />
         </div>
-        <div ref={image2} className="absolute w-[130px] top-[30%] right-[10%] ">
-        <img
-          src="/spinning-circle1.webp"
-          alt="spinning circle"
-          className="rounded-full animate-spin-slow2 hidden lg:block"
-        />
+
+        <div ref={image2} className="absolute w-[130px] top-[30%] right-[10%]">
+          <img
+            src="/spinning-circle1.webp"
+            alt="spinning circle"
+            className="rounded-full animate-spin-slow2 hidden lg:block"
+          />
         </div>
       </div>
 
-<Suspense fallback={<p>Loading ...</p>}>
-      <Slider />
-      <AboutSection />
-      <Projects />
-      <ServiceSection />
-      <ContactSection />
+      <Suspense fallback={<p>Loading ...</p>}>
+        <Slider />
+        <AboutSection />
+        <Projects />
+        <ServiceSection />
+        <ContactSection />
       </Suspense>
+
       <ToTop />
     </div>
   );

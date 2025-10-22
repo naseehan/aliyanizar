@@ -2,53 +2,53 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import rateLimit from "express-rate-limit";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Limit form submissions
+// Rate limiter to prevent spam
 const limiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minute
-  max: 1,
-  handler: (req, res) => {
-    res.status(429).json({ error: "Too many requests, try again later." });
-  },
+  windowMs: 60 * 1000,
+  max: 3,
+  message: { error: "Too many requests, try again later." },
 });
+app.use(limiter);
 
-// Configure Nodemailer transporter
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",  // NOT localhost
-  port: 587,
-  secure: false, // true if port is 465
-  auth: {
-    user: process.env.EMAIL_SENDER, // verified Gmail
-    pass: process.env.EMAIL_PASS,   // App Password
-  },
-});
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-app.post("/sendmail", limiter, async (req, res) => {
+// POST endpoint to handle form submissions
+app.post("/sendmail", async (req, res) => {
   const { name, email, phone, what, message } = req.body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({ error: "Missing required fields" });
+    return res
+      .status(400)
+      .json({ success: false, message: "Missing required fields" });
   }
 
-  const mailOptions = {
-    from: process.env.EMAIL_SENDER, // your verified email
-    to: "naseehan700@gmail.com", // you + client
-    subject: `New message from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nRegarding: ${what || ""}\nMessage:\n${message}`,
-    // replyTo: email // OPTIONAL if you want to reply directly to user
-  };
-
   try {
-    await transporter.sendMail(mailOptions);
-    res.json({ success: true, message: "✅ Email sent successfully!" });
+    // Send email using Resend
+    const data = await resend.emails.send({
+      from: "Website Contact <onboarding@resend.dev>", // use your verified sender if available
+      to: "naseehan700@gmail.com",
+      subject: `New message from ${name}`,
+      text: `
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+Regarding: ${what}
+Message: ${message}
+      `,
+    });
+
+    res.json({ success: true, message: "✅ Email sent successfully!", data });
   } catch (error) {
     console.error("Email send error:", error);
     res.status(500).json({

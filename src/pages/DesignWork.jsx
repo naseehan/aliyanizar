@@ -1,17 +1,9 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GoBack from "../components/GoBack";
 
 const DesignWork = () => {
-  let navigate = useNavigate();
-  const handleClick = (slug) => {
-    let keyword = slug.toLowerCase().replace(/s\+/g, "-");
-    navigate(`${keyword}`);
-  };
 
-  const handleInteriors = () => {
-    navigate()
-  }
 
   return (
     <div className="bg-[#FFFFF0] relative">
@@ -27,7 +19,7 @@ const DesignWork = () => {
         <div className="grid sm:[grid-template-columns:repeat(auto-fit,minmax(500px,1fr))] [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-8">
 
 
-          <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
+          <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[446px]">
             <img
               src="/comingSoon.jpeg"
               alt=""
@@ -47,7 +39,7 @@ const DesignWork = () => {
             </div>
           </div>
 
-          <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
+          <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[446px]">
             <img
               src="/murals/Dhikr.webp"
               alt="murals"
@@ -67,7 +59,7 @@ const DesignWork = () => {
             </div>
           </div>
 
-          <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[500px]">
+          <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[446px]">
             <img
               src="/comingSoon.jpeg"
               alt=""

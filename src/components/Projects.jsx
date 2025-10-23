@@ -134,7 +134,7 @@ useGSAP(() => {
 
       <div className="flex pb-20" ref={buttonRef}>
         <Link to='/works/designWorks'
-          className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200">
+          className="text-center border border-solid p-[10px_15px] w-[200px] mx-auto text-[20px] font-semibold font-['Maghfirea',sans-serif] tracking-[3px] border-[#D4AF37] text-[#946C00] hover:bg-[#8a733e] hover:text-[#fff] transition-colors duration-200">
           MORE WORKS
         </Link>
       </div>

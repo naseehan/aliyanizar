@@ -171,7 +171,7 @@ const ContactSection = () => {
     ${
       loading
         ? "bg-gray-300 cursor-not-allowed"
-        : "text-[#D4AF37] hover:bg-[#8a733e] hover:text-[#fff]"
+        : "border-[#D4AF37] text-[#946C00] hover:bg-[#8a733e] hover:text-[#fff]"
     }`}
               >
                 {loading ? "Submitting..." : "Submit"}

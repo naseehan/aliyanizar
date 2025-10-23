@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./Slider.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -123,13 +123,13 @@ const Slider = () => {
     <div className="bg-[#FFFFF0]">
       {/* heading */}
       <div className="py-20 mx-auto text-center">
-        <h1
+        <h2
           className="text-[50px] font-bold tracking-[5px] text-[#D4AF37] font-['Maghfirea',sans-serif]"
           id="heading"
           ref={headingRef}
         >
           ARTWORKS
-        </h1>
+        </h2>
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
       </div>
 

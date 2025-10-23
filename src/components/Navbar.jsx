@@ -11,22 +11,22 @@ const Navbar = () => {
     setIsOpen((prev) => !prev);
   };
 
-    // lock scrolling when clicked outside
-    useEffect(() => {
-      if (isOpen) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "auto";
-      }
-      return () => {
-        document.body.style.overflow = "auto"; // cleanup
-      };
-    }, [isOpen]);
+  // lock scrolling when clicked outside
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto"; // cleanup
+    };
+  }, [isOpen]);
 
   return (
     <div className="bg-[#004953] fixed z-[80] top-0 left-0 right-0 w-screen ">
-        {/* overlay for closing navbar when clicked outside */}
-       <div
+      {/* overlay for closing navbar when clicked outside */}
+      <div
         className={`absolute inset-0 z-50 h-[100vh] ${
           isOpen ? "block" : "hidden"
         }`}
@@ -39,6 +39,7 @@ const Navbar = () => {
       <div className="sm:hidden relative h-[60px]">
         <img
           src={hamburger}
+          srcSet="/hamburger1.png 2x"
           alt="menu"
           className="py-3.5 cursor-pointer absolute right-2"
           onClick={handleClick}
@@ -49,36 +50,43 @@ const Navbar = () => {
             isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-        
-          <ul
-            className={`grid gap-4 justify-start py-12 px-[9px]  text-[#D4AF37] font-normal text-[30px] text-end tracking-[3px] font-[Maghfirea,sans-serif] `}
-          >
-            <li className="" onClick={handleClick}>
+          <ul className="grid gap-4 justify-start py-12 px-[9px] text-[#D4AF37] font-normal text-[30px] text-end tracking-[3px] font-[Maghfirea,sans-serif]">
+            <li onClick={handleClick}>
               <Link to="/">Home</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+            <li>
+              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+            </li>
 
-            <li className="" onClick={handleClick}>
+            <li onClick={handleClick}>
               <Link to="/works">Works</Link>
             </li>
+            <li>
+              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+            </li>
 
-            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
-
-            <li className="" onClick={handleClick}>
+            <li onClick={handleClick}>
               <Link to="/about">About</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+            <li>
+              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+            </li>
 
-            <li className="" onClick={handleClick}>
+            <li onClick={handleClick}>
               <Link to="/shop">Shop</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+            <li>
+              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+            </li>
 
-            <li className="" onClick={handleClick}>
+            <li onClick={handleClick}>
               <Link to="/services">Services</Link>
             </li>
-            <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
-            <li className="" onClick={handleClick}>
+            <li>
+              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+            </li>
+
+            <li onClick={handleClick}>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>

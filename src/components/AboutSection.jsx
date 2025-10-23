@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -40,12 +40,12 @@ const AboutSection = () => {
  items-center lg:grid-cols-2 gap-[60px] grid-cols-1"
       >
         <div className="px-4 lg:px-0 text-center lg:text-start">
-          <h1
+          <h2
             className="text-[60px] font-bold font-['Maghfirea',sans-serif] uppercase tracking-[8px] text-[#b9900d] 
 "
           >
             hello<span className="font-[Ubuntu]">!</span>
-          </h1>
+          </h2>
           <p className="text-[24px] mb-12 leading-[1.5] font-[Flaviotte] uppercase tracking-[4px] font-medium text-[#b9900d] lg:max-w-[29rem]">
             I am Aliya Nizar,
             <br />

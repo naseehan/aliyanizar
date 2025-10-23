@@ -59,9 +59,9 @@ useGSAP(() => {
 
         {/* heading */}
       <div className="py-20 mx-auto text-center">
-        <h1 className="text-[60px] font-bold tracking-[5px] text-[#D4AF37] font-['Maghfirea',sans-serif] uppercase" id="heading" ref={headingRef}>
+        <h2 className="text-[60px] font-bold tracking-[5px] text-[#D4AF37] font-['Maghfirea',sans-serif] uppercase" id="heading" ref={headingRef}>
           Design Projects
-        </h1>
+        </h2>
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
       </div>
 

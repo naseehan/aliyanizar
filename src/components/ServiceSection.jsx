@@ -59,13 +59,13 @@ const ServiceSection = () => {
       </div>
       {/* heading */}
       <div className=" mx-auto text-center">
-        <h1
+        <h2
           className="text-[50px] font-bold tracking-[5px] text-[#D4AF37] font-['Maghfirea',sans-serif] uppercase"
           id="heading"
           ref={headingRef}
         >
           services
-        </h1>
+        </h2>
         <div className="h-px bg-[#D4AF37] mx-auto max-w-[1000px]"></div>
       </div>
 
@@ -75,7 +75,7 @@ const ServiceSection = () => {
         <div className="p-5 grid gap-y-3">
           <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
             <img src={paint} alt="paint" loading='lazy' className="w-[50px]"/>
-            <h1 className="tracking-[3px]">PAINTINGS</h1>
+            <h3 className="tracking-[3px]">PAINTINGS</h3>
           </div>
           <p className="text-[14px] md:text-[17px]  font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
             Canvases • Mural Walls • fabric(clothing) • wood
@@ -86,7 +86,7 @@ const ServiceSection = () => {
         <div className="p-5 grid gap-y-3">
           <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
             <img src={icon2} alt={icon2} loading='lazy' className="w-[50px]"/>
-            <h1 className="tracking-[3px]">Illustrations </h1>
+            <h3 className="tracking-[3px]">Illustrations </h3>
           </div>
           <p className="text-[14px] md:text-[17px]  font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
             Invitation cards • Digital art
@@ -96,7 +96,7 @@ const ServiceSection = () => {
         <div className="p-5 grid gap-y-3">
           <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
             <img src={icon1} alt={icon1} loading='lazy' className="w-[50px]"/>
-            <h1 className="tracking-[3px]">CALLIGRAPHY</h1>
+            <h3 className="tracking-[3px]">CALLIGRAPHY</h3>
           </div>
           <p className="text-[14px] md:text-[17px]  font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
            Canvas paintings • Prints
@@ -106,7 +106,7 @@ const ServiceSection = () => {
         <div className="p-5 grid gap-y-3">
           <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px]  font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
             <img src={icon3} alt={icon3} loading='lazy' className="w-[50px]"/>
-            <h1 className="tracking-[3px]">3D VISUALIZATION</h1>
+            <h3 className="tracking-[3px]">3D VISUALIZATION</h3>
           </div>
           <p className="text-[14px] md:text-[17px] font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d]">
             3D Models and Visualization for Interior Spaces
@@ -116,7 +116,7 @@ const ServiceSection = () => {
          <div className="p-5 grid gap-y-3">
           <div className="flex gap-[10px] items-center uppercase text-2xl md:text-[30px] w-[300px] font-bold font-['Maghfirea',sans-serif] text-[#b9900d]">
             <img src={icon4} alt={icon4} loading='lazy' className="w-[50px]"/>
-            <h1 className="tracking-[3px]">Interior Design Consultation</h1>
+            <h3 className="tracking-[3px]">Interior Design Consultation</h3>
           </div>
           <p className="text-[14px] md:text-[17px] font-medium font-[Ubuntu]  max-w-[474px] text-[#b9900d] capitalize">
            Concept development • Mood boards • CAD • 3D • Interior Styling

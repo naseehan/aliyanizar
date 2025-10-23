@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactSection = () => {
-  const form = useRef();
   const contactRef = React.useRef();
 
   const [loading, setLoading] = useState(false);
@@ -88,12 +87,12 @@ const ContactSection = () => {
         ref={contactRef}
       >
         <div className="grid max-w-[400px] basis-[40%] gap-5 ">
-          <h1
+          <h2
             className="text-[50px] font-bold tracking-[3px] text-[#D4AF37] font-['Maghfirea',sans-serif] uppercase"
             id="heading"
           >
             Let’s Collaborate & Create
-          </h1>
+          </h2>
           <p className="font-medium font-[Ubuntu] text-[#b9900d]">
             Whether you’re looking to add art to your life, style your space, or
             visualize a new idea—we’d love to hear from you.{" "}

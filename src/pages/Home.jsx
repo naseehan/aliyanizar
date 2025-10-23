@@ -11,6 +11,7 @@ import ToTop from "../components/ToTop";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Title, Meta, Link } from 'react-head';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,6 +82,15 @@ const Home = () => {
   }, []);
 
   return (
+<>
+      <Title>Aliya Nizar Studio</Title>
+      <Meta
+        name="description"
+        content="Aliya Nizar Studio showcases the work of Dubai-based artist and interior designer Aliya Nizar. Visitors can explore her curated portfolio, purchase prints and original artworks, or consult her for bespoke design proposals."
+      />
+      <Link rel="canonical" href="https://aliyanizarstudio.com/" />
+
+
     <div className="relative">
       <div className="parallaxWrapper relative">
         <ParallaxBanner
@@ -118,6 +128,7 @@ const Home = () => {
 
       <ToTop />
     </div>
+    </>
   );
 };
 

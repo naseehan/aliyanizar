@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 const Contact = lazy(() => import("./pages/Contact"));
 const Services = lazy(() => import("./pages/Services"));
-import Work from "./pages/Work";
+const Work = lazy(() => import("./pages/Work"))
 import ScrollToTop from "./components/ScrollToTop";
 import Loader from "./components/Loader";
 const ArtWorkDetails = lazy(() => import("./pages/ArtWorkDetails")) ;

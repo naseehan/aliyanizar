@@ -40,7 +40,7 @@ const Footer = () => {
           </a>
           
         </div>
-        <p className="text-[#b9900d]">
+        <p className="text-[#8b6500]">
           ©2025 aliyanizarstudio. All Rights Reserved
         </p>
       </div>

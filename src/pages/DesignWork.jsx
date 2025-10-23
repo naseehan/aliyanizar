@@ -51,9 +51,9 @@ const DesignWork = () => {
               <h3 className="text-[40px] font-medium font-[Flaviotte] tracking-[4px]">
                 Wall Murals
               </h3>
-              <Link to="/murals">
+              <Link to="/murals" aria-label="Learn more about Wall Murals">
                 <p className="text-[20px] font-semibold text-center">
-                  Learn More
+                  View Murals
                 </p>
               </Link>
             </div>

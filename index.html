@@ -3,41 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
-    <link rel="icon" href="/public/logo.jpeg" type="image/x-icon"/>
-     <meta
+
+    <link rel="icon" href="/logo.jpeg" type="image/x-icon" />
+    <meta
       name="description"
       content="Aliya Nizar Studio showcases the work of Dubai-based artist and interior designer Aliya Nizar. Visitors can explore her curated portfolio, purchase prints and original artworks, or consult her for bespoke design proposals."
     />
-    <meta
-      name="keywords"
-      content="Aliya Nizar, aliya, Aliya nizar studio, aliya nizar portfolio, interior designer, artist,aliya portfolio"
-    />
+   
     <meta name="author" content="naseeh" />
+    <!-- preload images -->
+    <link
+      rel="preload"
+      as="image"
+      href="/logo1.webp"
+      fetchpriority="high"
+      type="image/webp"
+    />
     <!-- preload fonts -->
-<link
-  rel="preload"
-  href="/fonts/Cloudy Aurora Serif.otf"
-  as="font"
-  type="font/otf"
-  crossorigin
-/>
-<link
-  rel="preload"
-  href="/fonts/Maghfirea-VGgl6.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-/>
+    <link
+      rel="preload"
+      href="/fonts/Cloudy Aurora Serif.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Maghfirea-VGgl6.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
 
-<!-- fontawesome -->
- <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  crossorigin="anonymous"
-/>
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      crossorigin="anonymous"
+    />
 
-
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous"
+      />
+    </noscript>
 
     <title>Aliya Nizar Studio</title>
     <!-- <script src="circletype.min.js" defer></script> -->

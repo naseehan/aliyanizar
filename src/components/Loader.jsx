@@ -7,12 +7,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Loader() {
-
   const imageRef = React.useRef();
   const ARef = React.useRef();
   const NRef = React.useRef();
 
-    useGSAP(() => {
+  useGSAP(() => {
     gsap.fromTo(
       imageRef.current,
       { y: 100, opacity: 0 },
@@ -30,7 +29,7 @@ export default function Loader() {
     );
   }, []);
 
-   useGSAP(() => {
+  useGSAP(() => {
     gsap.fromTo(
       ARef.current,
       { y: 150, opacity: 0 },
@@ -48,7 +47,7 @@ export default function Loader() {
     );
   }, []);
 
-   useGSAP(() => {
+  useGSAP(() => {
     gsap.fromTo(
       NRef.current,
       { y: 200, opacity: 0 },
@@ -69,11 +68,22 @@ export default function Loader() {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-[#FFFFF0] z-50">
       <div className="relative flex items-center justify-center font-['Maghfirea',sans-serif] text-[#D4AF37] font-medium text-[50px]">
+        <img
+          src="/logo1.webp"
+          alt="Aliya Nizar Studio Logo"
+          width="160"
+          height="160"
+          className="w-40 h-40"
+          ref={imageRef}
+          fetchPriority="high"
+        />
 
-        <img src="/logo1.webp" alt="Logo" className="w-40 h-40"  ref={imageRef} fetchPriority="high"/>
-
-        <span className="absolute z-10 top-8 left-[50px]" ref={ARef}>A</span>
-        <span className="absolute top-14 left-[82px]" ref={NRef}>N</span>
+        <span className="absolute z-10 top-8 left-[50px]" ref={ARef}>
+          A
+        </span>
+        <span className="absolute top-14 left-[82px]" ref={NRef}>
+          N
+        </span>
       </div>
     </div>
   );

@@ -70,9 +70,9 @@ useGSAP(() => {
 // onClick={() => handleClick("project-title")}
 >
   <div className="grid [grid-template-columns:repeat(auto-fit,minmax(329px,1fr))] gap-5">
-      <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[446px]">
+      <div className="group relative hover:-translate-y-3 duration-500 h-[400px] sm:h-[446px] sm:w-auto">
         <img
-          src="/comingSoon.jpeg"
+          src="/comingSoonHome.webp"
           alt=""
           loading="lazy"
           className="w-full h-full"
@@ -112,7 +112,7 @@ useGSAP(() => {
 
        <div className="group relative hover:-translate-y-3 duration-500 h-[400px]  sm:w-auto sm:h-[446px]">
         <img
-          src="/comingSoon.jpeg"
+          src="/comingSoonHome.webp"
           alt="crafts"
           loading="lazy"
           className="w-full h-full"

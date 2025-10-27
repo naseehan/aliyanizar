@@ -15,7 +15,6 @@ const HeroText = () => {
   const textRef = useRef(null);
   const reverseRef = useRef(null);
   const aliyaRef = React.useRef();
-  const wrapperRef = React.useRef();
   const circleInstance = useRef(null);
   const reverseInstance = useRef(null);
 

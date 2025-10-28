@@ -23,6 +23,33 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  let links = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "Works",
+      path: "/works",
+    },
+    {
+      name: "About",
+      path: "/about",
+    },
+    {
+      name: "Shop",
+      path: "/shop",
+    },
+    {
+      name: "Services",
+      path: "/services",
+    },
+    {
+      name: "Contact",
+      path: "/contact",
+    },
+  ];
+
   return (
     <div className="bg-[#004953] fixed z-[80] top-0 left-0 right-0 w-screen ">
       {/* overlay for closing navbar when clicked outside */}
@@ -51,44 +78,18 @@ const Navbar = () => {
           }`}
         >
           <ul className="grid gap-4 justify-start py-12 px-[9px] text-[#D4AF37] font-normal text-[30px] text-end tracking-[3px] font-[Maghfirea,sans-serif]">
-            <li onClick={handleClick}>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
-            </li>
 
-            <li onClick={handleClick}>
-              <Link to="/works">Works</Link>
-            </li>
-            <li>
-              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
-            </li>
+            {links.map((link) => (
+              <React.Fragment key={link.name}>
+                <li onClick={handleClick}>
+                  <Link to={link.path}>{link.name}</Link>
+                </li>
+                <li>
+                  <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
+                </li>
+              </React.Fragment>
+            ))}
 
-            <li onClick={handleClick}>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
-            </li>
-
-            <li onClick={handleClick}>
-              <Link to="/shop">Shop</Link>
-            </li>
-            <li>
-              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
-            </li>
-
-            <li onClick={handleClick}>
-              <Link to="/services">Services</Link>
-            </li>
-            <li>
-              <div className="h-px bg-[#D4AF37] min-w-[96vw] max-w-[1000px]"></div>
-            </li>
-
-            <li onClick={handleClick}>
-              <Link to="/contact">Contact</Link>
-            </li>
           </ul>
         </nav>
       </div>

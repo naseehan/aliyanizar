@@ -70,7 +70,6 @@ const HeroText = () => {
     }
   }, []);
 
-  
 
 
 
@@ -105,9 +104,7 @@ const HeroText = () => {
     );
   }, []);
 
-
-
-
+  
 
 
   return (
@@ -117,7 +114,7 @@ const HeroText = () => {
     >
       <div className="relative mb-[30px]">
 
-  
+  {/* <img src="/Interior.png" alt="interior designer" className="animate-spin" /> */}
         <p
           ref={reverseRef}
           className="text-[27px] font-bold text-[#cb9b4a] font-[Maghfirea,sans-serif]"
@@ -127,7 +124,7 @@ const HeroText = () => {
 
         <p
           ref={textRef}
-          className="text-[27px]  text-[#cb9b4a] font-[Maghfirea,sans-serif] font-bold absolute left-[50%]  top-[53px] circle-text"
+          className="text-[27px]  text-[#cb9b4a] font-[Maghfirea,sans-serif] font-bold absolute left-[50%]  top-[53px] circle-text artist-text"
         >
           ⋄ ARTIST ⋄
         </p>

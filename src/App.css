@@ -72,8 +72,21 @@
   animation: spin-slow2 6s linear infinite;
   will-change: transform, opacity;
 }
-
-
+/* .artist-text div span {
+  display: inline-block;
+  animation: spin 1s linear 1;
+  will-change: transform, opacity;
+      padding-right: 14px;
+      transform-origin: 50% 150%;
+} */
+/* @keyframes spin {
+  0% {
+    transform: rotate(180deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+} */
 .circle-text {
   display: inline-block;
   transform-origin: center center;

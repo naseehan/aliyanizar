@@ -97,7 +97,7 @@ const Home = () => {
           className="parallax aspect-[2/1] h-screen"
           layers={[
             { speed: -30, children: <HeroText /> },
-            // { image: "/bgwork.webp", speed: -2 },
+            { image: "/bgwork.webp", speed: -2 },
           ]}
         />
 

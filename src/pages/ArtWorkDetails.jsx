@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { products } from "./shopItems";
 import GoBack from "../components/GoBack";
 import Sidebar from "../components/Sidebar";
@@ -47,7 +47,7 @@ const ArtWorkDetails = () => {
     dispatch(removeFave(id));
   };
   // Add to cart
-  const handleClick = (id) => {
+  const handleClick = () => {
     // const product = products.find((item) => item.id === id);
     const result =  dispatch(addToCart(product));
      if (result.meta?.exceeded) {

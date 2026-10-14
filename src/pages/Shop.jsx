@@ -320,7 +320,8 @@ const Shop = () => {
           {/* products */}
           <div className="grid lg:w-[100%]">
             <div className="grid [grid-template-columns:repeat(auto-fit,minmax(144px,1fr))] sm:[grid-template-columns:repeat(auto-fit,minmax(239px,1fr))] gap-3 sm:gap-10 mt-16 shop-page-products">
-              {filterdProducts.map((item, i) => !item.forShow && ( (
+              {filterdProducts.map((item, i) => 
+                (
                 
                 <div
                   key={i}
@@ -404,7 +405,7 @@ const Shop = () => {
             
                   </div>
                 </div>
-              )))}
+             ) )}
             </div>
           </div>
         </div>

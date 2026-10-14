@@ -1,11 +1,9 @@
-import React, { useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import GoBack from "../components/GoBack";
 import { toast } from "react-toastify";
 
 const Contact = () => {
   const location = window.location.href;
-  let link = import.meta.env.VITE_LINK;
 
   const [loading, setLoading] = useState(false);
 

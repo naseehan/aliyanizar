@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
-import { products } from "./shopItems";
-import { categories } from "./shopItems";
+import { fetchProducts, shopCategories } from "../lib/productsApi";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -21,8 +20,35 @@ const Shop = () => {
   const faves = useSelector((state) => state.faves.items);
   const cart = useSelector((state) => state.cart.items);
 
-  const [filterdProducts, setFilteredProducts] = useState(products);
-  const [search, setSearch] = useState();
+const [products, setProducts] = useState([]);
+const [filterdProducts, setFilteredProducts] = useState([]);
+const [search, setSearch] = useState("");
+const [loadingProducts, setLoadingProducts] = useState(true);
+const [productsError, setProductsError] = useState("");
+const categories = shopCategories;
+
+useEffect(() => {
+  let cancelled = false;
+
+  fetchProducts()
+    .then((items) => {
+      if (cancelled) return;
+      setProducts(items);
+      setFilteredProducts(items);
+    })
+    .catch((err) => {
+      if (!cancelled) {
+        setProductsError(err.message || "Could not load products.");
+      }
+    })
+    .finally(() => {
+      if (!cancelled) setLoadingProducts(false);
+    });
+
+  return () => {
+    cancelled = true;
+  };
+}, []);
 
   let navigate = useNavigate();
 
@@ -320,8 +346,13 @@ const Shop = () => {
           {/* products */}
           <div className="grid lg:w-[100%]">
             <div className="grid [grid-template-columns:repeat(auto-fit,minmax(144px,1fr))] sm:[grid-template-columns:repeat(auto-fit,minmax(239px,1fr))] gap-3 sm:gap-10 mt-16 shop-page-products">
-              {filterdProducts.map((item, i) => 
-                (
+              {loadingProducts ? (
+                <p className="col-span-full py-8 text-center text-[#004953]">Loading products…</p>
+              ) : productsError ? (
+                <p className="col-span-full py-8 text-center text-red-700">{productsError}</p>
+              ) : filterdProducts.length === 0 ? (
+                <p className="col-span-full py-8 text-center text-[#004953]">No products found.</p>
+              ) : filterdProducts.map((item, i) => (
                 
                 <div
                   key={i}

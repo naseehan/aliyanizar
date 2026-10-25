@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { fetchProducts, shopCategories } from "../lib/productsApi";
+import { toSlug } from "../lib/slug";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -75,8 +76,7 @@ useEffect(() => {
 
   // goto artwork details page
   const goToDetailsPage = (name) => {
-    let keyword = name.toLowerCase().replace(/s\+/g, "-");
-    navigate(`/works/artWorks/${keyword}`);
+    navigate(`/works/artWorks/${toSlug(name)}`);
   };
 
   const handleFilterToggle = () => {

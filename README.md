@@ -1,12 +1,44 @@
-# React + Vite
+# Aliya Nizar Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio and online shop for Dubai-based artist and interior designer Aliya Nizar.
 
-Currently, two official plugins are available:
+- **Frontend:** React 19, Vite, Tailwind CSS, Redux Toolkit, React Router, GSAP
+- **Content:** products are loaded from a Strapi CMS (`src/lib/productsApi.js`)
+- **API:** Express server in `server/` that sends contact-form emails through Resend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting started
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The contact-form API lives in `server/`:
+
+```bash
+cd server
+npm install
+npm start
+```
+
+## Testing
+
+The project has **126 automated tests** across the frontend and the API, with roughly 95% statement coverage on the frontend. They run on every push and pull request through GitHub Actions (`.github/workflows/test.yml`).
+
+| Layer | Tools | What is covered |
+| --- | --- | --- |
+| State | Vitest | Cart and favourites Redux slices: 5-item limit, localStorage persistence and recovery from corrupted storage |
+| Data | Vitest | Strapi response normalisation (v4 and v5 shapes, media URLs, rich-text blocks), fetch errors, URL slug helpers |
+| Components | React Testing Library, user-event | Shop search, category filters, add to cart and favourites, cart sidebar and WhatsApp checkout, artwork details, gallery pagination, navigation, contact forms (success, 429 rate limit, server errors) |
+| Routing | React Testing Library | Every route in `App.jsx`, the intro loader and the 404 fallback |
+| API | Vitest, Supertest | `POST /sendmail`: validation, email content, mail-provider failures, rate limiting, CORS |
+
+```bash
+npm test                 # frontend tests
+npm run test:watch       # watch mode
+npm run test:coverage    # coverage report in coverage/
+npm run test:server      # API tests
+npm run test:all         # everything
+```
+
+Tests sit next to the code they cover (`*.test.js` / `*.test.jsx`). Shared setup and render helpers are in `src/test/`. The Express app is built by `createApp()` in `server/app.js`, which takes the mailer as a parameter, so the API tests never send real emails.

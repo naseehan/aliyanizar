@@ -9,6 +9,7 @@ import "./embla.css";
 import { products } from "../../pages/shopItems";
 import { Link, useNavigate } from "react-router-dom";
 import GoBack from "../GoBack";
+import { toSlug } from "../../lib/slug";
 // import { DotButton, useDotButton } from './EmblaCarouselDotButton'
 
 const TWEEN_FACTOR_BASE = 0.52;
@@ -25,8 +26,7 @@ const ArtWorks = (props) => {
 
   let navigate = useNavigate();
   const handleClick = (slug) => {
-    let keyword = slug.toLowerCase().replace(/s\+/g, "-");
-    navigate(`${keyword}`);
+    navigate(toSlug(slug));
   };
 
   const {

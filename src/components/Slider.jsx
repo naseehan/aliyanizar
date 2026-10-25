@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {products} from "../pages/shopItems"
+import { toSlug } from "../lib/slug";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,8 +17,7 @@ const Slider = () => {
 
   let navigate = useNavigate();
   const handleClick = (slug) => {
-    let keyword = slug.toLowerCase().replace(/s\+/g, "-");
-    navigate(`/works/artWorks/${keyword}`);
+    navigate(`/works/artWorks/${toSlug(slug)}`);
   };
 
   const headingRef = React.useRef();

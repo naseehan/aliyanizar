@@ -10,12 +10,13 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    const fields = new FormData(e.target);
     const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      phone: e.target.phone.value,
-      what: e.target.what.value,
-      message: e.target.message.value,
+      name: fields.get("name"),
+      email: fields.get("email"),
+      phone: fields.get("phone"),
+      what: fields.get("what"),
+      message: fields.get("message"),
     };
 // https://aliyanizar.onrender.com/sendmail
     try {

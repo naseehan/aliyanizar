@@ -11,7 +11,7 @@ function getMediaUrl(media) {
 function blocksToText(blocks) {
   if (typeof blocks === "string") return blocks;
   if (!Array.isArray(blocks)) return "";
-  return blocks.map((block) => (block.children || []).map((child) => child.text || "").join("")).filter(Boolean).join("\\n\\n");
+  return blocks.map((block) => (block.children || []).map((child) => child.text || "").join("")).filter(Boolean).join("\n\n");
 }
 
 export function normalizeProduct(entry) {

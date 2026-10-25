@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchProducts } from "../lib/productsApi";
+import { fromSlug } from "../lib/slug";
 import GoBack from "../components/GoBack";
 import Sidebar from "../components/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,9 +42,7 @@ const ArtWorkDetails = () => {
     };
   }, []);
 
-  const normalizedSlug = decodeURIComponent(slug || "")
-    .replace(/-/g, " ")
-    .toLowerCase();
+  const normalizedSlug = fromSlug(slug);
 
   const product = products.find(
     (item) => item.name.toLowerCase() === normalizedSlug

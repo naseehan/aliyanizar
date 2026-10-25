@@ -33,12 +33,13 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    const fields = new FormData(e.target);
     const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      phone: e.target.phone.value,
-      what: e.target.what.value,
-      message: e.target.message.value,
+      name: fields.get("name"),
+      email: fields.get("email"),
+      phone: fields.get("phone"),
+      what: fields.get("what"),
+      message: fields.get("message"),
     };
 
     try {
@@ -48,6 +49,7 @@ const ContactSection = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         }).then((res) => {
+          if (res.status === 429) throw new Error("Too many requests");
           if (!res.ok) throw new Error("Server error");
           return res.json();
         }),
